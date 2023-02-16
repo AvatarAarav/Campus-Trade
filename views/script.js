@@ -16,7 +16,7 @@ const ads = [
       description: "Bose QuietComfort 35 II wireless headphones in pristine condition. Comes with original box and accessories."
     }
   ];
-  
+
   // Function to create ad cards dynamically
   const createAdCards = (ads) => {
     const adCardsContainer = document.getElementById("ad-cards-container");
@@ -27,18 +27,14 @@ const ads = [
         <h3>${ad.title}</h3>
         <p>${ad.price}</p>
         <p>${ad.description}</p>
-        <button onclick="viewAdDetails('${ad.title}')">View Ad</button>
+        <button onclick="getAdDetails('${ad.title}')">View Ad</button>
       `;
       adCardsContainer.appendChild(adCard);
     });
   };
-  
-  // Function to view ad details
-  const viewAdDetails = (title) => {
-    const selectedAd = ads.find(ad => ad.title === title);
-    localStorage.setItem("selectedAd", JSON.stringify(selectedAd));
-    window.location.href = "ad_details.html";
-  };
+  function getAdDetails(title){
+    location.assign(location.href+`${"ad/"+title}`)
+  }
   
   
   // Call createAdCards function to create ad cards on page load
