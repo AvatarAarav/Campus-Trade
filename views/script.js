@@ -80,17 +80,14 @@ const createAdCards = (ads) => {
         const adBody = document.createElement("div");
         adBody.classList.add("card-body");
         adBody.innerHTML = `
-            <h2 class="price"><i class="fa-solid fa-indian-rupee-sign"></i> ${ad.price}</h2>
-            <h4 class="card-title">${ad.title}</h4>
-            <p class="card-text">${ad.description}</p>
-            <button onclick="getAdDetails('${ad.title}')">View Ad</button>
-        `;
+    <h4 class="price" style="font-size:min(20px,2.2vw);"><i class="fa-solid fa-indian-rupee-sign"></i> ${ad.price}</h4>
+    <h6 class="card-title" style="font-size:min(20px,2.2vw);">${ad.title}</h6>
+    <button class="viewAd" onclick="getAdDetails('${ad.title}')">View Ad</button>
+`;
 
         const adCard = document.createElement("div");
         adCard.classList.add("card");
-        adCard.classList.add("m-2");
-        adCard.setAttribute("style", "width: 23%; min-width: 210px;");
-        adCard.innerHTML = `<img class="card-img-top" src=${ad.image_src} alt="Card image" style="width:100%">`;
+        adCard.innerHTML = `<img class="card-img-top productpic" src=${ad.image_src} alt="Card image" style="width:100%">`;
         adCard.appendChild(adBody);
         adCardsContainer.appendChild(adCard);
     });
