@@ -1,0 +1,34 @@
+:root {
+    --blue1: #142850;
+    --blue2: #27496D;
+    --blue3: #0C7B93;
+    --blue4: #00A8CC;
+}
+
+.tophead {
+    margin-left: 20px;
+    margin-top: 90px;
+}
+
+body {
+    background-color: var(--blue4);
+}
+
+.navbar {
+    background-color: var(--blue1);
+}
+
+.card {
+    border: 4px solid var(--blue4);
+}
+
+.card:hover {
+    border: 4px solid whitesmoke;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
