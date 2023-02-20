@@ -16,11 +16,16 @@
 
     <nav class="navbar navbar-expand-sm navbar-dark shadow-sm p-4 mb-4 fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="javascript:void(0)">College Trade</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-            <span class="navbar-toggler-icon"></span>
+            <a class="navbar-brand" style="font-size:min(35px,4vw); padding: 0px; margin-top: -5px; margin-bottom: -5px;" href="javascript:void(0)">College Trade</a>
+            <button class="menubtn" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="mynavbar">
+                <span><form class="d-flex searchbar">
+                    <input class="inpsearch" type="text" placeholder="Search">
+                    <button class="searchbtn" type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form></span>
+
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="javascript:void(0)">Login</a>
@@ -32,10 +37,7 @@
                         <a class="nav-link" href="javascript:void(0)">Support</a>
                     </li>
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="text" placeholder="Search">
-                    <button class="btn btn-primary" type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
-                </form>
+
             </div>
         </div>
     </nav>
@@ -47,28 +49,20 @@
         <h2>Recomendations</h2>
     </div>
 
-    <div class="container-fluid d-flex flex-wrap" id="ad-cards-container">
-
-        <div class="card m-2 " style="width: 23%; min-width: 210px;">
-            <img class="card-img-top" src="https://picsum.photos/id/233/600/400" alt="Card image" style="width:100%">
-            <div class="card-body">
-                <h2 class="price"><i class="fa-solid fa-indian-rupee-sign"></i> 3,000</h2>
-                <h4 class="card-title">Product-name</h4>
-                <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse, ipsam totam aliquam numquam possimus debitis deleniti eveniet nobis fugiat laboriosam.</p>
-                <!-- <a href="#" class="btn btn-primary">See Profile</a> -->
-                <button onclick="viewAdDetails('${ad.title}')">View Ad</button>
-            </div>
-        </div>
-
+    <div class="adContainer" id="ad-cards-container">
 
     </div>
 
 
-    <a href="#" class="btn border-info bg-black text-white">to top</a>
+    <div class="topbtnbar">
+        <a href="#" class="btn border-info bg-black text-white topbtn"><span><i class="fa-solid fa-caret-up"></i></span> Top</a>
+    </div>
+
 
     <footer class="py-3">
         <p>Copyright &copy; Olx-like Website 2023</p>
     </footer>
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
