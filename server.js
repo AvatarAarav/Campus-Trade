@@ -1,5 +1,5 @@
-var express= require('express');
-var path=require('path')
+import express from 'express';
+import path from 'path';
 const app=express();
 app.set('view engine', 'ejs');
 app.set('views','./views');
