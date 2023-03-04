@@ -16,7 +16,13 @@
 
     <nav class="navbar navbar-expand-sm navbar-dark shadow-sm p-4 mb-4 fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" style="font-size:min(35px,4vw); padding: 0px; margin-top: -5px; margin-bottom: -5px;" href="javascript:void(0)">College Trade</a>
+            <i class="fa-solid fa-handshake logo"></i>
+            <div class="heading">
+                <h2>Campus<span style="color: orangered;">Trade</span></h2>
+                <p>A student to student market place.</p>
+            </div>
+            <!-- <img src="./logo.jpeg" alt="logo"> -->
+            <!-- <a class="navbar-brand" style="font-size:min(35px,4vw); padding: 0px; margin-top: -5px; margin-bottom: -5px;" href="javascript:void(0)">College Trade</a> -->
             <button class="menubtn" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -28,10 +34,10 @@
 
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)">Login</a>
+                        <a class="nav-link" href="#" onclick="openlogin()" data-bs-toggle="collapse" data-bs-target="#mynavbar">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)">Sign Up</a>
+                        <a class="nav-link" href="#" onclick="openregister()" data-bs-toggle="collapse" data-bs-target="#mynavbar">Sign Up</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="javascript:void(0)">Support</a>
@@ -42,11 +48,68 @@
         </div>
     </nav>
 
+    <div class="blur-screen" id="blur-screen" onclick="closeall()">
+
+    </div>
+
+
+
+
+    <div class="outerbox" id="outerbox">
+        <div class="header">
+            <div class="backbtn"><span style="float: right;font-size: 40px;margin-top: -10px;"><i class="fa-solid fa-circle-arrow-right"  data-bs-toggle="tooltip" data-bs-placement="top" title="Go Back !" onclick="closelogin()"></i></span></div>
+            <h2>Log<span style="color: orangered;">in</span></h2>
+        </div>
+        <div class="profilephoto"><img id="profilephoto" src="./boy1.png" alt="boy" onclick="profilepic()"></div>
+        <div class="loginbox">
+            <div class="inputbox"><span class="iconn"><i class="fa-solid fa-user"></i></span><input class="uname" type="text" placeholder="User Name"></div>
+            <div class="inputbox"><span class="iconn"><i class="fa-solid fa-key"></i></span><input class="upass" type="password" placeholder="Password"></div>
+            <input class="subbtn" type="submit" value="Login">
+        </div>
+
+        <div class="exist">
+            <a href="#" onclick="openregister()">New User ?</a>
+        </div>
+
+        <hr>
+        <span style="color: white;">Login with <a href="#" class="google"><i class="fa-brands fa-google"></i> google</a></span>
+    </div>
+
+
+
+    <!-- Register -->
+    <div class="registerbox" id="registerbox">
+
+        <div class="header">
+            <div class="backbtn"><span style="float: right;font-size: 40px;margin-top: -10px;"><i class="fa-solid fa-circle-arrow-right"  data-bs-toggle="tooltip" data-bs-placement="top" title="Go Back !" onclick="closeregister()"></i></span></div>
+            <h2>Sign<span style="color: orangered;">Up</span></h2>
+        </div>
+        <div class="profilephoto"><img id="Rprofilephoto" src="./boy1.png" alt="boy" onclick="Rprofilepic()"></div>
+        <div class="loginbox">
+            <div class="inputbox"><span class="iconn"><i class="fa-solid fa-user"></i></span><input class="uname" type="text" placeholder="User Name"></div>
+            <div class="inputbox"><span class="iconn"><i class="fa-solid fa-envelope"></i></span><input class="umail" type="email" placeholder="E mail Id"></div>
+            <div class="inputbox"><span class="iconn"><i class="fa-solid fa-graduation-cap"></i></span><input class="uclg" type="text" placeholder="College Name"></div>
+            <div class="inputbox"><span class="iconn"><i class="fa-solid fa-key"></i></span><input class="upass" type="password" placeholder="New Password"></div>
+            <div class="inputbox"><span class="iconn"><i class="fa-solid fa-lock"></i></span><input class="upass" type="password" placeholder="Confirm Password"></div>
+            <input class="subbtn" type="submit" value="Sign Up">
+        </div>
+
+        <div class="exist">
+            <a href="#" onclick="openlogin()">Existing User ?</a>
+        </div>
+
+        <hr>
+
+
+
+        <span style="color: white;">Sign up with <a href=""><i class="fa-brands fa-google google"></i> google</a></span>
+    </div>
+
 
 
 
     <div class="container-fluid tophead">
-        <h2>Recomendations</h2>
+        <h2>Featured</h2>
     </div>
 
     <div class="adContainer" id="ad-cards-container">
