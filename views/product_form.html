@@ -1,0 +1,159 @@
+
+	
+
+	<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<title>Object Form</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./styles.css">
+	<script src="https://kit.fontawesome.com/ef8a591cb3.js" crossorigin="anonymous"></script>
+	<!-- Custom CSS -->
+	<style>
+		label{
+			font-size: 20px;
+			
+		}
+		#button2:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  background-color: blue;
+  
+}
+		body {
+			width: 100%;
+
+		}
+
+
+		.secondone {
+			margin-top: 50px;
+			width: 60%;
+			min-width: 360px;
+			background-color: #0C7B93;
+			padding: 25px;
+			border-radius: 5px;
+			box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+			
+
+			
+		}
+		h2 {
+			color: white;
+			margin-bottom: 25px;
+			text-align: center;
+			margin-top: revert;
+		}
+		
+		.form-control {
+			border-color: #007bff;
+		}
+		.form-control:focus {
+			border-color: #007bff;
+			box-shadow: none;
+		}
+		.btn-primary {
+			background-color: #007bff;
+			border-color: #007bff;
+			margin-top: 20px;
+			float: right;
+		}
+		.btn-primary:hover {
+			background-color: #0069d9;
+			border-color: #0062cc;
+		}
+		.error {
+			color: red;
+			font-size: 12px;
+			margin-top: 5px;
+		}
+		
+	
+  .logo {
+    font-size: 40px;
+    color: white;
+    padding: 0px;
+    margin: 0px 5px 0px -20px;
+}
+
+.heading {
+    padding: 0px;
+    margin: 0px 10px -15px 5px;
+    color: white;
+    /* background-color: red; */
+}
+
+
+	</style>
+</head>
+
+<body style = "background-color: white;">
+	<!-- <i class="fa-sharp fa-regular fa-handshake"></i> -->
+	<i class="fa-sharp fa-regular fa-handshake"></i>
+
+	<nav class="navbar navbar-expand-sm navbar-dark shadow-sm p-4 mb-4 fixed-top" >
+        <div class="container-fluid" style="display: flex; justify-content: center;">
+			
+			<span><i class="fa-solid fa-handshake logo"></i></span>
+            <!-- <div class="heading">
+                <h2>Campus<span style="color: orangered;">Trade</span></h2>
+                <p>A student to student market place.</p>
+            </div> -->
+            <a class="navbar-brand" style="font-size:min(35px,4vw); padding: 0px; margin-top: -5px; margin-bottom: -5px;
+			" href="javascript:void(0)">Campus<span style="color: orangered;">Trade</span></a>
+            <button class="menubtn" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+				<!-- <i class="fa-sharp fa-regular fa-handshake"style="background-color:white;"></i> -->
+                <span class="navbar-toggler-icon"></span>
+            </button>
+           
+        </div>
+    </nav>
+
+	<div class="secondone"  >
+		<h2>Object Form</h2>
+		<form id="object-form" method="POST">
+			<!-- <div class="form-group">
+				<label for="id">ID:</label>
+				<input type="text" class="form-control" id="id" name="id" required>
+				<span class="error" id="id-error"></span>
+			</div> -->
+			<div class="form-group">
+				<label for="name">Name:</label>
+				<input type="text" class="form-control" id="name" name="name" required>
+				<span class="error" id="name-error"></span>
+			</div>
+			<div class="form-group">
+				<label for="type">Type of Object:</label>
+				<input type="text" class="form-control" id="type" name="type" required>
+				<span class="error" id="type-error"></span>
+			</div>
+			<div class="form-group">
+				<label for="age">How old:</label>
+				<small>eg.(2 years 5 months)</small>
+				<input type="text" class="form-control" id="age" name="age" required>
+				<span class="error" id="age-error"></span>
+			</div>
+			<div class="form-group">
+				<label for="price">Price:</label>
+				<input type="text" class="form-control" id="price" name="price" required>
+				<span class="error" id="price-error"></span>
+			</div>
+			<div class="form-group">
+				<label for="image1">Image :</label>
+				<small>(please enter a clear image of the item)</small>
+				<input type="file" class="form-control-file" id="image1" name="image1" required>
+				<span class="error" id="image1-error"></span>
+			</div>
+			
+<button type="submit" class="btn btn-primary" id = "button2" style="background-color: brown;height: 62px;width: 116px;display: inline-block;border-radius: 23px;">Submit</button>
+</form>
+</div>
+
+
+	
