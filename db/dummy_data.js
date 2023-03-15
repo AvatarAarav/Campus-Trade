@@ -78,9 +78,7 @@ export const products=[
       "description": "64GB space gray unlocked",
       "how_much_old": "1 year",
       "price": "$500",
-      "img1-link": "https://example.com/iphone-x-img1.jpg",
-      "img2-link": "https://example.com/iphone-x-img2.jpg",
-      "img3-link": "https://example.com/iphone-x-img3.jpg"
+      "img1-link": "https://example.com/iphone-x-img1.jpg"
     },
     {
       "name of product": "MacBook Air",
@@ -88,9 +86,7 @@ export const products=[
       "description": "13-inch, 256GB storage, Space Gray",
       "how_much_old": "6 months",
       "price": "$1,000",
-      "img1-link": "https://example.com/macbook-air-img1.jpg",
-      "img2-link": "https://example.com/macbook-air-img2.jpg",
-      "img3-link": "https://example.com/macbook-air-img3.jpg"
+      "img1-link": "https://example.com/macbook-air-img1.jpg"
     },
     {
       "name of product": "Canon EOS Rebel T7",
@@ -98,9 +94,7 @@ export const products=[
       "description": "24.1 MP DSLR Camera with EF-S 18-55mm f/3.5-5.6 is II Lens",
       "how_much_old": "2 years",
       "price": "$450",
-      "img1-link": "https://example.com/canon-eos-rebel-t7-img1.jpg",
-      "img2-link": "https://example.com/canon-eos-rebel-t7-img2.jpg",
-      "img3-link": "https://example.com/canon-eos-rebel-t7-img3.jpg"
+      "img1-link": "https://example.com/canon-eos-rebel-t7-img1.jpg"
     },
     {
       "name of product": "Nintendo Switch",
@@ -108,9 +102,7 @@ export const products=[
       "description": "32GB Neon Red/Blue Joy-Con",
       "how_much_old": "8 months",
       "price": "$300",
-      "img1-link": "https://example.com/nintendo-switch-img1.jpg",
-      "img2-link": "https://example.com/nintendo-switch-img2.jpg",
-      "img3-link": "https://example.com/nintendo-switch-img3.jpg"
+      "img1-link": "https://example.com/nintendo-switch-img1.jpg"
     },
     {
       "name of product": "Bose QuietComfort 35 II",
@@ -118,9 +110,7 @@ export const products=[
       "description": "Wireless, noise-cancelling headphones",
       "how_much_old": "1 year",
       "price": "$250",
-      "img1-link": "https://example.com/bose-qc35-img1.jpg",
-      "img2-link": "https://example.com/bose-qc35-img2.jpg",
-      "img3-link": "https://example.com/bose-qc35-img3.jpg"
+      "img1-link": "https://example.com/bose-qc35-img1.jpg"
     },
     {
       "name of product": "Fitbit Charge 4",
@@ -128,9 +118,7 @@ export const products=[
       "description": "Black, Large",
       "how_much_old": "3 months",
       "price": "$150",
-      "img1-link": "https://example.com/fitbit-charge-4-img1.jpg",
-      "img2-link": "https://example.com/fitbit-charge-4-img2.jpg",
-      "img3-link": "https://example.com/fitbit-charge-4-img3.jpg"
+      "img1-link": "https://example.com/fitbit-charge-4-img1.jpg"
     },
     {
     "name of product": "LG 55-inch OLED TV",
@@ -138,9 +126,7 @@ export const products=[
     "description": "4K UHD Smart OLED TV with Alexa built-in",
     "how_much_old": "2 years",
     "price": "$1,500",
-    "img1-link": "https://example.com/lg-oled-tv-img1.jpg",
-    "img2-link": "https://example.com/lg-oled-tv-img2.jpg",
-    "img3-link": "https://example.com/lg-oled-tv-img3.jpg"
+    "img1-link": "https://example.com/lg-oled-tv-img1.jpg"
     },
     {
     "name of product": "Amazon Echo Dot (3rd gen)",
@@ -148,9 +134,7 @@ export const products=[
     "description": "Smart speaker with Alexa, Charcoal",
     "how_much_old": "1 year",
     "price": "$40",
-    "img1-link": "https://example.com/echo-dot-img1.jpg",
-    "img2-link": "https://example.com/echo-dot-img2.jpg",
-    "img3-link": "https://example.com/echo-dot-img3.jpg"
+    "img1-link": "https://example.com/echo-dot-img1.jpg"
     },
     {
     "name of product": "Dell UltraSharp U2718Q",
@@ -158,9 +142,7 @@ export const products=[
     "description": "27-inch 4K IPS LED-backlit monitor",
     "how_much_old": "3 years",
     "price": "$500",
-    "img1-link": "https://example.com/dell-monitor-img1.jpg",
-    "img2-link": "https://example.com/dell-monitor-img2.jpg",
-    "img3-link": "https://example.com/dell-monitor-img3.jpg"
+    "img1-link": "https://example.com/dell-monitor-img1.jpg"
     },
     {
     "name of product": "Nintendo Switch Pro Controller",
@@ -168,8 +150,6 @@ export const products=[
     "description": "Wireless gaming controller for Nintendo Switch",
     "how_much_old": "4 months",
     "price": "$70",
-    "img1-link": "https://example.com/switch-controller-img1.jpg",
-    "img2-link": "https://example.com/switch-controller-img2.jpg",
-    "img3-link": "https://example.com/switch-controller-img3.jpg"
+    "img1-link": "https://example.com/switch-controller-img1.jpg"
     }
 ]

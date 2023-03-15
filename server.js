@@ -1,12 +1,14 @@
 import express from 'express';
-import { getAllProducts } from './db/DB_Functions.js';
 import apiRouter from './Router/apiRouter.js'
+import bodyParser from 'body-parser';
+import createTable from './db/create.js';
 const app = express();
+
+app.use(bodyParser.urlencoded({extended:false}));
 app.set('view engine', 'ejs');
 app.set('views', './views');
 app.use(express.static('./views'));
 
-const ads =await getAllProducts();
 
 app.use('/api',apiRouter)
 app.get('/', (req, res) => {
@@ -21,5 +23,6 @@ app.get('/ad/:title', (req, res) => {
   res.render('ad_details', obj)
 })
 var server = app.listen(3000, function () {
+  createTable()
   console.log('listening to port 3000')
 });

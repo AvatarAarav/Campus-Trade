@@ -1,4 +1,6 @@
+
 // Dummy data for ads
+
 fetch('http://localhost:3000/api/products') .then(response => {
     if (response.ok) {
       return response.json();
@@ -27,7 +29,8 @@ const createAdCards = (ads) => {
 
         const adCard = document.createElement("div");
         adCard.classList.add("card");
-        adCard.innerHTML = `<img class="card-img-top productpic" src=${ad.image_src} alt="Card image" style="width:100%">`;
+        // console.log(`'data:${ad.img_type};base64,${ad.img_content.data.toString('base64')}'`)
+        adCard.innerHTML = `<img class="card-img-top productpic" src='data:${ad.img_type};base64,${btoa(String.fromCharCode.apply(null,ad.img_content.data))}' alt="Card image" style="width:100%">`;
         adCard.appendChild(adBody);
         adCardsContainer.appendChild(adCard);
     });
