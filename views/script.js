@@ -37,3 +37,68 @@ function getAdDetails(title) {
     location.assign(location.href + `${"ad/"+title}`)
 }
 
+
+//index.js script
+var profilephoto = document.getElementById("profilephoto");
+
+function profilepic() {
+    console.log(profilephoto.alt);
+    if (profilephoto.alt === 'girl') {
+        profilephoto.src ='./assets/boy1.png';
+        profilephoto.alt = 'boy';
+    } else {
+        profilephoto.src = './assets/girl1.png';
+        profilephoto.alt = 'girl';
+    }
+}
+
+var rprofilephoto = document.getElementById("Rprofilephoto");
+
+function Rprofilepic() {
+    console.log(rprofilephoto.alt);
+    if (rprofilephoto.alt === 'girl') {
+        rprofilephoto.src = './assets/boy1.png';
+        rprofilephoto.alt = 'boy';
+    } else {
+        rprofilephoto.src = './assets/girl1.png';
+        rprofilephoto.alt = 'girl';
+    }
+}
+
+
+
+// for open and close of login modal
+
+
+
+var box = document.getElementById("outerbox");
+var register = document.getElementById("registerbox");
+var screen = document.getElementById("blur-screen");
+
+function openlogin() {
+    closeall();
+    box.classList.add("open-loginbox");
+    screen.style.display = "block";
+}
+
+function closelogin() {
+    box.classList.remove("open-loginbox");
+    screen.style.display = "none";
+}
+
+function openregister() {
+    closeall();
+    register.classList.add("open-registerbox");
+    screen.style.display = "block";
+}
+
+function closeregister() {
+    register.classList.remove("open-registerbox");
+    screen.style.display = "none";
+}
+
+
+function closeall() {
+    closelogin();
+    closeregister();
+}
