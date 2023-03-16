@@ -37,3 +37,15 @@ export const AddFormData=({name,type,description,age,price,photo})=>{
     }
   });
 }
+
+export const AddUser=({name,email,password,collegeName,year})=>{
+  var db = new sqlite3.Database('Campus_Trade.db');
+  // Save the uploaded photo to the database
+  db.run('INSERT INTO users (name, email,password,college_name,year,) VALUES (?, ?, ?, ?,?)', [name,email,password,collegeName,year], (err) => {
+    if (err) {
+      console.error(err);
+    } else {
+      console.log("Data Entered in Database")
+    }
+  });
+}

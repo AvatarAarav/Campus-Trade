@@ -61,7 +61,7 @@ const createTable = () => {
       console.log('Entering Data!!');
       // Define the SQL query to create the table users
       const createTableQuery = `CREATE TABLE IF NOT EXISTS users (
-        id INTEGER PRIMARY KEY,
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
         name TEXT,
         email TEXT UNIQUE,
         password TEXT,
