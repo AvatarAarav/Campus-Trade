@@ -156,6 +156,23 @@
 				<span class="error" id="image1-error"></span>
 			</div>
 			
+
+<script>
+	const input = document.getElementById('image')
+
+input.addEventListener('change', (event) => {
+  const target = event.target
+  	if (target.files && target.files[0]) {
+
+      const maxAllowedSize = 0.5 * 1024 * 1024;
+      if (target.files[0].size > maxAllowedSize) {
+      	window.alert("please keep the file size less than 500 KB")
+       	target.value = ''
+      }
+  }
+})
+</script>
+
 <button type="submit" class="btn btn-primary" id = "button2" style="background-color: brown;height: 62px;width: 116px;display: inline-block;border-radius: 23px;">Submit</button>
 </form>
 </div>
