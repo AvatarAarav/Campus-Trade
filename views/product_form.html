@@ -164,9 +164,9 @@ input.addEventListener('change', (event) => {
   const target = event.target
   	if (target.files && target.files[0]) {
 
-      const maxAllowedSize = 0.5 * 1024 * 1024;
+      const maxAllowedSize = 0.1 * 1024 * 1024;
       if (target.files[0].size > maxAllowedSize) {
-      	window.alert("please keep the file size less than 500 KB")
+      	window.alert("please keep the file size less than 100 KB")
        	target.value = ''
       }
   }
