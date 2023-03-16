@@ -59,10 +59,12 @@ export const checkLogin=({email,password})=>{
       if (err) {
         reject(err)
       } else {
-        if(rows.length>0)
+        if(rows.length==0) 
+        resolve({err:"No Record Found"})
+        else if( rows[0].password==password)
         resolve(rows[0]);
         else
-        resolve({err:"No data"})
+        resolve({err:"Wrong Details"})
       }
     });
     // Close the database connection
