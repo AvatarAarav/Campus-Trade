@@ -1,4 +1,4 @@
-import { AddUser } from "../db/DB_Functions";
+import { AddUser } from "../db/DB_Functions.js";
 export const addUserAPI=async (req,res)=>{
     try {
         AddUser(req.body)
