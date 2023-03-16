@@ -49,3 +49,21 @@ export const AddUser=({name,email,password,collegeName,year})=>{
     }
   });
 }
+
+export const checkLogin=({email,password})=>{
+  var db = new sqlite3.Database('Campus_Trade.db');
+  const query = 'SELECT * FROM users where email=?';
+  // Execute the SQL query and retrieve all rows as an object
+  return new Promise((resolve, reject) => {
+    db.all(query, [email], function (err, rows) {
+      if (err) {
+        reject(err)
+      } else {
+        if(rows.length>0)
+        resolve(rows[0]);
+      }
+    });
+    // Close the database connection
+    db.close();
+  });
+}
