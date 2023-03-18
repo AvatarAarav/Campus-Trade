@@ -23,6 +23,10 @@ app.get('/ad/:title', (req, res) => {
   var obj = temp[0];
   res.render('ad_details', obj)
 })
+app.get('/user/:id',(req,res)=>{
+  const id=req.params.id;
+  // res.render()
+})
 var server = app.listen(3000, function () {
   createTable()
   console.log('listening to port 3000')
