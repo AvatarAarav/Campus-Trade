@@ -184,3 +184,18 @@ hr{
     height : 2px;
     background-color: #F5F5F5;
 }
+
+
+button
+{
+    background-color: white;
+    color: #000000;
+    border: 2px solid blanchedalmond;
+  
+    width: 100px;
+    padding: 5px;
+}
+button:hover{
+    background-color:#142850 ;
+    color :white
+}
