@@ -2,7 +2,7 @@ import express from "express";
 import multer from "multer";
 import { submitForm } from "../controllers/submitForm.js";
 import { addUserAPI } from "../controllers/register.js";
-import { checkLogin } from "../db/DB_Functions.js";
+import { checkLoginAPI } from "../controllers/login.js";
 import { getAllProductsAPI } from "../controllers/apiFunctions.js";
 
 const router=express.Router();
@@ -14,5 +14,5 @@ router.get('/products',getAllProductsAPI)
 const upload = multer({ dest: 'uploads/' });
 router.post('/form',upload.single('photo'),submitForm)
 router.post('/user/register',addUserAPI)
-router.post('user/login',checkLogin)
+router.post('/user/login',checkLoginAPI)
 export default router

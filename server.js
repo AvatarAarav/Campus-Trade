@@ -5,6 +5,7 @@ import createTable from './db/create.js';
 const app = express();
 
 app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.json()) //For checking api's with postman
 app.set('view engine', 'ejs');
 app.set('views', './views');
 app.use(express.static('./views'));
