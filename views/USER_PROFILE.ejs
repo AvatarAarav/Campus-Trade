@@ -18,10 +18,12 @@
 		</div>
 		<div id="profile-info">
 			<ul>
-				<li><span>User-ID:</span></li>
-				<li><span>Name:</span> </li>
-				<li><span>Email:</span> </li>
-				<li><span>College:</span></li>
+				<li><span>User-ID: <%= x=user.user_id %></span></li>
+				<li><span>Name:<%= user.user_name %></span> </li>
+				<li><span>Email:<%= user.em %></span> </li>
+				<li><span>College:<%= user.coll %></span></li>
+				
+				<button type="submit" onclick="postCard()">Post AD</button>
 			</ul>
 		</div>
 	</div>
