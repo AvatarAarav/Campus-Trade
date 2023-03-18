@@ -41,7 +41,7 @@ export const AddFormData=({name,type,description,age,price,photo})=>{
 export const AddUser=({name,email,password,collegeName,year})=>{
   var db = new sqlite3.Database('Campus_Trade.db');
   // Save the uploaded photo to the database
-  db.run('INSERT INTO users (name, email,password,college_name,year,) VALUES (?, ?, ?, ?,?)', [name,email,password,collegeName,year], (err) => {
+  db.run('INSERT INTO users (name, email,password,college_name,year) VALUES (?, ?, ?, ?,?)', [name,email,password,collegeName,year], (err) => {
     if (err) {
       console.error(err);
     } else {
@@ -59,8 +59,12 @@ export const checkLogin=({email,password})=>{
       if (err) {
         reject(err)
       } else {
-        if(rows.length>0)
+        if(rows.length==0) 
+        resolve({err:"No Record Found"})
+        else if( rows[0].password==password)
         resolve(rows[0]);
+        else
+        resolve({err:"Wrong Details"})
       }
     });
     // Close the database connection
