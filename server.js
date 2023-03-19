@@ -17,7 +17,7 @@ app.use(express.static('./views'));
 
 app.use('/api',apiRouter)
 app.get('/', (req, res) => {
-  res.render("index",{name:undefined})
+  res.render("index",{user:undefined})
 })
 app.get('/ad/:title', (req, res) => {
 
