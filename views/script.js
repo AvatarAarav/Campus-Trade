@@ -47,10 +47,10 @@ var profilephoto = document.getElementById("profilephoto");
 function profilepic() {
     console.log(profilephoto.alt);
     if (profilephoto.alt === 'girl') {
-        profilephoto.src ='./assets/boy1.png';
+        profilephoto.src ='http://localhost:3000/assets/boy1.png';
         profilephoto.alt = 'boy';
     } else {
-        profilephoto.src = './assets/girl1.png';
+        profilephoto.src = 'http://localhost:3000/assets/girl1.png';
         profilephoto.alt = 'girl';
     }
 }
@@ -60,10 +60,10 @@ var rprofilephoto = document.getElementById("Rprofilephoto");
 function Rprofilepic() {
     console.log(rprofilephoto.alt);
     if (rprofilephoto.alt === 'girl') {
-        rprofilephoto.src = './assets/boy1.png';
+        rprofilephoto.src = 'http://localhost:3000/assets/boy1.png';
         rprofilephoto.alt = 'boy';
     } else {
-        rprofilephoto.src = './assets/girl1.png';
+        rprofilephoto.src = 'http://localhost:3000/assets/girl1.png';
         rprofilephoto.alt = 'girl';
     }
 }
