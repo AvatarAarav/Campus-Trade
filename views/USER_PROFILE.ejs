@@ -3,8 +3,8 @@
 <html>
 <head>
 	<title>Shopping Website Profile Page</title>
-	<link rel="stylesheet" href="user_style.css">
-	<script src="ct.js"></script>
+	<link rel="stylesheet" href="http://localhost:3000/user_style.css">
+	<script src="http://localhost:3000/USER_PROFILE.js"></script>
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -14,7 +14,7 @@
 		<h1 style="font-size: 40px	;font-family: Georgia, 'Times New Roman', Times, serif;">PROFILE</h1>
 	
 		<div id="profile-photo">
-			<img src="logo.png" alt="Profile Photo">
+			<img src="" alt="Profile Photo">
 		</div>
 		<div id="profile-info">
 			<ul>
@@ -23,7 +23,7 @@
 				<li><span>Email:<%= user.em %></span> </li>
 				<li><span>College:<%= user.coll %></span></li>
 				
-				<button type="submit" onclick="postCard()">Post AD</button>
+				<a href="http://localhost:3000/product_form.html"><button type="submit">Post AD</button></a>
 			</ul>
 		</div>
 	</div>

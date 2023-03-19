@@ -3,6 +3,7 @@ export const addUserAPI=async (req,res)=>{
     try {
         console.log(req.body)
         const userData= await AddUser(req.body)
+        
         // console.log("User Added")
         res.status(200).render('index',{user :userData});
     } catch (error) {
