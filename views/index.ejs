@@ -8,10 +8,8 @@
 
 <body>
 
-    <%- include('./navbar.ejs'); %>
-    <% if (name) { %>
-        <h2><%=name%></h2>
-      <% } %>
+    <%- include('./navbar.ejs',{user :user}); %>
+
         <!-- <div class="blur-screen" id="blur-screen" onclick="closeall()">
 
         </div> -->

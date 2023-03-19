@@ -17,12 +17,17 @@
             </form></span>
 
             <ul class="navbar-nav me-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="http://localhost:3000/login.html"  >Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="http://localhost:3000/register.html"  >Sign Up</a>
-                </li>
+                <% if(user){ %>
+                    <a class="nav-link" href="#"  >HI <%=user.name%></a>
+                 <% } else{ %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://localhost:3000/login.html"  >Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://localhost:3000/register.html"  >Sign Up</a>
+                    </li>
+                  <% } %>
+                
                 <li class="nav-item">
                     <a class="nav-link" href="http://localhost:3000/devs.html">Developers</a>
                 </li>
