@@ -16,7 +16,6 @@
 
 
 <body>
-
     <!-- Register -->
     <div class="registerbox" id="registerbox">
 
@@ -26,18 +25,19 @@
         </div>
         <div class="profilephoto"><img id="Rprofilephoto" src="./assets/boy1.png" alt="boy" onclick="Rprofilepic()"></div>
         <div class="loginbox">
-            <form action="/api/user/register">
-                <div class="inputbox"><span class="iconn"><i class="fa-solid fa-user"></i></span><input class="uname" type="text" placeholder="User Name"></div>
-                <div class="inputbox"><span class="iconn"><i class="fa-solid fa-envelope"></i></span><input class="umail" type="email" placeholder="E mail Id"></div>
-                <div class="inputbox"><span class="iconn"><i class="fa-solid fa-graduation-cap"></i></span><input class="uclg" type="text" placeholder="College Name"></div>
-                <div class="inputbox"><span class="iconn"><i class="fa-solid fa-key"></i></span><input class="upass" type="password" placeholder="New Password"></div>
+            <form action="/api/user/register" method="post">
+                <div class="inputbox"><span class="iconn"><i class="fa-solid fa-user"></i></span><input name="name" class="uname" type="text" placeholder="User Name"></div>
+                <div class="inputbox"><span class="iconn"><i class="fa-solid fa-envelope"></i></span><input class="umail" type="email" name="email" placeholder="E mail Id"></div>
+                <div class="inputbox"><span class="iconn"><i class="fa-solid fa-graduation-cap"></i></span><input name="collegeName" class="uclg" type="text" placeholder="College Name"></div>
+                <div class="inputbox"><span class="iconn"><i class="fa-solid fa-graduation-cap"></i></span><input name="year" class="uyear" type="text" placeholder="Year"></div>
+                <div class="inputbox"><span class="iconn"><i class="fa-solid fa-key"></i></span><input class="upass" type="password" name="password" placeholder="New Password"></div>
                 <div class="inputbox"><span class="iconn"><i class="fa-solid fa-lock"></i></span><input class="upass" type="password" placeholder="Confirm Password"></div>
                 <input class="subbtn" type="submit" value="Sign Up">
             </form>
         </div>
 
         <div class="exist">
-            <a href="./login.html">Existing User ?</a>
+            <a href="http://localhost:3000/login.html">Existing User ?</a>
         </div>
 
         <hr>

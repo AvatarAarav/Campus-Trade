@@ -24,16 +24,16 @@
         </div>
         <div class="profilephoto"><img id="profilephoto" src="./assets/boy1.png" alt="boy" onclick="profilepic()"></div>
         <div class="loginbox">
-            <form action="/api/user/register">
-                <div class="inputbox"><span class="iconn"><i class="fa-solid fa-user"></i></span><input class="uname" type="text" placeholder="User Name"></div>
-                <div class="inputbox"><span class="iconn"><i class="fa-solid fa-key"></i></span><input class="upass" type="password" placeholder="Password"></div>
+            <form action="/api/user/login" method="post">
+                <div class="inputbox"><span class="iconn"><i class="fa-solid fa-user"></i></span><input class="uname" type="text" name="email" placeholder="User Email Id"></div>
+                <div class="inputbox"><span class="iconn"><i class="fa-solid fa-key"></i></span><input class="upass" type="password" name="password" placeholder="Password"></div>
                 <input class="subbtn" type="submit" value="Login">
             </form>
 
         </div>
 
         <div class="exist">
-            <a href="./register.html">New User ?</a>
+            <a href="http://localhost:3000/register.html">New User ?</a>
         </div>
 
         <hr>

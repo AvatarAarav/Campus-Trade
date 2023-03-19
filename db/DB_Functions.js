@@ -20,37 +20,39 @@ export const getAllProducts = () => {
   });
 
 }
-export const AddFormData=({name,type,description,age,price,photo})=>{
+export const AddFormData = ({ name, type, description, age, price, photo }) => {
   var db = new sqlite3.Database('Campus_Trade.db');
   // Save the uploaded photo to the database
-  db.run('INSERT INTO products (name, type,description,age,price,img_type,img_content) VALUES (?, ?, ?, ?,?,?,?)', [name,type,description,age,price,photo.mimetype,fs.readFileSync(photo.path)], (err) => {
+  db.run('INSERT INTO products (name, type,description,age,price,img_type,img_content) VALUES (?, ?, ?, ?,?,?,?)', [name, type, description, age, price, photo.mimetype, fs.readFileSync(photo.path)], (err) => {
     if (err) {
       console.error(err);
     } else {
 
-        /*For uploading file,we need to first convert it to savable form,for which we have to save it in 
-        a local file (.ie uploads) folder but later we don't need to save the photo twice(1 in mysql other in uploads folder), thatswhy 
-        here we are removing the contents of the folder
-        */
-        fsExtra.emptyDirSync('uploads/');
-        console.log("Data Entered in Database")
-    }
-  });
-}
-
-export const AddUser=({name,email,password,collegeName,year})=>{
-  var db = new sqlite3.Database('Campus_Trade.db');
-  // Save the uploaded photo to the database
-  db.run('INSERT INTO users (name, email,password,college_name,year) VALUES (?, ?, ?, ?,?)', [name,email,password,collegeName,year], (err) => {
-    if (err) {
-      console.error(err);
-    } else {
+      /*For uploading file,we need to first convert it to savable form,for which we have to save it in 
+      a local file (.ie uploads) folder but later we don't need to save the photo twice(1 in mysql other in uploads folder), thatswhy 
+      here we are removing the contents of the folder
+      */
+      fsExtra.emptyDirSync('uploads/');
       console.log("Data Entered in Database")
     }
   });
 }
 
-export const checkLogin=({email,password})=>{
+export const AddUser = ({ name, email, password, collegeName, year }) => {
+  var db = new sqlite3.Database('Campus_Trade.db');
+  // Save the uploaded photo to the database
+  return new Promise((resolve, reject) => {
+    db.run('INSERT INTO users (name, email,password,college_name,year) VALUES (?, ?, ?, ?,?)', [name, email, password, collegeName, year], function (err) {
+      if (err) {
+        reject(err)
+      } else {
+        resolve({ id:this.lastID,name, email, password, collegeName, year })
+      }
+    });
+  })
+}
+
+export const checkLogin = ({ email, password }) => {
   var db = new sqlite3.Database('Campus_Trade.db');
   const query = 'SELECT * FROM users where email=?';
   // Execute the SQL query and retrieve all rows as an object
@@ -59,12 +61,14 @@ export const checkLogin=({email,password})=>{
       if (err) {
         reject(err)
       } else {
-        if(rows.length==0) 
-        resolve({err:"No Record Found"})
-        else if( rows[0].password==password)
-        resolve(rows[0]);
+        if (rows.length == 0)
+          resolve({ err: "No Record Found" })
+        else if (rows[0].password == password){
+          // console.log(rows);
+          resolve(rows[0]);
+        }
         else
-        resolve({err:"Wrong Details"})
+          resolve({ err: "Wrong Details" })
       }
     });
     // Close the database connection
