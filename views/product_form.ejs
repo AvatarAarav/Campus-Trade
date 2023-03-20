@@ -17,80 +17,92 @@
 	<script src="https://kit.fontawesome.com/ef8a591cb3.js" crossorigin="anonymous"></script>
 	<!-- Custom CSS -->
 	<style>
-		label{
-			font-size: 20px;
-			
-		}
-		#button2:hover {
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
-  background-color: blue;
-  
-}
-		body {
-			width: 100%;
-
-		}
-
-
-		.secondone {
-			margin-top: 50px;
-			width: 60%;
-			min-width: 360px;
-			background-color: #0C7B93;
-			padding: 25px;
-			border-radius: 5px;
-			box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
-			
-
-			
-		}
-		h2 {
-			color: white;
-			margin-bottom: 25px;
-			text-align: center;
-			margin-top: revert;
-		}
-		
-		.form-control {
-			border-color: #007bff;
-		}
-		.form-control:focus {
-			border-color: #007bff;
-			box-shadow: none;
-		}
-		.btn-primary {
-			background-color: #007bff;
-			border-color: #007bff;
-			margin-top: 20px;
-			float: right;
-		}
-		.btn-primary:hover {
-			background-color: #0069d9;
-			border-color: #0062cc;
-		}
-		.error {
-			color: red;
-			font-size: 12px;
-			margin-top: 5px;
-		}
-		
-	
-  .logo {
-    font-size: 40px;
-    color: white;
-    padding: 0px;
-    margin: 0px 5px 0px -20px;
-}
-
-.heading {
-    padding: 0px;
-    margin: 0px 10px -15px 5px;
-    color: white;
-    /* background-color: red; */
-}
-
-
-	</style>
+		:root {
+		   --blue1: #142850;
+		   --blue2: #27496D;
+		   --blue3: #0C7B93;
+		   --blue4: #00A8CC;
+		   --bisket: rgb(251, 218, 174);
+		   --yello: #F1F7B5;
+		   --redd: #FD8A8A;
+	   }
+	   
+	   label {
+		   font-size: 20px;
+	   }
+	   
+	   body {
+		   width: 100%;
+		   color: white;
+		   background-image: linear-gradient(to bottom, white, rgb(255, 160, 207));
+	   }
+	   
+	   .secondone {
+		   width: 50%;
+		   min-width: 350px;
+		   background-color: #333;
+		   padding: 0 25px 25px 25px;
+		   margin-top: 80px;
+		   margin-bottom: 80px;
+		   border-radius: 30px;
+		   border-top: 10px solid blueviolet;
+		   border-bottom: 10px solid lightgreen;
+		   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+	   }
+	   
+	   h2 {
+		   color: orangered;
+		   margin: 10px 0 10px 0;
+		   text-align: center;
+	   }
+	   
+	   hr {
+		   width: 99%;
+		   margin-top: 0;
+		   margin-bottom: 20px;
+		   background-color: grey;
+	   }
+	   
+	   .form-control {
+		   background: whitesmoke;
+		   border: 2px solid var(--blue4);
+		   margin-top: 0;
+		   /* border-color: green; */
+	   }
+	   
+	   .form-control:focus {
+		   border-color: greenyellow;
+		   box-shadow: none;
+	   }
+	   
+	   label {
+		   margin-bottom: 0;
+	   }
+	   
+	   .btn {
+		   background-color: var(--blue4);
+		   border-color: white;
+		   margin-top: 20px;
+		   float: right;
+	   }
+	   
+	   .btn:hover {
+		   background-color: lightgreen;
+	   }
+	   
+	   .error {
+		   color: red;
+		   font-size: 12px;
+		   margin-top: 5px;
+	   }
+	   
+	   .logo {
+		   font-size: 40px;
+		   color: white;
+		   padding: 0px;
+		   margin: 0px 5px 0px -20px;
+	   }
+   </style>
 </head>
 
 <body style = "background-color: white;">
@@ -128,6 +140,8 @@
 				<input type="text" class="form-control" id="name" name="name" required>
 				<span class="error" id="name-error"></span>
 			</div>
+			<input type="hidden" name="email" value="<%=user.email%>"/>
+            <input type="hidden" name="password" value="<%=user.password%>" />
 			<div class="form-group">
 				<label for="type">Type of Object:</label>
 				<input type="text" class="form-control" id="type" name="type" required>

@@ -18,12 +18,16 @@
 		</div>
 		<div id="profile-info">
 			<ul>
-				<li><span>User-ID: <%= x=user.user_id %></span></li>
-				<li><span>Name:<%= user.user_name %></span> </li>
-				<li><span>Email:<%= user.em %></span> </li>
-				<li><span>College:<%= user.coll %></span></li>
-				
-				<a href="http://localhost:3000/product_form.html"><button type="submit">Post AD</button></a>
+				<li><span>User-ID: <%= x=user.id %></span></li>
+				<li><span>Name:<%= user.name %></span> </li>
+				<li><span>Email:<%= user.email %></span> </li>
+				<li><span>College:<%= user.college_name %></span></li>
+				<form class="d-inline" method="POST" action="/api/user/adCreate">
+					<input type="hidden" name="email" value="<%=user.email%>"/>
+					<input type="hidden" name="password" value="<%=user.password%>" />
+					<b><button class="btn btn-primary" type="submit">Create Ad</button></b>
+				</form>
+
 			</ul>
 		</div>
 	</div>
