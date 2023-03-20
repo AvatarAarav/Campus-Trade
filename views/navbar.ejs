@@ -18,7 +18,15 @@
 
             <ul class="navbar-nav me-auto">
                 <% if(user){ %>
-                    <a class="nav-link" href="#"  >HI <%=user.name%></a>
+                    <!-- onclick="openProfile('<%=user.id%>','<%=user.password%>') "-->
+                    <span class="nav-link" >
+                        Hi,
+                        <form class="d-inline" method="POST" action="/api/user">
+                            <input type="hidden" name="userId" value="<%=user.id%>"/>
+                            <input type="hidden" name="pass" value="<%=user.password%>" />
+                            <b><button class="btn btn-primary" type="submit"><%=user.name%></button></b>
+                        </form>
+                    </span>
                  <% } else{ %>
                     <li class="nav-item">
                         <a class="nav-link" href="http://localhost:3000/login.html"  >Login</a>

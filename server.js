@@ -9,7 +9,7 @@ import { fileURLToPath } from 'url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 app.use(bodyParser.urlencoded({extended:false}));
-// app.use(bodyParser.json()) //for post requests
+app.use(bodyParser.json()) //for post requests
 app.set('view engine', 'ejs');
 app.set('views', __dirname+'/views');
 app.use(express.static('./views'));

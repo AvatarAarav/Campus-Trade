@@ -46,7 +46,7 @@ export const AddUser = ({ name, email, password, collegeName, year }) => {
       if (err) {
         reject(err)
       } else {
-        resolve({ id:this.lastID,name, email, password, collegeName, year })
+        resolve({ id: this.lastID, name, email, password, collegeName, year })
       }
     });
   })
@@ -63,7 +63,31 @@ export const checkLogin = ({ email, password }) => {
       } else {
         if (rows.length == 0)
           resolve({ err: "No Record Found" })
-        else if (rows[0].password == password){
+        else if (rows[0].password == password) {
+          // console.log(rows);
+          resolve(rows[0]);
+        }
+        else
+          resolve({ err: "Wrong Details" })
+      }
+    });
+    // Close the database connection
+    db.close();
+  });
+}
+
+export const getUserDataAPI = ({userId, pass}) => {
+  var db = new sqlite3.Database('Campus_Trade.db');
+  const query = 'SELECT * FROM users where id=?';
+  // Execute the SQL query and retrieve all rows as an object
+  return new Promise((resolve, reject) => {
+    db.all(query, [userId], function (err, rows) {
+      if (err) {
+        reject(err)
+      } else {
+        if (rows.length == 0)
+          resolve({ err: "No Record Found" })
+        else if (rows[0].password == pass) {
           // console.log(rows);
           resolve(rows[0]);
         }

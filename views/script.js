@@ -40,6 +40,17 @@ function getAdDetails(title) {
     location.assign(location.href + `${"ad/"+title}`)
 }
 
+// //Function to redirect on clicking profile-link
+// function openProfile(id,pass){
+//     fetch('/api/user/'+id,{
+//         method:"POST",
+//         headers: {
+//             "Content-Type": "application/json",
+//         },
+//         body: JSON.stringify({id,pass})
+//     })
+//     window.location.reload()
+// }
 
 //index.js script
 var profilephoto = document.getElementById("profilephoto");
@@ -74,34 +85,34 @@ function Rprofilepic() {
 
 
 
-var box = document.getElementById("outerbox");
-var register = document.getElementById("registerbox");
-var screen = document.getElementById("blur-screen");
+// var box = document.getElementById("outerbox");
+// var register = document.getElementById("registerbox");
+// var screen = document.getElementById("blur-screen");
 
-function openlogin() {
-    closeall();
-    box.classList.add("open-loginbox");
-    screen.style.display = "block";
-}
+// function openlogin() {
+//     closeall();
+//     box.classList.add("open-loginbox");
+//     screen.style.display = "block";
+// }
 
-function closelogin() {
-    box.classList.remove("open-loginbox");
-    screen.style.display = "none";
-}
+// function closelogin() {
+//     box.classList.remove("open-loginbox");
+//     screen.style.display = "none";
+// }
 
-function openregister() {
-    closeall();
-    register.classList.add("open-registerbox");
-    screen.style.display = "block";
-}
+// function openregister() {
+//     closeall();
+//     register.classList.add("open-registerbox");
+//     screen.style.display = "block";
+// }
 
-function closeregister() {
-    register.classList.remove("open-registerbox");
-    screen.style.display = "none";
-}
+// function closeregister() {
+//     register.classList.remove("open-registerbox");
+//     screen.style.display = "none";
+// }
 
 
-function closeall() {
-    closelogin();
-    closeregister();
-}
+// function closeall() {
+//     closelogin();
+//     closeregister();
+// }
