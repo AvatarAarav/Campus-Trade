@@ -38,10 +38,10 @@ export const getProduct=(id)=>{
   });
 }
 
-export const AddFormData = ({ name, type, description, age, price, photo }) => {
+export const AddFormData = ({ name, type, description,email ,age, price, photo }) => {
   var db = new sqlite3.Database('Campus_Trade.db');
   // Save the uploaded photo to the database
-  db.run('INSERT INTO products (name, type,description,age,price,img_type,img_content) VALUES (?, ?, ?, ?,?,?,?)', [name, type, description, age, price, photo.mimetype, fs.readFileSync(photo.path)], (err) => {
+  db.run('INSERT INTO products (name, type,description,email,age,price,img_type,img_content) VALUES (?, ?, ?, ?,?,?,?,?)', [name, type, description, email,age, price, photo.mimetype, fs.readFileSync(photo.path)], (err) => {
     if (err) {
       console.error(err);
     } else {

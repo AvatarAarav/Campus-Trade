@@ -20,6 +20,7 @@ const createTable = () => {
             name TEXT NOT NULL,
             type TEXT NOT NULL,
             description TEXT,
+            email TEXT,
             age TEXT,
             price TEXT,
             img_type TEXT NOT NULL,
