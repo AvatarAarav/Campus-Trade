@@ -9,7 +9,7 @@ export const submitForm=async (req,res)=>{
         if(userData.err) res.status(404).render('index',{user: undefined})
         else{
             AddFormData({...req.body,photo})
-            res.status(200).render('USER_PROFILE',{user :userData});
+            res.status(200).render('index',{user :userData});
         }
     } catch (error) {
         console.error(`${error.message}!!`)

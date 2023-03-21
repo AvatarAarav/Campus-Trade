@@ -11,34 +11,38 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="mynavbar">
-            <span><form class="d-flex searchbar">
-                <input class="inpsearch" type="text" placeholder="Search">
-                <button class="searchbtn" type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
-            </form></span>
+            <span>
+                <form class="d-flex searchbar">
+                    <input class="inpsearch" type="text" placeholder="Search">
+                    <button class="searchbtn" type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+            </span>
 
-            <ul class="navbar-nav me-auto">
+            <ul class="navbar-nav">
                 <% if(user){ %>
                     <!-- onclick="openProfile('<%=user.id%>','<%=user.password%>') "-->
-                    <span class="nav-link" >
+                    <span class="nav-link">
                         Hi,
                         <form class="d-inline" method="POST" action="/api/user">
-                            <input type="hidden" name="userId" value="<%=user.id%>"/>
+                            <input type="hidden" name="userId" value="<%=user.id%>" />
                             <input type="hidden" name="pass" value="<%=user.password%>" />
-                            <b><button class="btn btn-primary" type="submit"><%=user.name%></button></b>
+                            <b><button class="btn btn-primary" type="submit">
+                                    <%=user.name%>
+                                </button></b>
                         </form>
                     </span>
-                 <% } else{ %>
-                    <li class="nav-item">
-                        <a class="nav-link" href="http://localhost:3000/login.html"  >Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="http://localhost:3000/register.html"  >Sign Up</a>
-                    </li>
-                  <% } %>
-                
-                <li class="nav-item">
-                    <a class="nav-link" href="http://localhost:3000/devs.html">Developers</a>
-                </li>
+                    <% } else{ %>
+                        <li class="nav-item">
+                            <a class="nav-link" href="http://localhost:3000/login.html">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="http://localhost:3000/register.html">Sign Up</a>
+                        </li>
+                        <% } %>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="http://localhost:3000/devs.html">Developers</a>
+                            </li>
             </ul>
 
         </div>
