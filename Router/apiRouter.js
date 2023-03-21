@@ -7,6 +7,7 @@ import { getUserData } from "../controllers/getUserData.js";
 import { getAllProductsAPI } from "../controllers/getAllProducts.js";
 import { getAdFormAPI } from "../controllers/getAdForm.js";
 import { getProductAPI } from "../controllers/getProduct.js";
+import { getAdImageAPI } from "../controllers/getAdImage.js";
 const router=express.Router();
 
 
@@ -20,5 +21,6 @@ router.post('/user/register',addUserAPI)
 router.post('/user/login',checkLoginAPI)
 router.post('/user',getUserData)
 router.post('/user/adCreate',getAdFormAPI)
+router.get('/adImage/:id',getAdImageAPI)
 
 export default router
