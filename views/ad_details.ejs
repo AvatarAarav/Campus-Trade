@@ -231,7 +231,60 @@
     <div class="chat">
         <h2 style="text-align: center;">Chat With Seller</h2>
         <hr>
+        
+    <form id= "loginForm" action = "" >
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject" required><br>
+      <br>
+        <label for="body">Body:</label>
+        <textarea id="body" name="body" required></textarea><br>
+      <br><br>
+        <input type="submit" value="Send an email" style="float:right;">
+      </form>
+<!-- <a href="mailto:parth.b21@iiits.in?subject=hi&body=hi">ccccc</a> -->
     </div>
+
+
+</div>
+
+<script>
+    
+    let loginForm = document.getElementById("loginForm");
+
+loginForm.addEventListener("submit", (e) => {
+e.preventDefault();
+
+let sub = document.getElementById("subject")
+
+let bod = document.getElementById("body")
+let f = `mailto:${'<%-ad.email%>'}?subject=${sub.value}&body=${bod.value}`
+// console.log(sub)
+// console.log(bod)
+
+
+// console.log('<%-ad.email%>')
+window.open(f,"_self")
+
+});
+
+
+//             function exec(){
+
+//                 let sub = document.getElementById("subject").innerHTML
+//                 console.log(sub)
+// let bod = document.getElementById("body").innerHTML
+// let f = `mailto:parth.b21@iiits.in?subject=${sub}&body=${bod}`
+// // console.log("hi")
+// console.log(f)
+// window.open(f,"_self")
+// console.log(f)
+// href="mailto:johndoe@fakeemail.com, janedoe@fakeemail.com?cc=jackdoe@fakeemail.com &bcc=jennydoe@fakeemail.com &subject=this is how to use the mailto link"
+// return f
+    // }
+</script>
+
+
+
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
