@@ -11,12 +11,25 @@
 </head>
 <body>
 	<div id="profile">
-		<h1 style="font-size: 40px	;font-family: Georgia, 'Times New Roman', Times, serif;">PROFILE</h1>
+		
+		<h1 style="font-size: 40px	;font-family: Georgia, 'Times New Roman', Times, serif; ;text-decoration-line: underline; text-decoration-color: #142850;"> PROFILE</h1>
 	
 		
 		<div id="profile-info">
-			<ul>
-				<li><span>User-ID: <%= x=user.id %></span></li>
+			<div style="display:flex; flex-direction: column;  align-items: start;	">
+				<p><span style="color:#142850; font-weight: bolder;">User-ID:</span> <span style="color: white;"><%= x=user.id %></span></p>
+				<p><span style="color:#142850; font-weight: bolder;">Name &nbsp;&nbsp;&nbsp;: </span> <span style="color: white;"></span><%= user.name %></span> </p>
+				<p><span style="color:#142850; font-weight: bolder;">Email &nbsp;&nbsp;&nbsp;: </span> <span style="color: white;"></span><%= user.email %></span> </p>
+				<p><span style="color:#142850; font-weight: bolder;">College&nbsp;: </span> <span style="color: white;"></span><%= user.college_name %></span></p>
+				<form class="d-inline" method="POST" action="/api/user/adCreate">
+					<input type="hidden" name="email" value="<%=user.email%>"/>
+					<input type="hidden" name="password" value="<%=user.password%>" />
+					<b><button class="btn btn-primary" type="submit">Create Ad</button></b>
+				</form>
+
+			</div>
+			<!-- <ul>
+				<li><span style="color:black">User-ID:</span> <span style="color: azure;"><%= x=user.id %></span></li>
 				<li><span>Name:<%= user.name %></span> </li>
 				<li><span>Email:<%= user.email %></span> </li>
 				<li><span>College:<%= user.college_name %></span></li>
@@ -26,7 +39,7 @@
 					<b><button class="btn btn-primary" type="submit">Create Ad</button></b>
 				</form>
 
-			</ul>
+			</ul> -->
 		</div>
 	</div>
 	<div id="profile-card-container">
