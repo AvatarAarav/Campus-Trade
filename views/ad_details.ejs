@@ -12,8 +12,8 @@
 
     <style>
         /* Navbar styles */
-
-        :root {
+        
+         :root {
             --blue1: #142850;
             --blue2: #27496D;
             --blue3: #0C7B93;
@@ -22,47 +22,47 @@
             --yello: #F1F7B5;
             --redd: #FD8A8A;
         }
-
+        
         .navbar {
             background-color: var(--blue1);
         }
-
+        
         .nav-item a:hover {
             color: orange;
         }
-
+        
         .logo {
             font-size: 40px;
             color: white;
             padding: 0px;
             margin: 0px 5px 0px -20px;
         }
-
+        
         .heading {
             padding: 0px;
             margin: 0px 10px -15px 5px;
             color: white;
             /* background-color: red; */
         }
-
+        
         .heading h2 {
             margin: 0px;
             padding: 0px;
             color: var(--blue4);
             font-weight: 700;
         }
-
+        
         .heading p {
             margin: 0px;
             padding: 0px;
             font-size: 13px;
             color: lightcyan;
         }
-
+        
         .searchbar {
             background-color: var(--blue1);
         }
-
+        
         .inpsearch {
             width: 90%;
             padding-left: 20px;
@@ -70,11 +70,11 @@
             border-top-left-radius: 15px;
             border-bottom-left-radius: 15px;
         }
-
+        
         .inpsearch:focus {
             outline: none;
         }
-
+        
         .searchbtn {
             width: 35px;
             height: 35px;
@@ -83,24 +83,23 @@
             border-top-right-radius: 15px;
             border-bottom-right-radius: 15px;
         }
-
+        
         .searchbtn:hover {
             background-color: orange;
             cursor: progress;
         }
-
+        
         .menubtn {
             display: none;
             background-color: var(--blue1);
             border: none;
         }
-
+        
         .navbar-toggler-icon {
             color: white;
         }
-
         /* Navbar styles */
-
+        
         body {
             background-color: #00A8CC;
             display: flex;
@@ -110,7 +109,7 @@
             align-items: center;
             padding: 0;
         }
-
+        
         .rowbox {
             width: 60%;
             display: flex;
@@ -121,27 +120,45 @@
             margin: 20px;
             /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
         }
-
+        
         .row1 {
             width: 100%;
             padding: 10px;
-            background-color: white;
+            background-color: whitesmoke;
             border-radius: 5px;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
-
+        
+        .flowcontrol {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            overflow-x: auto;
+        }
+        
         .chat {
             width: 35%;
             height: 100vh;
             display: flex;
             flex-direction: column;
-            background-color: white;
+            background-color: whitesmoke;
             padding: 3px;
             border-radius: 5px;
             margin-right: 20px;
+            margin-top: 30px;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
-
+        
+        .chatinput {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        
+        form {
+            width: 70%;
+        }
+        
         .colbox1 {
             display: flex;
             flex-direction: column;
@@ -152,7 +169,7 @@
             border-radius: 5px;
             /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
         }
-
+        
         .colbox2 {
             display: flex;
             flex-direction: column;
@@ -163,28 +180,25 @@
             border-radius: 5px;
             /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
         }
-
+        
         hr {
             height: 1px;
             background-color: grey;
         }
-
+        
         @media (max-width: 415px) {
             body {
                 flex-direction: column;
                 padding: 0;
             }
-
             .rowbox,
             .chat {
                 width: 90%;
                 margin-top: 20px;
             }
-
             .menubtn {
                 display: block;
             }
-
             /* .colbox1,
             .colbox2 {
                 width: 90%;
@@ -204,49 +218,51 @@
                 <img id="ad-photo" style="width: 100%;" class="img-fluid" alt="photo">
             </div>
 
-            <h2 id="ad-title">
-                <%=ad.name%>
-            </h2>
+            <div class="flowcontrol">
+                <h2 id="ad-title">
+                    <%=ad.name%>
+                </h2>
 
-            <h2 id="ad-price">
-                MRP :
-                <%=ad.price%>
-            </h2>
-            <h2 id="ad-title">
-                TYPE :
-                <%=ad.type%>
-            </h2>
-            <h4>Seller : We need to update database </h4>
-            <button type="button" class="btn btn-success">Buy Now</button>
-            <hr>
+                <h2 id="ad-price">
+                    MRP :
+                    <%=ad.price%>
+                </h2>
+                <h2 id="ad-title">
+                    TYPE :
+                    <%=ad.type%>
+                </h2>
+                <h4>Seller : We need to update database </h4>
+                <button type="button" class="btn btn-success">Buy Now</button>
+                <hr>
 
-            <h3>Product Description</h3>
-            <p id="ad-description">
-                <%=ad.description%>
-            </p>
+                <h3>Product Description</h3>
+                <p id="ad-description">
+
+                    <%=ad.description%>
+                </p>
+            </div>
+
+
         </div>
         <!-- </div> -->
     </div>
 
     <div class="chat">
-        <h2 style="text-align: center;">Chat With Seller</h2>
+        <h2 style="text-align: center;margin-top: 10px;">Chat With Seller</h2>
         <hr>
-        
-    <form id= "loginForm" action = "" >
-        <label for="subject">Subject:</label>
-        <input type="text" id="subject" name="subject" required><br>
-      <br>
-        <label for="body">Body:</label>
-        <textarea id="body" name="body" required></textarea><br>
-      <br><br>
-        <input type="submit" value="Send an email" style="float:right;">
-      </form>
-<!-- <a href="mailto:parth.b21@iiits.in?subject=hi&body=hi">ccccc</a> -->
+        <div class="chatinput">
+            <form id="loginForm" action="">
+                <label for="subject" style=" display: block; margin-top: 20px;">Subject : </label>
+                <input type="text" id="subject" name="subject " style="width:100%;" required placeholder="eg. Doubt, Bargain "><br>
+
+                <label for="body" style="display: block; margin-top: 20px; ">Query : </label>
+                <textarea id="body" name="body" style="width:100%;" required placeholder="Ask your questions.... "></textarea><br>
+
+                <input type="submit" value="Send mail" style="float: right; background-color: green; border-radius: 5px;margin-top: 30px; color: azure; width: 90px;">
+            </form>
+        </div>
+        <!-- <a href="mailto:parth.b21@iiits.in?subject=hi&body=hi ">ccccc</a> -->
     </div>
-
-
-</div>
-
 <script>
     
     let loginForm = document.getElementById("loginForm");
