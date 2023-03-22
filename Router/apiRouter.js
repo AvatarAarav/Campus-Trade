@@ -1,5 +1,5 @@
-import express from "express";
-import multer from "multer";
+import express from "express";   
+import multer from "multer"; //module to handle file submission
 import { submitForm } from "../controllers/Add_Product.js";
 import { addUserAPI } from "../controllers/register.js";
 import { checkLoginAPI } from "../controllers/login.js";
@@ -8,6 +8,8 @@ import { getAllProductsAPI } from "../controllers/getAllProducts.js";
 import { getAdFormAPI } from "../controllers/getAdForm.js";
 import { getProductAPI } from "../controllers/getProduct.js";
 import { getAdImageAPI } from "../controllers/getAdImage.js";
+
+
 const router=express.Router();
 
 

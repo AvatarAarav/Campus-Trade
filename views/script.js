@@ -3,7 +3,7 @@
 
 fetch('http://localhost:3000/api/products') .then(response => {
     if (response.ok) {
-      return response.json();
+      return response.json(); //converting back to object
     }
     throw new Error('Network response was not ok.');
   })
@@ -17,6 +17,7 @@ fetch('http://localhost:3000/api/products') .then(response => {
             
 // Function to create ad cards dynamically
 const createAdCards = (ads) => {
+    //ads is an array of all ads
     const adCardsContainer = document.getElementById("ad-cards-container");
     ads.forEach(ad => {
         const adBody = document.createElement("div");
@@ -26,7 +27,6 @@ const createAdCards = (ads) => {
     <h6 class="card-title" style="font-size:min(20px,2.2vw);">${ad.name}</h6>
     <button class="viewAd" onclick="getAdDetails('${ad.id}')">View Ad</button>
 `;
-
         const adCard = document.createElement("div");
         adCard.classList.add("card");
         // console.log(`'data:${ad.img_type};base64,${ad.img_content.data.toString('base64')}'`)

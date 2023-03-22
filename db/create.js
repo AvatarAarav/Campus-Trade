@@ -2,10 +2,15 @@ import sqlite3 from 'sqlite3';
 import { users, products } from './dummy_data.js';
 
 // Check if table exists
+
+
 const createTable = () => {
-  var db = new sqlite3.Database('Campus_Trade.db');
+  var db = new sqlite3.Database('Campus_Trade.db');//db is our database object
 
   //sqlite_master is the name of the table having All tables names
+
+  //We have 2 tables(i.e user,products)
+
   db.get(`SELECT name FROM sqlite_master WHERE type='table' AND name='products'`, (err, row) => {
     if (err) {
       console.error(err.message);
