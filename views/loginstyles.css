@@ -13,7 +13,7 @@ body {
     padding: 0;
     margin: 0;
     /* background-color: var(--blue4); */
-    background-image: linear-gradient(to left, var(--blue1), var(--blue2), var(--blue3), var(--blue4));
+    background-image: url(./assets/loginbg1920x800.jpg);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,7 +28,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #333;
+    background-color: var(--redd);
     border: none;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-bottom-left-radius: 30px;
@@ -44,13 +44,13 @@ body {
 
 .outerbox h2 {
     text-align: center;
-    color: var(--blue4);
+    color: brown;
     margin: 0;
 }
 
 .registerbox h2 {
     text-align: center;
-    color: var(--blue4);
+    color: brown;
     /* background-color: black; */
     margin: 0;
 }
@@ -72,7 +72,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #333;
+    background-color: var(--redd);
     border: none;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-bottom-left-radius: 30px;
@@ -233,11 +233,11 @@ hr {
     /* background-color: black; */
     align-items: left;
     /* background-color: blueviolet; */
-    color: red;
+    color: white;
 }
 
 .backbtn:hover {
-    color: white;
+    color: var(--blue1);
 }
 
 .leftarrow {
@@ -252,30 +252,32 @@ hr {
 .outerbox a {
     font-weight: 600;
     text-decoration: none;
-    color: greenyellow;
+    color: yellow;
 }
 
 .outerbox a:hover {
     text-decoration: none;
-    color: orangered;
+    color: brown;
+    text-decoration: underline;
 }
 
 .registerbox a {
     font-weight: 600;
     text-decoration: none;
-    color: greenyellow;
+    color: yellow;
 }
 
 .registerbox a:hover {
     text-decoration: none;
-    color: orangered;
+    color: brown;
+    text-decoration: underline;
 }
 
 .google:hover {
     cursor: not-allowed;
 }
 
-@media (max-width: 412px) {
+@media (max-width: 512px) {
     .outerbox {
         width: 350px;
     }
