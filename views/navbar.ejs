@@ -1,50 +1,55 @@
-<nav class="navbar navbar-expand-sm navbar-dark shadow-sm p-4 container-fluid">
-    <div class="container-fluid">
-        <i class="fa-solid fa-handshake logo"></i>
-        <div class="heading">
-            <h2>Campus<span style="color: orangered;">Trade</span></h2>
-            <p>A student to student market place.</p>
+<div class="container-fluid navvbar">
+    <nav class="navbar navbar-expand-lg navbar parentNavbox">
+        <div style="display: flex">
+            <i class="fa-solid fa-handshake logo"></i>
+            <h1 style="font-weight: 700;text-decoration: underline;font-style: italic; color: #142850;">Campus<span style="color: red;">Trade</span></h1>
         </div>
-        <!-- <img src="./logo.jpeg" alt="logo"> -->
-        <!-- <a class="navbar-brand" style="font-size:min(35px,4vw); padding: 0px; margin-top: -5px; margin-bottom: -5px;" href="javascript:void(0)">College Trade</a> -->
-        <button class="menubtn" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-            <span class="navbar-toggler-icon"></span>
+        <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+        <button class="navbar-toggler menuu" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="mynavbar">
-            <span>
-                <form class="d-flex searchbar">
-                    <input class="inpsearch" type="text" placeholder="Search">
-                    <button class="searchbtn" type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
-                </form>
-            </span>
 
-            <ul class="navbar-nav">
-                <% if(user){ %>
+        <div class="collapse navbox navbar-collapse boxxx" id="navbarSupportedContent">
+            <form class="form d-flex my-2 my-lg-0 searchbox">
+                <input class="inpsearch" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn searchbtn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+
+            <ul class="navbar-nav mr-auto">
+                <% if(user) { %>
                     <!-- onclick="openProfile('<%=user.id%>','<%=user.password%>') "-->
-                    <span class="nav-link">
-                        Hi,
-                        <form class="d-inline" method="POST" action="/api/user">
-                            <input type="hidden" name="userId" value="<%=user.id%>" />
-                            <input type="hidden" name="pass" value="<%=user.password%>" />
-                            <b><button class="btn btn-primary" type="submit">
-                                    <%=user.name%>
-                                </button></b>
-                        </form>
-                    </span>
+                    <span class="nav-link" style="padding: 0;">
+                    Hi,
+                    <form class="d-inline" method="POST" action="/api/user">
+                        <input type="hidden" name="userId" value="<%=user.id%>" />
+                        <input type="hidden" name="pass" value="<%=user.password%>" />
+                        <button class="btn" type="submit">
+                            <%=user.name%>
+                        </button>
+                    </form>
+                </span>
                     <% } else{ %>
                         <li class="nav-item">
-                            <a class="nav-link" href="http://localhost:3000/login.html">Login</a>
+                            <a class="nav-link" href="http://localhost:3000/login.html">Login <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="http://localhost:3000/register.html">Sign Up</a>
                         </li>
                         <% } %>
-
                             <li class="nav-item">
                                 <a class="nav-link" href="http://localhost:3000/devs.html">Developers</a>
                             </li>
+
+
             </ul>
 
         </div>
-    </div>
-</nav>
+
+
+
+    </nav>
+
+
+
+
+</div>

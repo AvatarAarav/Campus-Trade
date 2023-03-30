@@ -9,106 +9,83 @@
 <body>
 
     <%- include('./navbar.ejs',{user :user}); %>
+        <div class="container-fluid extendednav"></div>
+
+
 
         <!-- <div class="blur-screen" id="blur-screen" onclick="closeall()">
 
         </div> -->
 
         <!-- Carousel -->
-        <div id="demo" class="carousel slide" data-bs-ride="carousel">
+        <div class="container fixedcar">
+            <div id="demo" class="carousel slide car" data-bs-ride="carousel">
 
-            <!-- Indicators/dots -->
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-                <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-                <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                <!-- Indicators/dots -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                </div>
+
+                <!-- The slideshow/carousel -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="img-fluid" src="http://localhost:3000/assets/carousalimage.png" alt="Los Angeles" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="img-fluid" src="http://localhost:3000/assets/carousalimage.png" alt="Chicago" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="img-fluid" src="http://localhost:3000/assets/carousalimage.png" alt="New York" class="d-block w-100">
+                    </div>
+                </div>
+
+                <!-- Left and right controls/icons -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
             </div>
 
-            <!-- The slideshow/carousel -->
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="http://localhost:3000/assets/bgimage21920x800.png" alt="Los Angeles" class="d-block w-100">
-                </div>
-                <div class="carousel-item">
-                    <img src="http://localhost:3000/assets/bgimage21920x800.png" alt="Chicago" class="d-block w-100">
-                </div>
-                <div class="carousel-item">
-                    <img src="http://localhost:3000/assets/bgimage21920x800.png" alt="New York" class="d-block w-100">
-                </div>
-            </div>
 
-            <!-- Left and right controls/icons -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </button>
+
+
+
+
+
         </div>
 
 
 
 
-        <!-- <div class="outerbox" id="outerbox">
-            <div class="header">
-                <div class="backbtn"><span style="float: right;font-size: 40px;margin-top: -10px;"><i class="fa-solid fa-circle-arrow-right"  data-bs-toggle="tooltip" data-bs-placement="top" title="Go Back !" onclick="closelogin()"></i></span></div>
-                <h2>Log<span style="color: orangered;">in</span></h2>
+        <!-- Live Clock -->
+        <div class="clock">
+            <div class="bg">
+                <h2 id="h">12</h2>
             </div>
-            <div class="profilephoto"><img id="profilephoto" src="./assets/boy1.png" alt="boy" onclick="profilepic()"></div>
-            <div class="loginbox">
-                <form action="/api/user/register">
-                    <div class="inputbox"><span class="iconn"><i class="fa-solid fa-user"></i></span><input class="uname" type="text" placeholder="User Name"></div>
-                    <div class="inputbox"><span class="iconn"><i class="fa-solid fa-key"></i></span><input class="upass" type="password" placeholder="Password"></div>
-                    <input class="subbtn" type="submit" value="Login">
-                </form>
-
+            <h2>:</h2>
+            <div class="bg">
+                <h2 id="m">20</h2>
             </div>
-
-            <div class="exist">
-                <a href="#" onclick="openregister()">New User ?</a>
+            <h2>:</h2>
+            <div class="bg">
+                <h2 id="s">00</h2>
             </div>
-
-            <hr>
-            <span style="color: white;">Login with <a href="#" class="google"><i class="fa-brands fa-google"></i> google</a></span>
-        </div> -->
-
-
-
-        <!-- Register -->
-        <!-- <div class="registerbox" id="registerbox">
-
-            <div class="header">
-                <div class="backbtn"><span style="float: right;font-size: 40px;margin-top: -10px;"><i class="fa-solid fa-circle-arrow-right"  data-bs-toggle="tooltip" data-bs-placement="top" title="Go Back !" onclick="closeregister()"></i></span></div>
-                <h2>Sign<span style="color: orangered;">Up</span></h2>
+            <div class="bg">
+                <h2 id="ap">AM</h2>
             </div>
-            <div class="profilephoto"><img id="Rprofilephoto" src="./assets/boy1.png" alt="boy" onclick="Rprofilepic()"></div>
-            <div class="loginbox">
-                <form action="/api/user/register">
-                    <div class="inputbox"><span class="iconn"><i class="fa-solid fa-user"></i></span><input class="uname" type="text" placeholder="User Name"></div>
-                    <div class="inputbox"><span class="iconn"><i class="fa-solid fa-envelope"></i></span><input class="umail" type="email" placeholder="E mail Id"></div>
-                    <div class="inputbox"><span class="iconn"><i class="fa-solid fa-graduation-cap"></i></span><input class="uclg" type="text" placeholder="College Name"></div>
-                    <div class="inputbox"><span class="iconn"><i class="fa-solid fa-key"></i></span><input class="upass" type="password" placeholder="New Password"></div>
-                    <div class="inputbox"><span class="iconn"><i class="fa-solid fa-lock"></i></span><input class="upass" type="password" placeholder="Confirm Password"></div>
-                    <input class="subbtn" type="submit" value="Sign Up">
-                </form>
-            </div>
-
-            <div class="exist">
-                <a href="#" onclick="openlogin()">Existing User ?</a>
-            </div>
-
-            <hr>
+        </div>
 
 
-
-            <span style="color: white;">Sign up with <a href=""><i class="fa-brands fa-google google"></i> google</a></span>
-        </div> -->
 
 
 
 
         <div class="container-fluid tophead">
-            <h2>Featured</h2>
+            <h2 style="text-align: center;">Featured Products</h2>
         </div>
 
         <div class="adContainer" id="ad-cards-container">
@@ -121,13 +98,67 @@
         </div>
 
 
-        <footer class="py-3">
-            <p>Copyright &copy; Campus-Trade Website 2023</p>
+        <footer>
+            <p>Copyright &copy; Campus-Trade.Inc 2023</p>
+            <div class="fbox">
+                <ul>
+                    <li><a href=""> hello</a></li>
+                    <li><a href=""> hello</a></li>
+                    <li><a href=""> hello</a></li>
+                    <li><a href=""> hello</a></li>
+                </ul>
+                <ul>
+                    <li><a href=""> hello</a></li>
+                    <li><a href=""> hello</a></li>
+                    <li><a href=""> hello</a></li>
+                    <li><a href=""> hello</a></li>
+                </ul>
+            </div>
+
         </footer>
+
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function(event) {
+
+                realTime();
+
+            });
+
+
+            function realTime() {
+
+                var date = new Date();
+                var hour = date.getHours();
+                var min = date.getMinutes();
+                var sec = date.getSeconds();
+                var halfday = "AM";
+                halfday = (hour >= 12) ? "PM" : "AM";
+                hour = (hour == 0) ? 12 : ((hour > 12) ? (hour - 12) : hour);
+                hour = update(hour);
+                min = update(min);
+                sec = update(sec);
+                document.getElementById("h").innerText = hour;
+                document.getElementById("m").innerText = min;
+                document.getElementById("s").innerText = sec;
+                document.getElementById("ap").innerText = halfday;
+
+                setTimeout(realTime, 1000);
+            }
+
+            function update(k) {
+                if (k < 10) {
+                    return "0" + k;
+                } else {
+                    return k;
+                }
+            }
+        </script>
 
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script type="text/javascript" src="http://localhost:3000/script.js"></script>
 
 

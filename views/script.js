@@ -1,20 +1,19 @@
-
 // Dummy data for ads
 
-fetch('http://localhost:3000/api/products') .then(response => {
-    if (response.ok) {
-      return response.json(); //converting back to object
-    }
-    throw new Error('Network response was not ok.');
-  })
-  .then(data => {
-    // Call createAdCards function to create ad cards on page load
-    createAdCards(data.data)
-  })
-  .catch(error => {
-    console.error('There was a problem with the fetch operation:', error);
-  });
-            
+fetch('http://localhost:3000/api/products').then(response => {
+        if (response.ok) {
+            return response.json(); //converting back to object
+        }
+        throw new Error('Network response was not ok.');
+    })
+    .then(data => {
+        // Call createAdCards function to create ad cards on page load
+        createAdCards(data.data)
+    })
+    .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+    });
+
 // Function to create ad cards dynamically
 const createAdCards = (ads) => {
     //ads is an array of all ads
@@ -37,7 +36,7 @@ const createAdCards = (ads) => {
 };
 
 function getAdDetails(id) {
-    location.assign("http://localhost:3000/"+`${"api/ad/"+id}`)
+    location.assign("http://localhost:3000/" + `${"api/ad/"+id}`)
 }
 
 // //Function to redirect on clicking profile-link
@@ -58,7 +57,7 @@ var profilephoto = document.getElementById("profilephoto");
 function profilepic() {
     console.log(profilephoto.alt);
     if (profilephoto.alt === 'girl') {
-        profilephoto.src ='http://localhost:3000/assets/boy1.png';
+        profilephoto.src = 'http://localhost:3000/assets/boy1.png';
         profilephoto.alt = 'boy';
     } else {
         profilephoto.src = 'http://localhost:3000/assets/girl1.png';
