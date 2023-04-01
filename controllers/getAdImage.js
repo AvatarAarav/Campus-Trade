@@ -1,9 +1,9 @@
-import { getProduct } from "../db/DB_Functions.js";
+import Products from "../db/Models/Products.js";
 export const getAdImageAPI=async (req,res)=>{
     try {
         const id=req.params.id;
-        const product=await getProduct(id)
-        res.status(200).json({ad:product[0]});
+        const product=await Products.findById(id)
+        res.status(200).json({ad:product});
     } catch (error) {
         console.error(`${error.message}!!`)
         res.status(404).send(`${error.message}!!`)

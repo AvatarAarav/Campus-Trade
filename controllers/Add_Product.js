@@ -1,16 +1,20 @@
-import { AddFormData } from "../db/DB_Functions.js";
-import { checkLogin } from "../db/DB_Functions.js";
+import Products from "../db/Models/Products.js";
+import fs from 'fs'
+import Users from "../db/Models/User.js";
 export const submitForm=async (req,res)=>{
     try {
         // console.log(req.body)
         const photo = req.file;
-        const adData=await checkLogin(req.body)
-        // console.log(`user=${userData}`)
-        if(adData.err) res.status(404).render('index',{user: undefined})
-        else{
-            AddFormData({...req.body,photo})
-            res.status(200).render('index',{user :adData});
-        }
+        const newProduct=await Products({...req.body,img_type:photo.mimetype,img_content:fs.readFileSync(photo.path)})
+        const udata=await Users.find({email:req.body.email})
+        newProduct.save()
+            .then(()=>{
+                res.status(200).render('index',{user :udata[0]});
+            })
+            .catch(()=>{
+                res.render('index',{user : undefined});
+                }
+            )
     } catch (error) {
         console.error(`${error.message}!!`)
         //Not returning error but rendering the same page with no change

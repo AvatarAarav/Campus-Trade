@@ -24,7 +24,7 @@ const createAdCards = (ads) => {
         adBody.innerHTML = `
     <h4 class="price" style="font-size:min(20px,2.2vw);"><i class="fa-solid fa-indian-rupee-sign"></i> ${ad.price}</h4>
     <h6 class="card-title" style="font-size:min(20px,2.2vw);">${ad.name}</h6>
-    <button class="viewAd" onclick="getAdDetails('${ad.id}')">View Ad</button>
+    <button class="viewAd" onclick="getAdDetails('${ad._id}')">View Ad</button>
 `;
         const adCard = document.createElement("div");
         adCard.classList.add("card");

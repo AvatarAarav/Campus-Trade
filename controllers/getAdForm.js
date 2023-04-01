@@ -1,11 +1,11 @@
-import { checkLogin } from "../db/DB_Functions.js";
+import Users from "../db/Models/User.js";
+
 export const getAdFormAPI=async (req,res)=>{
     try {
         // console.log(req.body)
-        const userData=await checkLogin(req.body) //checking if logged in
+        const userData=await Users.find({email:req.body.email})
         // console.log(`user=${userData}`)
-        if(userData.err) res.status(404).render('index',{user: undefined})
-        else res.status(200).render('product_form',{user :userData});
+        res.status(200).render('product_form',{user :userData[0]});
     } catch (error) {
         console.error(`${error.message}!!`)
         //Not returning error but rendering the same page with no change

@@ -1,11 +1,16 @@
-import { checkLogin } from "../db/DB_Functions.js";
+import Users from "../db/Models/User.js";
 export const checkLoginAPI=async (req,res)=>{
     try {
         // console.log(req.body)
-        const userData=await checkLogin(req.body)
+        const userData=await Users.find({email:req.body.email})
+        if(userData[0].password==req.body.password){
+            res.status(200).render('index',{user :userData[0]});
+        }
+        else{
+            res.render('index',{user : undefined});
+        }
         // console.log(`user=${userData}`)
-        if(userData.err) res.status(404).render('index',{user: undefined})
-        else res.status(200).render('index',{user :userData});
+        
     } catch (error) {
         console.error(`${error.message}!!`)
         //Not returning error but rendering the same page with no change

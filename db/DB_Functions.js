@@ -1,7 +1,7 @@
 import sqlite3 from 'sqlite3';
 import * as fsExtra from 'fs-extra'
 import fs from 'fs'
-export const getAllProducts = () => {
+export const getAllProducts =async () => {
   var db = new sqlite3.Database('Campus_Trade.db');
 
   // Define the SQL query to retrieve all rows from the table
