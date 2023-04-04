@@ -12,13 +12,13 @@
         <div class="collapse navbox navbar-collapse boxxx" id="navbarSupportedContent">
             <form class="form d-flex my-2 my-lg-0 searchbox">
                 <input class="inpsearch" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn searchbtn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button class="searchbtn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
 
             <ul class="navbar-nav mr-auto">
                 <% if(user) { %>
                     <!-- onclick="openProfile('<%=user.id%>','<%=user.password%>') "-->
-                    <span class="nav-link" style="padding: 0;">
+                    <span class="nav-item" style="padding: 0;">
                     Hi,
                     <form class="d-inline" method="POST" action="/api/user">
                         <input type="hidden" name="userId" value="<%=user.id%>" />

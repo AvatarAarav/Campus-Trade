@@ -3,93 +3,462 @@
 
 <head>
     <title>User Profile</title>
-    <link rel="stylesheet" href="http://localhost:3000/user_style.css">
+    <!-- <link rel="stylesheet" href="http://localhost:3000/user_style.css"> -->
     <script src="http://localhost:3000/USER_PROFILE.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/ef8a591cb3.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <style>
+         :root {
+            --blue1: #142850;
+            --blue2: #27496D;
+            --blue3: #0C7B93;
+            --blue4: #00A8CC;
+            --bisket: rgb(251, 218, 174);
+            --yello: #F1F7B5;
+            --redd: #FD8A8A;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 0px;
+            margin: 0px;
+            background-color: whitesmoke;
+        }
+        
+        .nav-item a:hover {
+            color: red;
+        }
+        
+        .logo {
+            font-size: 40px;
+            color: var(--blue1);
+            padding: 0px;
+            margin: 0px 5px 0px 0px;
+        }
+        
+        .heading {
+            padding: 0px;
+            margin: 0px 10px -15px 5px;
+            color: white;
+            /* background-color: red; */
+        }
+        
+        h1 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .searchbar {
+            background-color: var(--blue1);
+        }
+        
+        .inpsearch {
+            width: 90%;
+            padding-left: 20px;
+            border: none;
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        
+        .inpsearch:focus {
+            outline: none;
+        }
+        
+        .searchbtn {
+            width: 35px;
+            height: 35px;
+            background-color: var(--redd);
+            border: none;
+            margin: 0;
+            padding-right: 20px;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+        
+        .searchbtn:hover {
+            background-color: orange;
+            cursor: progress;
+        }
+        
+        .menubtn {
+            display: none;
+            background-color: var(--blue1);
+            border: none;
+        }
+        
+        .navbar-toggler-icon {
+            color: white;
+        }
+        
+        .navvbar {
+            height: 80px;
+            padding: 30px;
+            margin: 0;
+            background-color: lightblue;
+            position: relative;
+        }
+        
+        .extendednav {
+            height: 320px;
+            background-color: lightblue;
+            border-bottom-right-radius: 500px;
+            /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+        }
+        
+        .boxxx {
+            /* background-color: lightgreen; */
+            z-index: 1;
+        }
+        
+        .parentNavbox {
+            margin-top: -30px;
+        }
+        /* .searchbox {
+            background-color: lightpink; 
+        } */
+        
+        .navbox {
+            display: flex;
+            justify-content: space-evenly;
+        }
+        
+        .imgbox {
+            width: 600px;
+            position: absolute;
+            top: 20;
+            /* background-color: lightpink; */
+        }
+        /* BODY */
+        
+        .ancestor {
+            width: 90%;
+            display: flex;
+            justify-content: space-evenly;
+            background-color: whitesmoke;
+            padding: 20px;
+            border-radius: 20px;
+            margin-top: 40px;
+        }
+        
+        .large {
+            width: 75%;
+            border-radius: 20px;
+            background-color: white;
+            border: 1px solid black;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        
+        .profileinfo {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            margin: 60px 0 0 60px;
+        }
+        
+        .profileinfo p {
+            margin-bottom: 0;
+        }
+        
+        .profileinfo i {
+            color: grey;
+        }
+        
+        .postadd {
+            float: right;
+            margin: -10px 10px 10px 0;
+            background-color: orange;
+            color: white;
+        }
+        
+        .postadd:hover {
+            background-color: var(--blue1);
+            color: white;
+        }
+        
+        .addbox {
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            /* background-color: palevioletred; */
+        }
+        
+        .add-container {
+            width: 100%;
+            height: 350px;
+            overflow: auto;
+        }
+        
+        .c-body {
+            padding: 0 0 10px 10px;
+        }
+        
+        .short {
+            width: 23%;
+            background-color: white;
+            margin-right: -50px;
+            border-radius: 10px;
+            border: 1px solid black;
+            /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+        }
+        
+        @media (max-width: 576px) {
+            .menubtn {
+                display: block;
+            }
+            .navvbar {
+                height: 60px;
+            }
+            .extendednav {
+                height: 160px;
+            }
+            .boxxx {
+                margin-top: 10px;
+                flex-direction: column;
+                align-items: start;
+                background-color: var(--blue4);
+                padding: 20px;
+                border-radius: 30px;
+                color: black;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            }
+            .menuu {
+                background-color: var(--redd);
+                padding: 20px;
+                margin-top: -15px;
+                margin-right: -28px;
+                border-bottom-left-radius: 30px;
+            }
+            .searchbtn {
+                background-color: var(--redd);
+            }
+            .tophead {
+                margin: 60px 0 30px 0;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <div id="profile">
-
-        <h1 style="font-size: 40px	;font-family: Georgia, 'Times New Roman', Times, serif; ;text-decoration-line: underline; text-decoration-color: #142850;"> PROFILE</h1>
+    <%- include('./navbar.ejs',{user :user}); %>
 
 
-        <div id="profile-info">
-            <div style="display:flex; flex-direction: column;  align-items: start;	">
-                <p><span style="color:#142850; font-weight: bolder;">User-ID:</span> <span style="color: white;"><%= x=user.id %></span></p>
-                <p><span style="color:#142850; font-weight: bolder;">Name &nbsp;&nbsp;&nbsp;: </span> <span style="color: white;"></span>
-                    <%= user.name %>
-                        </span>
-                </p>
-                <p><span style="color:#142850; font-weight: bolder;">Email &nbsp;&nbsp;&nbsp;: </span> <span style="color: white;"></span>
-                    <%= user.email %>
-                        </span>
-                </p>
-                <p><span style="color:#142850; font-weight: bolder;">College&nbsp;: </span> <span style="color: white;"></span>
-                    <%= user.college_name %>
-                        </span>
-                </p>
-                <form class="d-inline" method="POST" action="/api/user/adCreate">
-                    <input type="hidden" name="email" value="<%=user.email%>" />
-                    <input type="hidden" name="password" value="<%=user.password%>" />
-                    <b><button class="btn btn-primary" type="submit">Create Ad</button></b>
-                </form>
 
+        <div class="container ancestor">
+            <div class="large">
+                <div class="bg" style="width:100%;height: 180px;padding-top: 30px; border-top-right-radius: 20px; border-top-left-radius: 20px; background-image:linear-gradient(to right , rgb(255, 204, 108) , var(--redd));">
+                    <img src="data:image/jpeg;base64,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"
+                        class="rounded-circle img-thumbnail mt-5 ms-5" alt="dummyPic" width="170" height="170">
+                </div>
+
+
+                <div class="profileinfo">
+                    <p style="font-size: 45px;padding: 0px; color:#27496D;">
+                        <%= user.name %>
+                    </p>
+                    <p><span style="color:#142850; font-weight: bolder;"><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp; </span>India</p>
+                    <p><span style="color:#142850; font-weight: bolder;"><i class="fa-solid fa-user"></i>&nbsp;&nbsp; </span> <span style="color: grey;"><%= x=user.id %></span></p>
+
+                    <p><span style="color:#142850; font-weight: bolder;"><i class="fa-solid fa-envelope"></i>&nbsp;&nbsp; </span>
+                        <%= user.email %>
+                            </span>
+                    </p>
+                    <p><span style="color:#142850; font-weight: bolder;"><i class="fa-solid fa-landmark"></i>&nbsp;&nbsp; </span>
+                        <%= user.college_name %>
+                            </span>
+                    </p>
+                    <form class="d-inline" style="width: 100%;" method="POST" action="/api/user/adCreate">
+                        <input type="hidden" name="email" value="<%=user.email%>" />
+                        <input type="hidden" name="password" value="<%=user.password%>" />
+                        <b><button class="btn postadd" type="submit"><span><i class="fa-solid fa-plus" style="color: white;"></i></span> Post Ad</button></b>
+                    </form>
+
+                </div>
             </div>
-            <!-- <ul>
-				<li><span style="color:black">User-ID:</span> <span style="color: azure;"><%= x=user.id %></span></li>
-				<li><span>Name:<%= user.name %></span> </li>
-				<li><span>Email:<%= user.email %></span> </li>
-				<li><span>College:<%= user.college_name %></span></li>
-				<form class="d-inline" method="POST" action="/api/user/adCreate">
-					<input type="hidden" name="email" value="<%=user.email%>"/>
-					<input type="hidden" name="password" value="<%=user.password%>" />
-					<b><button class="btn btn-primary" type="submit">Create Ad</button></b>
-				</form>
 
-			</ul> -->
+            <div class="short" style="padding: 10px;">
+                <p>Earnings</p>
+                <p>Spent</p>
+                <p>Profit</p>
+                <p>loss</p>
+                <p>Adds posted</p>
+                <p>Products Bought</p>
+            </div>
+
+
         </div>
-    </div>
-    <div id="profile-card-container">
 
-        <h2 style="font-size: 25px; font-family: Georgia, 'Times New Roman', Times, serif;">CARDS POSTED</h2>
-        <hr>
+        <hr style="width: 90%; height: 4px; background-color: grey;margin-left: 50px;">
 
-        <div id="card-container">
+        <div class="container ancestor">
+            <div class="addbox">
+                <h2 style="width: 100%;text-align: center; color: #142850;">Shopping History</h2>
 
-            <div class="card"><img src="card1.jpg" alt="Card 1"></div>
-            <div class="card"><img src="card2.jpg" alt="Card 2"></div>
-            <div class="card"><img src="card3.jpg" alt="Card 3"></div>
-            <div class="card"><img src="card4.jpg" alt="Card 4"></div>
-            <div class="card"><img src="card5.jpg" alt="Card 5"></div>
-            <div class="card"><img src="card6.jpg" alt="Card 6"></div>
-            <div class="card"><img src="card7.jpg" alt="Card 7"></div>
-            <div class="card"><img src="card8.jpg" alt="Card 8"></div>
-            <div class="card"><img src="card9.jpg" alt="Card 9"></div>
-            <div class="card"><img src="card10.jpg" alt="Card 10"></div>
-            <div class="card"><img src="card11.jpg" alt="Card 11"></div>
+                <div class="add-container">
+                    <div class="card" style="display: inline-block; width:210px; margin: 20px 0 0 20px; border-bottom: 6px solid orangered;">
+                        <img class="card-img-top" src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81KoSSAwH2L._SL1500_.jpg" alt="Card image" style="width: 208px;height: 230px;">
+                        <div class="c-body" style="background-color: white; width: 100%;">
+                            <h3 class="card-title">Laptop</h3>
+                            <p class="card-text"> $ 30,000</p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="display: inline-block; width:210px; margin: 20px 0 0 20px; border-bottom: 6px solid orangered;">
+                        <img class="card-img-top" src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81KoSSAwH2L._SL1500_.jpg" alt="Card image" style="width: 208px;height: 230px;">
+                        <div class="c-body" style="background-color: white; width: 100%;">
+                            <h3 class="card-title">Laptop</h3>
+                            <p class="card-text"> $ 30,000</p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="display: inline-block; width:210px; margin: 20px 0 0 20px; border-bottom: 6px solid orangered;">
+                        <img class="card-img-top" src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81KoSSAwH2L._SL1500_.jpg" alt="Card image" style="width: 208px;height: 230px;">
+                        <div class="c-body" style="background-color: white; width: 100%;">
+                            <h3 class="card-title">Laptop</h3>
+                            <p class="card-text"> $ 30,000</p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="display: inline-block; width:210px; margin: 20px 0 0 20px; border-bottom: 6px solid orangered;">
+                        <img class="card-img-top" src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81KoSSAwH2L._SL1500_.jpg" alt="Card image" style="width: 208px;height: 230px;">
+                        <div class="c-body" style="background-color: white; width: 100%;">
+                            <h3 class="card-title">Laptop</h3>
+                            <p class="card-text"> $ 30,000</p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="display: inline-block; width:210px; margin: 20px 0 0 20px; border-bottom: 6px solid orangered;">
+                        <img class="card-img-top" src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81KoSSAwH2L._SL1500_.jpg" alt="Card image" style="width: 208px;height: 230px;">
+                        <div class="c-body" style="background-color: white; width: 100%;">
+                            <h3 class="card-title">Laptop</h3>
+                            <p class="card-text"> $ 30,000</p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="display: inline-block; width:210px; margin: 20px 0 0 20px; border-bottom: 6px solid orangered;">
+                        <img class="card-img-top" src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81KoSSAwH2L._SL1500_.jpg" alt="Card image" style="width: 208px;height: 230px;">
+                        <div class="c-body" style="background-color: white; width: 100%;">
+                            <h3 class="card-title">Laptop</h3>
+                            <p class="card-text"> $ 30,000</p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="display: inline-block; width:210px; margin: 20px 0 0 20px; border-bottom: 6px solid orangered;">
+                        <img class="card-img-top" src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81KoSSAwH2L._SL1500_.jpg" alt="Card image" style="width: 208px;height: 230px;">
+                        <div class="c-body" style="background-color: white; width: 100%;">
+                            <h3 class="card-title">Laptop</h3>
+                            <p class="card-text"> $ 30,000</p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="display: inline-block; width:210px; margin: 20px 0 0 20px; border-bottom: 6px solid orangered;">
+                        <img class="card-img-top" src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81KoSSAwH2L._SL1500_.jpg" alt="Card image" style="width: 208px;height: 230px;">
+                        <div class="c-body" style="background-color: white; width: 100%;">
+                            <h3 class="card-title">Laptop</h3>
+                            <p class="card-text"> $ 30,000</p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
         </div>
-    </div>
-    <div id="profile-card-container-2">
-        <h2 style="font-size: 25px	;font-family: Georgia, 'Times New Roman', Times, serif;">CARDS BUYING</h2>
-        <hr>
-        <div id="card-container-2">
-            <div class="card1"><img src="card1.jpg" alt="card 1"></div>
-            <div class="card1"><img src="card2.jpg" alt="card 2"></div>
-            <div class="card1"><img src="card3.jpg" alt="card 3"></div>
-            <div class="card1"><img src="card4.jpg" alt="card 4"></div>
-            <div class="card1"><img src="card5.jpg" alt="card 5"></div>
-            <div class="card1"><img src="card6.jpg" alt="card 6"></div>
-            <div class="card1"><img src="card7.jpg" alt="card 7"></div>
-            <div class="card1"><img src="card8.jpg" alt="card 8"></div>
-            <div class="card1"><img src="card9.jpg" alt="card 9"></div>
-            <div class="card1"><img src="card10.jpg" alt="card 10"></div>
-            <div class="card1"><img src="card11.jpg" alt="card 11"></div>
-        </div>
-    </div>
 
+        <hr style="width: 90%; height: 4px; background-color: grey;margin-left: 50px;">
+
+
+        <div class="container ancestor">
+            <div class="addbox">
+                <h2 style="width: 100%;text-align: center; color: #142850;">Adds Posted</h2>
+
+                <div class="add-container">
+                    <div class="card" style="display: inline-block; width:210px; margin: 20px 0 0 20px; border-bottom: 6px solid orangered;">
+                        <img class="card-img-top" src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81KoSSAwH2L._SL1500_.jpg" alt="Card image" style="width: 208px;height: 230px;">
+                        <div class="c-body" style="background-color: white; width: 100%;">
+                            <h3 class="card-title">Laptop</h3>
+                            <p class="card-text"> $ 30,000</p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="display: inline-block; width:210px; margin: 20px 0 0 20px; border-bottom: 6px solid orangered;">
+                        <img class="card-img-top" src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81KoSSAwH2L._SL1500_.jpg" alt="Card image" style="width: 208px;height: 230px;">
+                        <div class="c-body" style="background-color: white; width: 100%;">
+                            <h3 class="card-title">Laptop</h3>
+                            <p class="card-text"> $ 30,000</p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="display: inline-block; width:210px; margin: 20px 0 0 20px; border-bottom: 6px solid orangered;">
+                        <img class="card-img-top" src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81KoSSAwH2L._SL1500_.jpg" alt="Card image" style="width: 208px;height: 230px;">
+                        <div class="c-body" style="background-color: white; width: 100%;">
+                            <h3 class="card-title">Laptop</h3>
+                            <p class="card-text"> $ 30,000</p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="display: inline-block; width:210px; margin: 20px 0 0 20px; border-bottom: 6px solid orangered;">
+                        <img class="card-img-top" src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81KoSSAwH2L._SL1500_.jpg" alt="Card image" style="width: 208px;height: 230px;">
+                        <div class="c-body" style="background-color: white; width: 100%;">
+                            <h3 class="card-title">Laptop</h3>
+                            <p class="card-text"> $ 30,000</p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="display: inline-block; width:210px; margin: 20px 0 0 20px; border-bottom: 6px solid orangered;">
+                        <img class="card-img-top" src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81KoSSAwH2L._SL1500_.jpg" alt="Card image" style="width: 208px;height: 230px;">
+                        <div class="c-body" style="background-color: white; width: 100%;">
+                            <h3 class="card-title">Laptop</h3>
+                            <p class="card-text"> $ 30,000</p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="display: inline-block; width:210px; margin: 20px 0 0 20px; border-bottom: 6px solid orangered;">
+                        <img class="card-img-top" src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81KoSSAwH2L._SL1500_.jpg" alt="Card image" style="width: 208px;height: 230px;">
+                        <div class="c-body" style="background-color: white; width: 100%;">
+                            <h3 class="card-title">Laptop</h3>
+                            <p class="card-text"> $ 30,000</p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="display: inline-block; width:210px; margin: 20px 0 0 20px; border-bottom: 6px solid orangered;">
+                        <img class="card-img-top" src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81KoSSAwH2L._SL1500_.jpg" alt="Card image" style="width: 208px;height: 230px;">
+                        <div class="c-body" style="background-color: white; width: 100%;">
+                            <h3 class="card-title">Laptop</h3>
+                            <p class="card-text"> $ 30,000</p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="display: inline-block; width:210px; margin: 20px 0 0 20px; border-bottom: 6px solid orangered;">
+                        <img class="card-img-top" src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81KoSSAwH2L._SL1500_.jpg" alt="Card image" style="width: 208px;height: 230px;">
+                        <div class="c-body" style="background-color: white; width: 100%;">
+                            <h3 class="card-title">Laptop</h3>
+                            <p class="card-text"> $ 30,000</p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
 </html>
