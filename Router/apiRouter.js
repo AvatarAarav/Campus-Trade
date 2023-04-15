@@ -8,6 +8,7 @@ import { getAllProductsAPI } from "../controllers/getAllProducts.js";
 import { getAdFormAPI } from "../controllers/getAdForm.js";
 import { getProductAPI } from "../controllers/getProduct.js";
 import { getAdImageAPI } from "../controllers/getAdImage.js";
+import { getUserCardsAPI } from "../controllers/getUserCards.js";
 
 
 const router=express.Router();
@@ -22,6 +23,7 @@ router.post('/form',upload.single('photo'),submitForm)
 router.post('/user/register',addUserAPI)
 router.post('/user/login',checkLoginAPI)
 router.post('/user',getUserData)
+router.get('/user/:email',getUserCardsAPI)
 router.post('/user/adCreate',getAdFormAPI)
 router.get('/adImage/:id',getAdImageAPI)
 
