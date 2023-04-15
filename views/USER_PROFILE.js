@@ -1,8 +1,8 @@
-document.querySelector('.delete').addEventListener('click', deleteCard);
-function deleteCard() {
-   
-    var cardToDelete = document.getElementById("cardId");
-    
-    
-    cardToDelete.parentNode.removeChild(cardToDelete);
-}
+const deleteBtns = document.querySelectorAll('.delete-btn');
+
+        deleteBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            const card = btn.closest('.card');
+            card.remove();
+          });
+        });
