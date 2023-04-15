@@ -6,6 +6,7 @@
     --bisket: rgb(251, 218, 174);
     --yello: #F1F7B5;
     --redd: #FD8A8A;
+    --newRed: #ED2647;
 }
 
 .tophead {
@@ -39,8 +40,17 @@ body {
     background-color: var(--blue1);
 } */
 
-.nav-item a:hover {
-    color: red;
+
+/* .nav-item a:hover {
+    color: ;
+} */
+
+.parentNavbox a {
+    color: yellow;
+}
+
+.parentNavbox a {
+    color: white;
 }
 
 .logo {
@@ -130,13 +140,14 @@ h1 {
     height: 80px;
     padding: 30px;
     margin: 0;
-    background-color: lightblue;
+    background-color: var(--newRed);
     position: relative;
 }
 
 .extendednav {
     height: 320px;
-    background-color: lightblue;
+    /* background-image: linear-gradient(to bottom, var(--newRed), whitesmoke); */
+    background-color: var(--newRed);
     border-bottom-right-radius: 500px;
     /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
@@ -246,6 +257,62 @@ h1 {
     /* box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 1), inset 3px 3px 5px rgba(0, 0, 0, 0.2); */
 }
 
+
+/* Footer styles */
+
+footer {
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #384745;
+    color: white;
+}
+
+.fbox {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer li {
+    text-decoration: none;
+    list-style-type: none;
+    margin: 10px 0 10px 0;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    font-style: none;
+}
+
+footer a:hover {
+    color: greenyellow;
+}
+
+footer i {
+    color: white;
+}
+
+footer hr {
+    display: none;
+}
+
+@media (max-width: 576px) {
+    footer hr {
+        display: block;
+    }
+    .fbox {
+        flex-direction: column;
+    }
+    .address {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+/* FOoter styles */
+
 @media (max-width: 576px) {
     /* .menubtn {
         display: block;
@@ -302,7 +369,7 @@ h1 {
     flex-wrap: wrap;
     margin: 0px;
     justify-content: center;
-    background-color: white;
+    background-color: whitesmoke;
 }
 
 .card {
@@ -360,22 +427,4 @@ h1 {
 
 .topbtn {
     float: right;
-}
-
-footer {
-    width: 100%;
-    height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    background-color: #9D73EF;
-    color: #fff;
-}
-
-.fbox {
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
 }

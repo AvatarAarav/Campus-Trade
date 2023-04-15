@@ -1,8 +1,9 @@
 <div class="container-fluid navvbar">
     <nav class="navbar navbar-expand-lg navbar parentNavbox">
         <div style="display: flex">
-            <i class="fa-solid fa-handshake logo"></i>
-            <h1 style="font-weight: 700;text-decoration: underline;font-style: italic; color: #142850;">Campus<span style="color: red;">Trade</span></h1>
+            <!-- <i class="fa-solid fa-handshake logo"></i>
+            <h1 style="font-weight: 700;text-decoration: underline;font-style: italic; color: #142850;">Campus<span style="color: red;">Trade</span></h1> -->
+            <img src="http://localhost:3000/assets/logo1.png" alt="" width="288px">
         </div>
         <!-- <a class="navbar-brand" href="#">Navbar</a> -->
         <button class="navbar-toggler menuu" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,37 +13,43 @@
         <div class="collapse navbox navbar-collapse boxxx" id="navbarSupportedContent">
             <form class="form d-flex my-2 my-lg-0 searchbox">
                 <input class="inpsearch" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn searchbtn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button class="searchbtn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
 
             <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost:3000">Home</a>
+                </li>
                 <% if(user) { %>
                     <!-- onclick="openProfile('<%=user.id%>','<%=user.password%>') "-->
-                    <span class="nav-link" style="padding: 0;">
-                    Hi,
+                    <span class="nav-item" style="padding: 0;">
                     <form class="d-inline" method="POST" action="/api/user">
                         <input type="hidden" name="userId" value="<%=user.id%>" />
                         <input type="hidden" name="pass" value="<%=user.password%>" />
-                        <button class="btn" type="submit">
-                            <%=user.name%>
+                        
+                        <button class="btn" type="submit"  style="color:white;">
+                            <span><i class="fa-solid fa-user"></i></span>
+                    <%=user.name%>
                         </button>
-                    </form>
-                </span>
-                    <% } else{ %>
-                        <li class="nav-item">
-                            <a class="nav-link" href="http://localhost:3000/login.html">Login <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="http://localhost:3000/register.html">Sign Up</a>
-                        </li>
-                        <% } %>
+                        </form>
+                        </span>
+                        <% } else{ %>
                             <li class="nav-item">
-                                <a class="nav-link" href="http://localhost:3000/devs.html">Developers</a>
+                                <a class="nav-link" href="http://localhost:3000/login">Login <span class="sr-only">(current)</span></a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="http://localhost:3000/register">Sign Up</a>
+                            </li>
+                            <% } %>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="http://localhost:3000/devs">Developers</a>
+                                </li>
+
 
 
             </ul>
 
+            <a href="#" style="color: white;"><i class=" fa-solid fa-arrow-left " data-bs-toggle="tooltip" data-bs-placement="top" title="Exit !" onclick="history.back()" style="font-size: xx-large;margin-left: 20px;"></i></a>
         </div>
 
 

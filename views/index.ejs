@@ -31,13 +31,13 @@
                 <!-- The slideshow/carousel -->
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img class="img-fluid" src="http://localhost:3000/assets/carousalimage.png" alt="Los Angeles" class="d-block w-100">
+                        <img class="img-fluid" src="http://localhost:3000/assets/carousalimage.png" alt="pic1" class="d-block w-100">
                     </div>
                     <div class="carousel-item">
-                        <img class="img-fluid" src="http://localhost:3000/assets/carousalimage.png" alt="Chicago" class="d-block w-100">
+                        <img class="img-fluid" src="http://localhost:3000/assets/carousal2crop.png" alt="pic2" class="d-block w-50">
                     </div>
                     <div class="carousel-item">
-                        <img class="img-fluid" src="http://localhost:3000/assets/carousalimage.png" alt="New York" class="d-block w-100">
+                        <img class="img-fluid" src="http://localhost:3000/assets/carousalpic3.png" alt="pic3" class="d-block w-100">
                     </div>
                 </div>
 
@@ -85,7 +85,7 @@
 
 
         <div class="container-fluid tophead">
-            <h2 style="text-align: center;">Featured Products</h2>
+            <h2 style="text-align: center; margin-top: 40px;">Featured Products</h2>
         </div>
 
         <div class="adContainer" id="ad-cards-container">
@@ -98,68 +98,59 @@
         </div>
 
 
-        <footer>
-            <p>Copyright &copy; Campus-Trade.Inc 2023</p>
-            <div class="fbox">
-                <ul>
-                    <li><a href=""> hello</a></li>
-                    <li><a href=""> hello</a></li>
-                    <li><a href=""> hello</a></li>
-                    <li><a href=""> hello</a></li>
-                </ul>
-                <ul>
-                    <li><a href=""> hello</a></li>
-                    <li><a href=""> hello</a></li>
-                    <li><a href=""> hello</a></li>
-                    <li><a href=""> hello</a></li>
-                </ul>
-            </div>
-
-        </footer>
 
 
-        <script>
-            document.addEventListener("DOMContentLoaded", function(event) {
-
-                realTime();
-
-            });
 
 
-            function realTime() {
+        <!-- Footer -->
+        <%- include('./footer.ejs'); %>
 
-                var date = new Date();
-                var hour = date.getHours();
-                var min = date.getMinutes();
-                var sec = date.getSeconds();
-                var halfday = "AM";
-                halfday = (hour >= 12) ? "PM" : "AM";
-                hour = (hour == 0) ? 12 : ((hour > 12) ? (hour - 12) : hour);
-                hour = update(hour);
-                min = update(min);
-                sec = update(sec);
-                document.getElementById("h").innerText = hour;
-                document.getElementById("m").innerText = min;
-                document.getElementById("s").innerText = sec;
-                document.getElementById("ap").innerText = halfday;
 
-                setTimeout(realTime, 1000);
-            }
 
-            function update(k) {
-                if (k < 10) {
-                    return "0" + k;
-                } else {
-                    return k;
+
+
+            <script>
+                document.addEventListener("DOMContentLoaded", function(event) {
+
+                    realTime();
+
+                });
+
+
+                function realTime() {
+
+                    var date = new Date();
+                    var hour = date.getHours();
+                    var min = date.getMinutes();
+                    var sec = date.getSeconds();
+                    var halfday = "AM";
+                    halfday = (hour >= 12) ? "PM" : "AM";
+                    hour = (hour == 0) ? 12 : ((hour > 12) ? (hour - 12) : hour);
+                    hour = update(hour);
+                    min = update(min);
+                    sec = update(sec);
+                    document.getElementById("h").innerText = hour;
+                    document.getElementById("m").innerText = min;
+                    document.getElementById("s").innerText = sec;
+                    document.getElementById("ap").innerText = halfday;
+
+                    setTimeout(realTime, 1000);
                 }
-            }
-        </script>
 
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script type="text/javascript" src="http://localhost:3000/script.js"></script>
+                function update(k) {
+                    if (k < 10) {
+                        return "0" + k;
+                    } else {
+                        return k;
+                    }
+                }
+            </script>
+
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script type="text/javascript" src="http://localhost:3000/script.js"></script>
 
 
 </body>

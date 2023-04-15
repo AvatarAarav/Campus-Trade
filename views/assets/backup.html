@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        footer {
+            width: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #384745;
+            color: white;
+        }
+        
+        .fbox {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        
+        footer li {
+            text-decoration: none;
+            list-style-type: none;
+            margin: 10px 0 10px 0;
+        }
+        
+        footer a {
+            color: white;
+            text-decoration: none;
+            font-style: none;
+        }
+        
+        footer a:hover {
+            color: greenyellow;
+        }
+        
+        footer i {
+            color: white;
+        }
+        
+        footer hr {
+            display: none;
+        }
+        
+        @media (max-width: 576px) {
+            footer hr {
+                display: block;
+            }
+            .fbox {
+                flex-direction: column;
+            }
+            .address {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <footer>
+
+        <div class="fbox">
+
+            <div class="addr">
+                <h3 style="text-align: center; color: chartreuse;">Quick links</h3>
+                <div class="address" style="display: flex;">
+                    <img src="/views/assets/logotext.png" alt="" width="400px">
+                    <ul>
+                        <li>A Student to student market-place</li>
+                        <li>E-Commerce website only for students</li>
+                        <li>FFSD-1 group project</li>
+                        <li>Team Leader : Aarav Nigam (+91 8840795754 only whatsapp)</li>
+                    </ul>
+                </div>
+
+            </div>
+            <hr style="width: 90%;color: grey;">
+            <ul>
+                <li><a href="http://localhost:3000/devs.html"> About Us</a></li>
+                <li><a href="https://www.linkedin.com/in/aarav-nigam-09982b222/"> Support Us</a></li>
+                <li><a href="https://www.linkedin.com/in/aarav-nigam-09982b222/"> Contact Us</a></li>
+
+            </ul>
+            <ul>
+                <li><a href="#"> Careers</a></li>
+                <li><a href="https://www.linkedin.com/in/aarav-nigam-09982b222/"> Feedback</a></li>
+                <li><a href="#"> Privacy Policy</a></li>
+            </ul>
+            <hr style="width: 90%;color: grey;">
+        </div>
+        <p style="text-align: center;padding-bottom: 20px;">Copyright &copy; Campus-Trade.Inc 2023</p>
+    </footer>
+
+</body>
+
+</html>
