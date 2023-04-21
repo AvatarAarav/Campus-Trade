@@ -33,6 +33,10 @@ app.get('/register', (req, res) => {
     res.render('register')
 })
 
+app.get('/adminPortal', (req, res) => {
+    res.render('adminPortal')
+})
+
 
 const PORT = 3000
 mongoose.connect("mongodb://127.0.0.1/CampusTradeDB")

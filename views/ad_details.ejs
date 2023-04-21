@@ -396,9 +396,12 @@
 
                         <hr>
                         <h5>Product Description</h5>
-                        <p id="ad-description">
-                            <%=ad.description%>
-                        </p>
+                        <div style="overflow-x: scroll;">
+                            <p id="ad-description">
+                                <%=ad.description%>
+                            </p>
+                        </div>
+
 
                         <button type="button" class="btn" style="width: 60%; background-color: orange; color: white;">Buy Now</button>
 
@@ -410,8 +413,8 @@
             </div>
 
             <div class="chat">
-                <h2 style="text-align: center;margin-top: 10px;text-decoration: underline;">Chat With Seller</h2>
-                <hr>
+                <h2 style="text-align: center;margin: -3px;height: 80px;padding: 20px;background-color: yellowgreen;color: whitesmoke;border-top-left-radius: 30px;font-style: italic;">Chat With Seller</h2>
+
                 <div class="chatinput">
                     <form id="loginForm" action="">
                         <label for="subject" style=" display: block; margin-top: 20px;">Subject : </label>
@@ -420,17 +423,17 @@
                         <label for="body" style="display: block; margin-top: 20px; ">Query : </label>
                         <textarea id="body" name="body" style="width:100%;border: 1px solid black; background-color: whitesmoke;" required placeholder="Ask your questions.... "></textarea><br>
 
-                        <input type="submit" value="Send mail" style="float: right; background-color:orange; border: none; border-radius: 5px;margin: 30px 0; color: white; width: 90px;">
+                        <input type="submit" value="Send mail" style="float: right; background-color:yellowgreen; border: none; border-radius: 5px;margin: 30px 0; color: white; width: 90px;height: 40px;">
                     </form>
                 </div>
                 <!-- <a href="mailto:parth.b21@iiits.in?subject=hi&body=hi ">ccccc</a> -->
             </div>
 
-            <div class="seller">
+            <!-- <div class="seller">
                 <h4> Seller email id :
                     <%-ad.email%>
                 </h4>
-            </div>
+            </div> -->
         </div>
 
 
