@@ -1,4 +1,10 @@
-// Dummy data for ads
+
+var searchForm = document.getElementById("searchForm");
+searchForm.addEventListener("submit", function(e) {
+    e.preventDefault()
+    console.log(e)
+});
+
 
 fetch('http://localhost:3000/api/products').then(response => {
         if (response.ok) {
@@ -77,6 +83,7 @@ function Rprofilepic() {
         rprofilephoto.alt = 'girl';
     }
 }
+
 
 
 
