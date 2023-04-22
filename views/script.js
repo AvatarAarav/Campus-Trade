@@ -61,7 +61,6 @@ function getAdDetails(id) {
 var profilephoto = document.getElementById("profilephoto");
 
 function profilepic() {
-    console.log(profilephoto.alt);
     if (profilephoto.alt === 'girl') {
         profilephoto.src = 'http://localhost:3000/assets/boy1.png';
         profilephoto.alt = 'boy';
@@ -74,7 +73,6 @@ function profilepic() {
 var rprofilephoto = document.getElementById("Rprofilephoto");
 
 function Rprofilepic() {
-    console.log(rprofilephoto.alt);
     if (rprofilephoto.alt === 'girl') {
         rprofilephoto.src = 'http://localhost:3000/assets/boy1.png';
         rprofilephoto.alt = 'boy';

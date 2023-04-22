@@ -4,7 +4,9 @@ import bodyParser from 'body-parser'; //module to read the body of post request
 import mongoose from 'mongoose';
 const app = express(); //function to handle requests , app is an object to handle requests
 import { dirname } from 'path'; //function to get directory name
+import { getUserPage } from './controllers/getUserPage.js';
 import { fileURLToPath } from 'url';
+import { getDevsPage } from './controllers/getDevsPage.js';
 const __dirname = dirname(fileURLToPath(
     import.meta.url)); //saving the directory name
 
@@ -20,10 +22,9 @@ app.use('/api', apiRouter) // calling /api calls different from different file
 app.get('/', (req, res) => {
     res.render("index", { user: undefined }) //rendering the first request
 })
+app.get('/user/home/:userId',getUserPage)
 
-app.get('/devs', (req, res) => {
-    res.render('devs');
-})
+app.get('/devs/:userId', getDevsPage)
 
 app.get('/login', (req, res) => {
     res.render('login')

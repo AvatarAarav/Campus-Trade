@@ -2,7 +2,6 @@
 import Users from "../db/Models/User.js";
 export const addUserAPI=async (req,res)=>{
     try {
-        console.log(req.body)
         const userData= await Users(req.body)
         // console.log("User Added")
         userData.save()

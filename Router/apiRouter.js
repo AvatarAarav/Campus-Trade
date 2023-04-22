@@ -9,7 +9,7 @@ import { getAdFormAPI } from "../controllers/getAdForm.js";
 import { getProductAPI } from "../controllers/getProduct.js";
 import { getAdImageAPI } from "../controllers/getAdImage.js";
 import { getUserCardsAPI } from "../controllers/getUserCards.js";
-
+import { getUserPage } from "../controllers/getUserPage.js";
 
 const router=express.Router();
 

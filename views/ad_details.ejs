@@ -501,7 +501,6 @@
                         ad
                     }) => {
                         // Call createAdCards function to create ad cards on page load
-                        console.log(ad)
                         const image = document.getElementById("ad-photo")
                             // console.log(image)
                         image.src = `data:${ad.img_type};base64,${btoa(String.fromCharCode.apply(null,ad.img_content.data))}`
