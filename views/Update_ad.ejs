@@ -270,9 +270,7 @@
             .menubtn {
                 display: block;
             }
-            .navvbar {
-                /* height: 60px; */
-            }
+          
             .extendednav {
                 height: 160px;
             }
@@ -317,8 +315,8 @@
     <%- include('./navbar.ejs',{user :user}); %>
 
         <div class="secondone">
-            <h2><span style="color: white;">Object </span>Form</h2>
-            <form id="object-form" method="POST" action="http://localhost:3000/api/form" enctype="multipart/form-data">
+            <h2><span style="color: white;">Update </span>Form</h2>
+            <form id="object-form" method="POST" action="http://localhost:3000/api/update_form/<%= ad._id %>/update/<%= user.email%>" enctype="multipart/form-data">
                 <!-- <div class="form-group">
 				<label for="id">ID:</label>
 				<input type="text" class="form-control fc" id="id" name="id" required>
@@ -355,7 +353,7 @@
                 <div class="form-group">
                     <label for="image1">Image :</label>
                     <small>(please enter a clear image of the item)</small>
-                    <input type="file" class="form-control fc-file" id="image" name="photo" value = "<%=ad.image%>"required>
+                    <input type="file" class="form-control fc-file" id="image" name="photo" >
                     <span class="error" id="image1-error"></span>
                 </div>
 

@@ -444,6 +444,9 @@
 
         <%- include('./footer.ejs'); %>
             <script>
+
+
+
                 const email = '<%- user.email %>'
                 fetch('http://localhost:3000/api/user/' + email).then(response => {
                     if (response.ok) {
@@ -469,7 +472,7 @@
                         <h3 class="card-title">${ad.name}</h3>
                             <p class="card-text"> ${ad.price}</p>
                             <button class="delete-btn" >Delete</button>
-                            <button class="btn btn-warning">Update</button>
+                            <button class="btn btn-warning" onclick="UpdateAd('${ad._id}')" >Update</button>
 `;
                         const adCard = document.createElement("div");
                         adCard.classList.add("card");
@@ -482,6 +485,15 @@
                         adCardsContainer.appendChild(adCard);
                     });
                 };
+
+
+
+                function UpdateAd(id) {
+          console.log('hi')
+          location.assign(`http://localhost:3000/api/user/ad_update/${email}/mail/${id}`);
+
+      }
+
             </script>
 
 

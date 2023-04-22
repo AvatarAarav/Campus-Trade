@@ -11,7 +11,8 @@ import { getAdImageAPI } from "../controllers/getAdImage.js";
 import { getUserCardsAPI } from "../controllers/getUserCards.js";
 import { getUserPage } from "../controllers/getUserPage.js";
 import { getSearchResultAPI} from "../controllers/getSearchResult.js"
-
+import {getUpdateAdAPI} from "../controllers/getUpdateAd.js"
+import {updateFormAPI} from "../controllers/Update_form.js"
 const router=express.Router();
 
 
@@ -21,6 +22,7 @@ router.get('/products',getAllProductsAPI)
 const upload = multer({ dest: 'uploads/' });
 router.get('/ad/:id',getProductAPI)
 router.post('/form',upload.single('photo'),submitForm)
+router.post('/update_form/:id/update/:email',upload.single('photo'),updateFormAPI)
 router.post('/user/register',addUserAPI)
 router.post('/user/login',checkLoginAPI)
 router.post('/user',getUserData)
@@ -28,4 +30,5 @@ router.get('/user/:email',getUserCardsAPI)
 router.post('/user/adCreate',getAdFormAPI)
 router.get('/adImage/:id',getAdImageAPI)
 router.get('/search_result',getSearchResultAPI)
+router.get('/user/ad_update/:email/mail/:id',getUpdateAdAPI)
 export default router
