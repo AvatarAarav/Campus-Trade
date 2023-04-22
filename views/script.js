@@ -3,6 +3,30 @@ var searchForm = document.getElementById("searchForm");
 searchForm.addEventListener("submit", function(e) {
     e.preventDefault()
     console.log(e)
+
+
+    const searchQuery = e.target[0].value;
+    // alert(searchQuery)
+
+
+    fetch(`http://localhost:3000/api/search_result?search=${searchQuery}`).then(response => {
+        if (response.ok) {
+            return response.json(); //converting back to object
+        }
+        throw new Error('Network response was not ok.');
+    })
+    .then(data => {
+        // Call createAdCards function to create ad cards on page load
+        let adCardsContain = document.getElementById("ad-cards-container");
+        empty(adCardsContain)
+        createAdCards(data.data)
+    })
+    .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+    });
+
+
+
 });
 
 
@@ -40,6 +64,16 @@ const createAdCards = (ads) => {
         adCardsContainer.appendChild(adCard);
     });
 };
+
+function empty(element) {
+    while(element.firstElementChild) {
+       element.firstElementChild.remove();
+    }
+  }
+  
+//   let parent = document.getElementById("parent");
+//   empty(parent);
+
 
 function getAdDetails(id) {
     location.assign("http://localhost:3000/" + `${"api/ad/"+id}`)

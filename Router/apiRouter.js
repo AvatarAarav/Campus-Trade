@@ -10,6 +10,7 @@ import { getProductAPI } from "../controllers/getProduct.js";
 import { getAdImageAPI } from "../controllers/getAdImage.js";
 import { getUserCardsAPI } from "../controllers/getUserCards.js";
 import { getUserPage } from "../controllers/getUserPage.js";
+import { getSearchResultAPI} from "../controllers/getSearchResult.js"
 
 const router=express.Router();
 
@@ -26,5 +27,5 @@ router.post('/user',getUserData)
 router.get('/user/:email',getUserCardsAPI)
 router.post('/user/adCreate',getAdFormAPI)
 router.get('/adImage/:id',getAdImageAPI)
-
+router.get('/search_result',getSearchResultAPI)
 export default router
