@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>User Profile</title>
+    <title>User Profile - ADMIN CONTROLS</title>
     <!-- <link rel="stylesheet" href="http://localhost:3000/user_style.css"> -->
     <script src="http://localhost:3000/USER_PROFILE.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -378,8 +378,8 @@
                     <form class="d-inline" style="width: 100%;" method="POST" action="/api/user/adCreate">
                         <input type="hidden" name="email" value="<%=user.email%>" />
                         <input type="hidden" name="password" value="<%=user.password%>" />
-                        <b><button class="btn postadd" type="submit"><span><i class="fa-solid fa-plus"
-                                        style="color: white;"></i></span> Post Ad</button></b>
+                        <b><button class="btn postadd del" type="submit"><span><i class="fa-solid fa-plus"
+                                        style="color: white;"></i></span> Delete User </button></b>
                     </form>
 
                 </div>
@@ -412,8 +412,8 @@
                         <div class="c-body" style="background-color: white; width: 100%;">
                             <h3 class="card-title">Laptop</h3>
                             <p class="card-text"> $ 30,000</p>
-                            <button class="delete-btn">Delete</button>
-                            <button class="btn btn-warning">Update</button>
+                            <button class="delete-btn">Delete Product</button>
+                            <!-- <button class="btn btn-warning">Update</button> -->
                         </div>
                     </div>
                 </div>
@@ -444,9 +444,6 @@
 
         <%- include('./footer.ejs'); %>
             <script>
-
-
-
                 const email = '<%- user.email %>'
                 fetch('http://localhost:3000/api/user/' + email).then(response => {
                     if (response.ok) {
@@ -471,13 +468,8 @@
                         adBody.innerHTML = `
                         <h3 class="card-title">${ad.name}</h3>
                             <p class="card-text"> ${ad.price}</p>
-<<<<<<< HEAD
                             <button class="delete-btn" >Delete</button>
-                            <button class="btn btn-warning" onclick="UpdateAd('${ad._id}')" >Update</button>
-=======
-                            <a href='http://localhost:3000/api/ad/${ad._id}/mail/${email}'><button class="delete-btn" >Delete</button></a>
                             <button class="btn btn-warning">Update</button>
->>>>>>> a66b3a3129dac2099f2e325c87e23bcbbc406cc8
 `;
                         const adCard = document.createElement("div");
                         adCard.classList.add("card");
@@ -490,15 +482,6 @@
                         adCardsContainer.appendChild(adCard);
                     });
                 };
-
-
-
-                function UpdateAd(id) {
-          console.log('hi')
-          location.assign(`http://localhost:3000/api/user/ad_update/${email}/mail/${id}`);
-
-      }
-
             </script>
 
 

@@ -1,11 +1,13 @@
 import Products from "../db/Models/Products.js";
+import Users from "../db/Models/User.js";
 export const delProductAPI=async (req,res)=>{
     try {
         const id=req.params.id;  //url parameters id
-        const product=await Products.findById(id)
-        res.status(200).render('ad_details',{ad:product});
+        await Products.deleteOne({_id:id})
+        const userData=await Users.findOne({email:req.params.eid})
+        res.status(200).render('USER_PROFILE',{user:userData})
     } catch (error) {
         console.error(`${error.message}!!`)
-        res.status(404).send(`${error.message}!!`)
+        res.render('index',{user : undefined});
     }
 }

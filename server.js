@@ -26,6 +26,10 @@ app.get('/user/home/:userId',getUserPage)
 
 app.get('/devs/:userId', getDevsPage)
 
+app.get('/devs',(req,res)=>{
+    res.render('devs',{ user: undefined })
+})
+
 app.get('/login', (req, res) => {
     res.render('login')
 })
@@ -40,7 +44,7 @@ app.get('/adminPortal', (req, res) => {
 
 
 const PORT = 3000
-mongoose.connect("mongodb://127.0.0.1/CampusTradeDB")
+mongoose.connect("mongodb+srv://Aarav-Nigam:XtwpTt4aolWGmkzn@cluster0.kd8i4tz.mongodb.net/CampusTradeDB?retryWrites=true&w=majority")
     .then(() => {
         app.listen(PORT, () => {
             console.log(`Server is listening at port ${PORT}`)
