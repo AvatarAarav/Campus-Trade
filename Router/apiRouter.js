@@ -10,6 +10,7 @@ import { getProductAPI } from "../controllers/getProduct.js";
 import { getAdImageAPI } from "../controllers/getAdImage.js";
 import { getUserCardsAPI } from "../controllers/getUserCards.js";
 import { getUserPage } from "../controllers/getUserPage.js";
+import { delProductAPI } from "../controllers/deleteAd.js";
 
 const router=express.Router();
 
@@ -18,7 +19,9 @@ router.get('/products',getAllProductsAPI)
 
 // Set up the multer middleware to handle file uploads
 const upload = multer({ dest: 'uploads/' });
+
 router.get('/ad/:id',getProductAPI)
+router.get('/ad/:id/mail/:eid',delProductAPI)
 router.post('/form',upload.single('photo'),submitForm)
 router.post('/user/register',addUserAPI)
 router.post('/user/login',checkLoginAPI)
