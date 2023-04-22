@@ -210,9 +210,6 @@
             .menubtn {
                 display: block;
             }
-            .navvbar {
-                /* height: 60px; */
-            }
             .extendednav {
                 height: 160px;
             }
@@ -307,7 +304,7 @@
 
 <body>
 
-    <%- include('./navbar.ejs',{user :undefined}); %>
+    <%- include('./navbar.ejs',{user :user}); %>
 
 
         <h2 style="text-align: center; margin-top: 20px;">Meet our Team</h2>

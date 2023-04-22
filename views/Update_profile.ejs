@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/ef8a591cb3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="http://localhost:3000/loginstyles.css">
+    <title>SignUp</title>
+
+
+    <style>
+         :root {
+            --blue1: #142850;
+            --blue2: #27496D;
+            --blue3: #0C7B93;
+            --blue4: #00A8CC;
+            --bisket: rgb(251, 218, 174);
+            --yello: #F1F7B5;
+            --redd: #FD8A8A;
+            --newRed: #ED2647;
+        }
+        
+        body {
+            width: 100%;
+            background-color: bisque;
+        }
+        /* Navbar styles */
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 0px;
+            margin: 0px;
+            background-color: whitesmoke;
+        }
+        
+        .nav-item a {
+            color: white;
+        }
+        
+        .nav-item a:hover {
+            color: #333;
+        }
+        
+        .logo {
+            font-size: 40px;
+            color: var(--blue1);
+            padding: 0px;
+            margin: 0px 5px 0px 0px;
+        }
+        
+        .heading {
+            padding: 0px;
+            margin: 0px 10px -15px 5px;
+            color: white;
+            /* background-color: red; */
+        }
+        
+        h1 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .searchbar {
+            background-color: var(--blue1);
+        }
+        
+        .inpsearch {
+            width: 90%;
+            padding-left: 20px;
+            border: none;
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        
+        .inpsearch:focus {
+            outline: none;
+        }
+        
+        .searchbtn {
+            width: 35px;
+            height: 35px;
+            background-color: var(--blue4);
+            border: none;
+            margin: 0;
+            padding-right: 20px;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+        
+        .searchbtn i {
+            font-size: large;
+        }
+        
+        .searchbtn:hover {
+            background-color: orange;
+            cursor: progress;
+        }
+        
+        .menubtn {
+            display: none;
+            background-color: var(--blue1);
+            border: none;
+        }
+        
+        .navbar-toggler-icon {
+            color: white;
+        }
+        
+        .navvbar {
+            height: 82px;
+            padding: 30px;
+            margin: 0;
+            background-color: var(--newRed);
+            position: relative;
+        }
+        
+        .extendednav {
+            height: 320px;
+            background-color: lightblue;
+            border-bottom-right-radius: 500px;
+            /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+        }
+        
+        .boxxx {
+            /* background-color: lightgreen; */
+            z-index: 1;
+        }
+        
+        .parentNavbox {
+            margin-top: -30px;
+        }
+        /* .searchbox {
+            background-color: lightpink; 
+        } */
+        
+        .navbox {
+            display: flex;
+            justify-content: space-evenly;
+        }
+        
+        .imgbox {
+            width: 600px;
+            position: absolute;
+            top: 20;
+            /* background-color: lightpink; */
+        }
+        /*  */
+        /* Footer Styles */
+        /* Footer styles */
+        
+        footer {
+            width: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #384745;
+            color: white;
+        }
+        
+        .fbox {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        
+        footer li {
+            text-decoration: none;
+            list-style-type: none;
+            margin: 10px 0 10px 0;
+        }
+        
+        footer a {
+            color: white;
+            text-decoration: none;
+            font-style: none;
+        }
+        
+        footer a:hover {
+            color: greenyellow;
+        }
+        
+        footer i {
+            color: white;
+        }
+        
+        footer hr {
+            display: none;
+        }
+        
+        @media (max-width: 576px) {
+            footer hr {
+                display: block;
+            }
+            .fbox {
+                flex-direction: column;
+            }
+            .address {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+
+
+</head>
+
+
+<body>
+
+    <%- include('./navbar.ejs',{user :undefined}); %>
+        <!-- Register -->
+        <div class="registerbox" id="registerbox">
+
+            <div class="header">
+                <div class="backbtn"><span style="float: right;font-size: 40px;margin-top: -10px; margin-right:5px;"><i class="fa-solid fa-xmark"  data-bs-toggle="tooltip" data-bs-placement="top" title="Go Back !" onclick="history.back()"></i></span></div>
+                <h2 style="color: brown;">Sign<span style="color: white;">Up</span></h2>
+            </div>
+            <hr style="margin: 5px 2px;">
+            <div class="profilephoto"><img id="Rprofilephoto" src="http://localhost:3000/assets/boy1.png" alt="boy" onclick="Rprofilepic()"></div>
+            <div class="loginbox">
+                <form action="/api/user/register" onsubmit="return validateForm()" method="post">
+                    <div class="inputbox"><span class="iconn"><i class="fa-solid fa-user"></i></span><input name="name" required class="uname" type="text" value = "<%=user.name%>" ></div>
+                    <div class="inputbox"><span class="iconn"><i class="fa-solid fa-envelope"></i></span><input class="umail" required type="email" name="email" value = "<%=user.email%>"></div>
+                    <div class="inputbox"><span class="iconn"><i class="fa-solid fa-graduation-cap"></i></span><input name="college_name" required class="uclg" type="text" value = "<%=user.college_name%>"></div>
+                    <div class="inputbox"><span class="iconn"><i class="fa-solid fa-calendar-days"></i></span><input name="year" required class="uyear" type="text" value = "<%=user.year%>"></div>
+                    <div class="inputbox"><span class="iconn"><i class="fa-solid fa-key"></i></span><input class="upass" id="pswd1" type="password" required minlength="6" name="password" value = "<%=user.password%>"></div>
+                    <div class="inputbox"><span class="iconn"><i class="fa-solid fa-lock"></i></span><input class="upass" id="pswd2" type="password" required minlength="6" value = "<%=user.password%>"></div>
+                    <!-- <input class="subbtn" type="button" style="width: 100%;" onclick="verifyPassword()" value="verify password"> -->
+                    <input class="subbtn" id="subbtn" type="submit" value="Sign Up">
+                </form>
+            </div>
+
+            <div class="exist">
+                <a href="http://localhost:3000/login.html">Existing User ?</a>
+            </div>
+
+            <hr>
+
+
+
+            <span style="color: white;">Sign up with <a href="#" class="google"><i class="fa-brands fa-google"></i> google</a></span>
+        </div>
+
+
+
+
+
+
+
+        <br>
+        <br>
+        <%- include('./footer.ejs'); %>
+
+
+
+
+            <script>
+                function validateForm() {
+                    var pw1 = document.getElementById("pswd1");
+                    var pw2 = document.getElementById("pswd2");
+                    if (pw1.value === pw2.value) {
+                        return true
+                    } else {
+                        alert("Password Don't Match")
+                        return false
+                    }
+                }
+                //index.js script
+                var profilephoto = document.getElementById("profilephoto");
+
+                function profilepic() {
+                    console.log(profilephoto.alt);
+                    if (profilephoto.alt === 'girl') {
+                        profilephoto.src = 'http://localhost:3000/assets/boy1.png';
+                        profilephoto.alt = 'boy';
+                    } else {
+                        profilephoto.src = 'http://localhost:3000/assets/girl1.png';
+                        profilephoto.alt = 'girl';
+                    }
+                }
+
+                var rprofilephoto = document.getElementById("Rprofilephoto");
+
+                function Rprofilepic() {
+                    console.log(rprofilephoto.alt);
+                    if (rprofilephoto.alt === 'girl') {
+                        rprofilephoto.src = 'http://localhost:3000/assets/boy1.png';
+                        rprofilephoto.alt = 'boy';
+                    } else {
+                        rprofilephoto.src = 'http://localhost:3000/assets/girl1.png';
+                        rprofilephoto.alt = 'girl';
+                    }
+                }
+            </script>
+
+</body>
+
+</html>
