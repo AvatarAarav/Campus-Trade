@@ -6,3 +6,7 @@ const deleteBtns = document.querySelectorAll('.delete-btn');
             card.remove();
           });
         });
+
+
+
+       
