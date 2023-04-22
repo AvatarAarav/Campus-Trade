@@ -205,7 +205,6 @@
         
         .flowcontrol {
             width: 40%;
-            overflow-x: auto;
             background-color: white;
         }
         
@@ -237,6 +236,40 @@
             height: 1px;
             background-color: grey;
         }
+        /* group chat */
+        
+        .msgbox {
+            max-width: 80%;
+            padding: 8px;
+            margin-top: 10px;
+            border-radius: 10px;
+        }
+        
+        .msgbox p {
+            padding: 0px;
+            margin: 0px;
+        }
+        
+        .msgform {
+            width: 100%;
+            margin: 5px;
+        }
+        
+        .msgform input {
+            width: 85%;
+        }
+        
+        .msgform button {
+            width: 13%;
+            background-color: var(--blue1);
+            color: white;
+        }
+        
+        .msgform button:hover {
+            background-color: greenyellow;
+            color: black;
+        }
+        /* / group chat */
         /* Footer styles */
         
         footer {
@@ -396,10 +429,8 @@
 
                         <hr>
                         <h5>Product Description</h5>
-                        <div style="overflow-x: scroll;">
-                            <p id="ad-description">
-                                <%=ad.description%>
-                            </p>
+                        <div id="ad-description">
+                            <%=ad.description%>
                         </div>
 
 
@@ -412,28 +443,92 @@
                 <!-- </div> -->
             </div>
 
-            <div class="chat">
-                <h2 style="text-align: center;margin: -3px;height: 80px;padding: 20px;background-color: yellowgreen;color: whitesmoke;border-top-left-radius: 30px;font-style: italic;">Chat With Seller</h2>
+            <div class="container d-flex justify-content-around align-items-baseline">
 
-                <div class="chatinput">
-                    <form id="loginForm" action="">
-                        <label for="subject" style=" display: block; margin-top: 20px;">Subject : </label>
-                        <input type="text" id="subject" name="subject " style="width:100%;border: 1px solid black; background-color: whitesmoke;" required placeholder="eg. Doubt, Bargain "><br>
+                <div class="chat" style="max-height: 600px;">
+                    <h2 style="text-align: center;margin: -3px;height: 80px;padding: 20px;background-color: green;color: whitesmoke;border-top-left-radius: 30px;font-style: italic;">Mail to Seller</h2>
 
-                        <label for="body" style="display: block; margin-top: 20px; ">Query : </label>
-                        <textarea id="body" name="body" style="width:100%;border: 1px solid black; background-color: whitesmoke;" required placeholder="Ask your questions.... "></textarea><br>
+                    <div class="chatinput">
+                        <form id="loginForm" action="">
+                            <label for="subject" style=" display: block; margin-top: 20px;">Subject : </label>
+                            <input type="text" id="subject" name="subject " style="width:100%;border: 1px solid black; background-color: whitesmoke;" required placeholder="eg. Doubt, Bargain "><br>
 
-                        <input type="submit" value="Send mail" style="float: right; background-color:yellowgreen; border: none; border-radius: 5px;margin: 30px 0; color: white; width: 90px;height: 40px;">
-                    </form>
+                            <label for="body" style="display: block; margin-top: 20px; ">Query : </label>
+                            <textarea id="body" rows="5" name="body" style="width:100%;border: 1px solid black; background-color: whitesmoke;" required placeholder="Ask your questions.... "></textarea><br>
+
+                            <input type="submit" value="Send mail" style="float: right; background-color:green; border: none; border-radius: 5px;margin: 30px 0; color: white; width: 90px;height: 40px;">
+                        </form>
+                    </div>
+                    <!-- <a href="mailto:parth.b21@iiits.in?subject=hi&body=hi ">ccccc</a> -->
                 </div>
-                <!-- <a href="mailto:parth.b21@iiits.in?subject=hi&body=hi ">ccccc</a> -->
+
+                <!-- <div class="seller">
+                    <h4> Seller email id :
+                        <%-ad.email%>
+                    </h4>
+                </div> -->
+
+
+
+                <div class="livechat" style="display:flex;flex-direction: column;padding: 0px; width: 500px; max-height: 550px;background-color: white; border-radius: 10px;border:1px solid var(--blue1);box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                    <h4 style="padding:10px;text-align: center;background-color: #142850;color: whitesmoke;border-top-left-radius: 10px; border-top-right-radius: 10px;">Group Chat <span><button style="border: none; background-color: var(--blue1);color: white;"><span><i class="fa-solid fa-rotate-right"></i></span></button>
+                        </span>
+                    </h4>
+                    <div style="width: 480px;display: flex;flex-direction: column;margin: 0px 10px 0 10px;overflow-y: scroll;">
+                        <div class="msgbox" style="align-self:flex-end;background-color: lightskyblue;">
+                            <p style="color: var(--blue1);"><strong>kumar</strong></p>
+                            <p>hii bro im a random user. im integrested in the add you posted . can you give me some discount</p>
+                        </div>
+
+                        <div class="msgbox" style="align-self:flex-start;background-color: pink;">
+                            <p style="color: var(--blue1);"><strong>seller</strong></p>
+                            <p>sure bro , i can give you 10% discount.</p>
+                        </div>
+
+                        <div class="msgbox" style="align-self:flex-end;background-color: lightskyblue;">
+                            <p style="color: var(--blue1);"><strong>kumar</strong></p>
+                            <p>thank you bro, when are you available to sell me the product....?</p>
+                        </div>
+
+                        <div class="msgbox" style="align-self:flex-start;background-color: pink;">
+                            <p style="color: var(--blue1);"><strong>seller</strong></p>
+                            <p>today we can meet in the college basement at 5:30 pm.</p>
+                        </div>
+
+                        <div class="msgbox" style="align-self:flex-end;background-color: lightskyblue;">
+                            <p style="color: var(--blue1);"><strong>kumar</strong></p>
+                            <p>ok sure.</p>
+                        </div>
+
+                        <div class="msgbox" style="align-self:flex-end;background-color: lightskyblue;">
+                            <p style="color: var(--blue1);"><strong>harshan</strong></p>
+                            <p>i will buy your product without any discount, please sell this to me...!</p>
+                        </div>
+
+                        <div class="msgbox" style="align-self:flex-end;background-color: lightskyblue;">
+                            <p style="color: var(--blue1);"><strong>kumar</strong></p>
+                            <p>bro :( </p>
+                        </div>
+
+                        <div class="msgbox" style="align-self:flex-start;background-color: pink;">
+                            <p style="color: var(--blue1);"><strong>seller</strong></p>
+                            <p>okay, whoever comes first to college basement will get it.</p>
+                        </div>
+
+
+                    </div>
+
+
+                    <form action="" class="msgform" style="display: flex;">
+                        <input type="text" placeholder="message">
+                        <button type="submit"><span><i class="fa-solid fa-paper-plane"></i></span></button>
+                    </form>
+
+
+                </div>
             </div>
 
-            <!-- <div class="seller">
-                <h4> Seller email id :
-                    <%-ad.email%>
-                </h4>
-            </div> -->
+
         </div>
 
 
