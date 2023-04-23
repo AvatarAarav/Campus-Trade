@@ -17,6 +17,7 @@ import { delProductAPI } from "../controllers/deleteAd.js";
 import { buyProductApi } from "../controllers/buyProductApi.js";
 import {ProfileUpdateAPI} from "../controllers/ProfileUpdate.js";
 import {ChangeProfileAPI} from "../controllers/ChangeProfile.js";
+import { removeProductApi } from "../controllers/removeProduct.js";
 const router=express.Router();
 
 
@@ -27,7 +28,8 @@ const upload = multer({ dest: 'uploads/' });
 
 router.get('/ad/:id/email/:eid',getProductAPI)
 router.get('/ad/buy/:id/uid/:uid',buyProductApi)
-router.get('/ad/:id/mail/:eid',delProductAPI)
+router.get('/ad/remove/:id/uid/:uid',removeProductApi)
+router.get('/ad/delete/:id/mail/:eid',delProductAPI)
 router.post('/form',upload.single('photo'),submitForm)
 router.post('/update_form/:id/update/:email',upload.single('photo'),updateFormAPI)
 router.post('/user/register',addUserAPI)

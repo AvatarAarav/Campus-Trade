@@ -432,10 +432,14 @@
                         <div id="ad-description">
                             <%=ad.description%>
                         </div>
-                        <% if(user?.ads?.find((id)=>id==ad._id)) { %>
-                            <a href="http://localhost:3000/api/ad/buy/<%=ad._id%>/uid/<%=user._id%>"><button disabled type="button" class="btn" style="width: 60%; background-color: orange; color: white;">Added to Your List</button></a>
+                        <% if(user?.email==ad.email) { %>
+                            <a href="http://localhost:3000/api/ad/buy/<%=ad._id%>/uid/<%=user._id%>"><button disabled type="button" class="btn" style="width: 60%; background-color: orange; color: white;">Your Own Product</button></a>
                         <% } else{ %>
-                            <a href="http://localhost:3000/api/ad/buy/<%=ad._id%>/uid/<%=user._id%>"><button type="button" class="btn" style="width: 60%; background-color: orange; color: white;">Buy Now</button></a>
+                            <% if(user?.ads?.find((id)=>id==ad._id)) { %>
+                                <a href="http://localhost:3000/api/ad/buy/<%=ad._id%>/uid/<%=user._id%>"><button disabled type="button" class="btn" style="width: 60%; background-color: orange; color: white;">Added to Your List</button></a>
+                            <% } else{ %>
+                                <a href="http://localhost:3000/api/ad/buy/<%=ad._id%>/uid/<%=user._id%>"><button type="button" class="btn" style="width: 60%; background-color: orange; color: white;">Buy Now</button></a>
+                            <% } %>
                         <% } %>
                     </div>
 
