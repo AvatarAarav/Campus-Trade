@@ -1,5 +1,5 @@
 import Products from "../db/Models/Products.js";
-export const getAdImageAPI=async (req,res)=>{
+export const getAdObjectAPI=async (req,res)=>{
     try {
         const id=req.params.id;
         const product=await Products.findById(id)

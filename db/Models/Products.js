@@ -10,6 +10,9 @@ const ProductSchema = new mongoose.Schema(
         age: String,
         price: String,
         img_type: String,
+        chats:[{
+            from:String,message:String
+        }],
         img_content: { type: Buffer, contentType: String },
     }
 );

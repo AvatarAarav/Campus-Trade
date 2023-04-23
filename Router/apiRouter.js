@@ -7,7 +7,7 @@ import { getUserData } from "../controllers/getUserData.js";
 import { getAllProductsAPI } from "../controllers/getAllProducts.js";
 import { getAdFormAPI } from "../controllers/getAdForm.js";
 import { getProductAPI } from "../controllers/getProduct.js";
-import { getAdImageAPI } from "../controllers/getAdImage.js";
+import { getAdObjectAPI } from "../controllers/getAdObject.js";
 import { getUserCardsAPI } from "../controllers/getUserCards.js";
 import { getUserPage } from "../controllers/getUserPage.js";
 import { getSearchResultAPI} from "../controllers/getSearchResult.js"
@@ -18,6 +18,8 @@ import { buyProductApi } from "../controllers/buyProductApi.js";
 import {ProfileUpdateAPI} from "../controllers/ProfileUpdate.js";
 import {ChangeProfileAPI} from "../controllers/ChangeProfile.js";
 import { removeProductApi } from "../controllers/removeProduct.js";
+import { postAddChatAPI } from "../controllers/postAddChat.js";
+import { getProductChatsAPI } from "../controllers/getProductChats.js";
 const router=express.Router();
 
 
@@ -37,10 +39,12 @@ router.post('/user/login',checkLoginAPI)
 router.post('/user',getUserData)
 router.get('/user/:email',getUserCardsAPI)
 router.post('/user/adCreate',getAdFormAPI)
-router.get('/adImage/:id',getAdImageAPI)
+router.get('/adObject/:id',getAdObjectAPI)
 router.get('/search_result',getSearchResultAPI)
 router.get('/user/ad_update/:email/mail/:id',getUpdateAdAPI)
 router.post('/user/UpdateProfile',ProfileUpdateAPI)
 router.post('/user/changeProfile',ChangeProfileAPI)
+router.post('/ad/id/:id/chat/:email/',postAddChatAPI)
+router.get('/ad/chat/:id',getProductChatsAPI)
 
 export default router
