@@ -270,7 +270,6 @@
             .menubtn {
                 display: block;
             }
-          
             .extendednav {
                 height: 160px;
             }
@@ -324,35 +323,35 @@
 			</div> -->
                 <div class="form-group">
                     <label for="name">Name:</label>
-                    <input type="text" class="form-control fc" id="name" name="name" value = "<%=ad.name%>">
+                    <input type="text" class="form-control fc" id="name" name="name" value="<%=ad.name%>">
                     <span class="error" id="name-error"></span>
                 </div>
                 <input type="hidden" name="email" value="<%=user.email%>" />
                 <div class="form-group">
                     <label for="type">Type of Object:</label>
-                    <input type="text" class="form-control fc" id="type" name="type" value = "<%=ad.type%>">
+                    <input type="text" class="form-control fc" id="type" name="type" value="<%=ad.type%>">
                     <span class="error" id="type-error"></span>
                 </div>
                 <div class="form-group">
                     <label for="type">Description of Object:</label>
-                    <input type="text" class="form-control fc" id="description" name="description" value = "<%=ad.description%>">
+                    <input type="text" class="form-control fc" id="description" name="description" value="<%=ad.description%>">
                     <span class="error" id="type-error"></span>
                 </div>
                 <div class="form-group">
                     <label for="age">How old:</label>
                     <small>eg.(2 years 5 months)</small>
-                    <input type="text" class="form-control fc" id="age" name="age" value = "<%= ad.age%>"required>
+                    <input type="text" class="form-control fc" id="age" name="age" value="<%= ad.age%>" required>
                     <span class="error" id="age-error"></span>
                 </div>
                 <div class="form-group">
                     <label for="price">Price:</label>
-                    <input type="text" class="form-control fc" id="price" name="price"  value = "<%=ad.price%>" required>
+                    <input type="text" class="form-control fc" id="price" name="price" value="<%=ad.price%>" required>
                     <span class="error" id="price-error"></span>
                 </div>
                 <div class="form-group">
                     <label for="image1">Image :</label>
                     <small>(please enter a clear image of the item)</small>
-                    <input type="file" class="form-control fc-file" id="image" name="photo" >
+                    <input type="file" class="form-control fc-file" id="image" name="photo">
                     <span class="error" id="image1-error"></span>
                 </div>
 
@@ -388,7 +387,7 @@
 
         <br>
         <br>
-        <%- include('./footer.ejs'); %>
+        <%- include('./footer.ejs',{user : user}); %>
 
 </body>
 
