@@ -22,24 +22,24 @@ app.use('/api', apiRouter) // calling /api calls different from different file
 app.get('/', (req, res) => {
     res.render("index", { user: undefined }) //rendering the first request
 })
-app.get('/user/home/:userId',getUserPage)
+app.get('/user/home/:userId', getUserPage)
 
 app.get('/devs/:userId', getDevsPage)
 
-app.get('/devs',(req,res)=>{
-    res.render('devs',{ user: undefined })
+app.get('/devs', (req, res) => {
+    res.render('devs', { user: undefined })
 })
 
 app.get('/login', (req, res) => {
-    res.render('login')
+    res.render('login', { user: undefined })
 })
 
 app.get('/register', (req, res) => {
-    res.render('register')
+    res.render('register', { user: undefined })
 })
 
 app.get('/adminPortal', (req, res) => {
-    res.render('adminPortal')
+    res.render('adminPortal', { user: undefined })
 })
 
 
