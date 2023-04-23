@@ -377,7 +377,6 @@
                     </p>
                     <form class="d-inline" style="width: 100%;" method="POST" action="/api/user/adCreate">
                         <input type="hidden" name="email" value="<%=user.email%>" />
-                        <input type="hidden" name="password" value="<%=user.password%>" />
                         <b><button class="btn postadd" type="submit"><span><i class="fa-solid fa-plus"
                                         style="color: white;"></i></span> Post Ad</button></b>
                     </form>
@@ -471,13 +470,9 @@
                         adBody.innerHTML = `
                         <h3 class="card-title">${ad.name}</h3>
                             <p class="card-text"> ${ad.price}</p>
-<<<<<<< HEAD
-                            <button class="delete-btn" >Delete</button>
-                            <button class="btn btn-warning" onclick="UpdateAd('${ad._id}')" >Update</button>
-=======
+                            
                             <a href='http://localhost:3000/api/ad/${ad._id}/mail/${email}'><button class="delete-btn" >Delete</button></a>
-                            <button class="btn btn-warning">Update</button>
->>>>>>> a66b3a3129dac2099f2e325c87e23bcbbc406cc8
+                            <button class="btn btn-warning" onclick="UpdateAd('${ad._id}')" >Update</button>
 `;
                         const adCard = document.createElement("div");
                         adCard.classList.add("card");
