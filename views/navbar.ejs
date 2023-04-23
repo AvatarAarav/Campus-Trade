@@ -6,8 +6,7 @@
             <img src="http://localhost:3000/assets/logo1.png" alt="" width="288px">
         </div>
         <!-- <a class="navbar-brand" href="#">Navbar</a> -->
-        <button class="navbar-toggler menuu" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler menuu" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -29,23 +28,26 @@
                             <input type="hidden" name="userId" value="<%=user._id%>" />
                             <button class="btn" type="submit" style="color:white;">
                                 <span><i id="user-icon" class="fa-solid fa-user"></i></span>
-                                <%=user.name%>
-                            </button>
+                    <%=user.name%>
+                        </button>
                         </form>
+                        </span>
+                        <span>
+                        <a href="/" class="btn" style="color:white;">Log Out</a>
                     </span>
-                    <li class="nav-item">
-                        <a class="nav-link" href="http://localhost:3000/devs/<%=user._id%>">Developers</a>
-                    </li>
-                    <% } else{ %>
                         <li class="nav-item">
-                            <a class="nav-link" href="http://localhost:3000/login">Login <span
+                            <a class="nav-link" href="http://localhost:3000/devs/<%=user._id%>">Developers</a>
+                        </li>
+                        <% } else{ %>
+                            <li class="nav-item">
+                                <a class="nav-link" href="http://localhost:3000/login">Login <span
                                     class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="http://localhost:3000/register">Sign Up</a>
-                        </li>
-                        <% } %>
-                            
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="http://localhost:3000/register">Sign Up</a>
+                            </li>
+                            <% } %>
+
 
 
 
