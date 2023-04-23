@@ -205,9 +205,11 @@
                 align-items: center;
             }
         }
-        #user-icon{
-            font-size:medium;
+        
+        #user-icon {
+            font-size: medium;
         }
+        
         @media (max-width: 576px) {
             .menubtn {
                 display: block;
@@ -340,7 +342,7 @@
                     <p class="card-text">Backend Developer</p>
                     <hr>
                     <div class="container d-flex link-box">
-                        
+
                         <a target="_blank" href="https://github.com/PARTHIIITS"><i class="fa-brands fa-square-github" style="color: black;"></i></a>
                     </div>
                     <!-- <a target="_blank" href="#" class="btn btn-primary">See Profile</a> -->
@@ -414,7 +416,7 @@
         <br>
         <br>
         <br>
-        <%- include('./footer.ejs'); %>
+        <%- include('./footer.ejs',{user : user}); %>
 
             <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

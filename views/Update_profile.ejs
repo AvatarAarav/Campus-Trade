@@ -9,7 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/ef8a591cb3.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="http://localhost:3000/loginstyles.css">
-    <title>SignUp</title>
+    <title>UPDATE</title>
 
 
     <style>
@@ -215,18 +215,19 @@
 
 <body>
 
-    <%- include('./navbar.ejs',{user :undefined}); %>
+    <%- include('./navbar.ejs',{user :user}); %>
         <!-- Register -->
         <div class="registerbox" id="registerbox">
 
             <div class="header">
                 <div class="backbtn"><span style="float: right;font-size: 40px;margin-top: -10px; margin-right:5px;"><i class="fa-solid fa-xmark"  data-bs-toggle="tooltip" data-bs-placement="top" title="Go Back !" onclick="history.back()"></i></span></div>
-                <h2 style="color: brown;">Sign<span style="color: white;">Up</span></h2>
+                <h2 style="color: brown;">Update<span style="color: white;">Profile</span></h2>
             </div>
             <hr style="margin: 5px 2px;">
             <div class="profilephoto"><img id="Rprofilephoto" src="http://localhost:3000/assets/boy1.png" alt="boy" onclick="Rprofilepic()"></div>
             <div class="loginbox">
-                <form action="/api/user/register" onsubmit="return validateForm()" method="post">
+                <form action="/api/user/changeProfile" onsubmit="return validateForm()" method="post">
+                    <input type="hidden" name="userId" value="<%=user._id%>" />
                     <div class="inputbox"><span class="iconn"><i class="fa-solid fa-user"></i></span><input name="name" required class="uname" type="text" value = "<%=user.name%>" ></div>
                     <div class="inputbox"><span class="iconn"><i class="fa-solid fa-envelope"></i></span><input class="umail" required type="email" name="email" value = "<%=user.email%>"></div>
                     <div class="inputbox"><span class="iconn"><i class="fa-solid fa-graduation-cap"></i></span><input name="college_name" required class="uclg" type="text" value = "<%=user.college_name%>"></div>
@@ -234,19 +235,17 @@
                     <div class="inputbox"><span class="iconn"><i class="fa-solid fa-key"></i></span><input class="upass" id="pswd1" type="password" required minlength="6" name="password" value = "<%=user.password%>"></div>
                     <div class="inputbox"><span class="iconn"><i class="fa-solid fa-lock"></i></span><input class="upass" id="pswd2" type="password" required minlength="6" value = "<%=user.password%>"></div>
                     <!-- <input class="subbtn" type="button" style="width: 100%;" onclick="verifyPassword()" value="verify password"> -->
-                    <input class="subbtn" id="subbtn" type="submit" value="Sign Up">
+                    <input class="subbtn" id="subbtn" type="submit" value="Edit">
                 </form>
             </div>
 
-            <div class="exist">
-                <a href="http://localhost:3000/login.html">Existing User ?</a>
-            </div>
+           
 
             <hr>
 
 
 
-            <span style="color: white;">Sign up with <a href="#" class="google"><i class="fa-brands fa-google"></i> google</a></span>
+            <!-- <span style="color: white;">Sign up with <a href="#" class="google"><i class="fa-brands fa-google"></i> google</a></span> -->
         </div>
 
 
@@ -264,6 +263,7 @@
 
             <script>
                 function validateForm() {
+                    console.log("hi")
                     var pw1 = document.getElementById("pswd1");
                     var pw2 = document.getElementById("pswd2");
                     if (pw1.value === pw2.value) {
