@@ -15,7 +15,8 @@ import {getUpdateAdAPI} from "../controllers/getUpdateAd.js"
 import {updateFormAPI} from "../controllers/Update_form.js"
 import { delProductAPI } from "../controllers/deleteAd.js";
 import { buyProductApi } from "../controllers/buyProductApi.js";
-
+import {ProfileUpdateAPI} from "../controllers/ProfileUpdate.js";
+import {ChangeProfileAPI} from "../controllers/ChangeProfile.js";
 const router=express.Router();
 
 
@@ -37,4 +38,7 @@ router.post('/user/adCreate',getAdFormAPI)
 router.get('/adImage/:id',getAdImageAPI)
 router.get('/search_result',getSearchResultAPI)
 router.get('/user/ad_update/:email/mail/:id',getUpdateAdAPI)
+router.post('/user/UpdateProfile',ProfileUpdateAPI)
+router.post('/user/changeProfile',ChangeProfileAPI)
+
 export default router
