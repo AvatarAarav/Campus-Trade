@@ -2,8 +2,6 @@
 var searchForm = document.getElementById("searchForm");
 searchForm.addEventListener("submit", function(e) {
     e.preventDefault()
-    console.log(e)
-
 
     const searchQuery = e.target[0].value;
     // alert(searchQuery)
