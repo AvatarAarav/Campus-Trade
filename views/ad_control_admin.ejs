@@ -435,6 +435,8 @@
 
 
                         <button type="button" class="btn" style="width: 60%; background-color: red; color: white;">Delete Product</button>
+                        <br>
+                        <button class="btn btn-warning">Reports Count : <%=ad.report%></button>
 
                     </div>
 
@@ -597,7 +599,7 @@
                     }) => {
                         // Call createAdCards function to create ad cards on page load
                         const image = document.getElementById("ad-photo")
-                            console.log(ad)
+                        console.log(ad)
                         image.src = `data:${ad.img_type};base64,${btoa(String.fromCharCode.apply(null,ad.img_content.data))}`
                             // console.log('done')
                     })
