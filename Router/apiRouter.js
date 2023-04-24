@@ -17,6 +17,9 @@ import { delProductAPI } from "../controllers/deleteAd.js";
 import { buyProductApi } from "../controllers/buyProductApi.js";
 import {ProfileUpdateAPI} from "../controllers/ProfileUpdate.js";
 import {ChangeProfileAPI} from "../controllers/ChangeProfile.js";
+import {getAdminProductAPI} from "../controllers/AdminProduct.js";
+import {getAllUsersAPI} from "../controllers/getAllUsers.js";
+import {getAdminUserAPI} from "../controllers/getAdminUser.js";
 const router=express.Router();
 
 
@@ -33,10 +36,13 @@ router.post('/update_form/:id/update/:email',upload.single('photo'),updateFormAP
 router.post('/user/register',addUserAPI)
 router.post('/user/login',checkLoginAPI)
 router.post('/user',getUserData)
+router.get('/allusers',getAllUsersAPI)
 router.get('/user/:email',getUserCardsAPI)
 router.post('/user/adCreate',getAdFormAPI)
 router.get('/adImage/:id',getAdImageAPI)
 router.get('/search_result',getSearchResultAPI)
+router.get('/admin_product',getAdminProductAPI)
+router.get('/search_admin_user',getAdminUserAPI)
 router.get('/user/ad_update/:email/mail/:id',getUpdateAdAPI)
 router.post('/user/UpdateProfile',ProfileUpdateAPI)
 router.post('/user/changeProfile',ChangeProfileAPI)
