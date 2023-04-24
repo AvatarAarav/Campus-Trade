@@ -8,6 +8,7 @@ const UserSchema = new mongoose.Schema(
         password: String,
         college_name: String,
         ads:[String],
+        report:[String],
         year: String,
     }
 );

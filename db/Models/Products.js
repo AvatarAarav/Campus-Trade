@@ -8,8 +8,12 @@ const ProductSchema = new mongoose.Schema(
         description: String,
         email: String,
         age: String,
-        price: String,
+        price: Number,
         img_type: String,
+        chats:[{
+            from:String,message:String
+        }],
+        report:Number,
         img_content: { type: Buffer, contentType: String },
     }
 );

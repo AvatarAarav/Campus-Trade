@@ -1,5 +1,5 @@
 import Products from "../db/Models/Products.js";
-export const getSearchResultAPI=async (req,res)=>{
+export const getAdminProductAPI=async (req,res)=>{
     try {
         // console.log(req.query.search)
 
@@ -19,7 +19,7 @@ console.log(searchString.toString())
         const query = {
             $or: [
               { name: { $regex: searchString, $options: "i" } },
-            
+             
               { type: { $regex: searchString, $options: "i" } },
               { price: { $eq: parseInt(searchString) } },
               { age: { $regex: searchString, $options: "i" } },
