@@ -24,14 +24,19 @@ import { removeProductApi } from "../controllers/removeProduct.js";
 import { postAddChatAPI } from "../controllers/postAddChat.js";
 import { getProductChatsAPI } from "../controllers/getProductChats.js";
 import { getAllUsersEmailAPI } from "../controllers/getAllUsersEmail.js";
+import {getuserdetailAPI} from "../controllers/getuserdetail.js"
+import {getadadmindetailAPI} from "../controllers/getadadmindetail.js"
 
 const router = express.Router();
+
+
 
 
 router.get('/products', getAllProductsAPI)
 
 // Set up the multer middleware to handle file uploads
 const upload = multer({ dest: 'uploads/' });
+
 
 router.get('/ad/:id/email/:eid', getProductAPI)
 router.get('/ad/buy/:id/uid/:uid', buyProductApi)
@@ -55,4 +60,7 @@ router.post('/user/changeProfile', ChangeProfileAPI)
 router.post('/ad/id/:id/chat/:email/', postAddChatAPI)
 router.get('/ad/chat/:id', getProductChatsAPI)
 router.get('/user/allEmail/', getAllUsersEmailAPI)
+router.get('/user/adminlink/:id/admin/:aid',getuserdetailAPI)
+router.get('/admin_ads/:id/admin/:aid',getadadmindetailAPI)
+
 export default router

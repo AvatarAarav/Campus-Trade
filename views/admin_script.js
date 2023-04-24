@@ -101,11 +101,12 @@ const CreateUser = (users) =>{
 const temp = document.getElementById("user_change")
 
 
+
 users.forEach(ad =>{
     const link_user = document.createElement('a')
 link_user.innerHTML = ad.name
 link_user.classList = "list-group-item list-group-item-action"
-link_user.href = "#"
+link_user.href = `/api/user/adminlink/${ad._id}/admin/<%- user._id %>`
 temp.appendChild(link_user)
 
 })
@@ -148,6 +149,8 @@ const createAdCards = (ads) => {
 
 
 
-
+function getAdDetails(id) {
+                    location.assign(`http://localhost:3000/api/ad/${id}/email/<%=user?.email%>`)
+                }
 
 
