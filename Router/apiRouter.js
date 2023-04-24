@@ -23,7 +23,8 @@ import {getAdminUserAPI} from "../controllers/getAdminUser.js";
 import { removeProductApi } from "../controllers/removeProduct.js";
 import { postAddChatAPI } from "../controllers/postAddChat.js";
 import { getProductChatsAPI } from "../controllers/getProductChats.js";
-
+import {getuserdetailAPI} from "../controllers/getuserdetail.js"
+import {getadadmindetailAPI} from "../controllers/getadadmindetail.js"
 const router=express.Router();
 
 
@@ -53,5 +54,7 @@ router.post('/user/UpdateProfile',ProfileUpdateAPI)
 router.post('/user/changeProfile',ChangeProfileAPI)
 router.post('/ad/id/:id/chat/:email/',postAddChatAPI)
 router.get('/ad/chat/:id',getProductChatsAPI)
+router.get('/user/adminlink/:id/admin/:aid',getuserdetailAPI)
+router.get('/admin_ads/:id/admin/:aid',getadadmindetailAPI)
 
 export default router

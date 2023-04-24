@@ -394,7 +394,7 @@
 
 <body>
 
-    <%- include('./navbar.ejs',{user :undefined}); %>
+    <%- include('./navbar.ejs',{user :admin}); %>
 
 
         <div class="container-fluid extendednavB"></div>
@@ -537,7 +537,7 @@
 
 
         <!-- footer -->
-        <%- include('./footer.ejs',{user : user}); %>
+        <%- include('./footer.ejs',{user : admin}); %>
 
 
 
@@ -586,7 +586,7 @@
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
             <script>
                 let id = '<%-ad._id%>'
-                fetch('http://localhost:3000/api/adImage/' + id).then(response => {
+                fetch('http://localhost:3000/api/adObject/' + id).then(response => {
                         if (response.ok) {
                             return response.json();
                         }
@@ -597,7 +597,7 @@
                     }) => {
                         // Call createAdCards function to create ad cards on page load
                         const image = document.getElementById("ad-photo")
-                            // console.log(image)
+                            console.log(ad)
                         image.src = `data:${ad.img_type};base64,${btoa(String.fromCharCode.apply(null,ad.img_content.data))}`
                             // console.log('done')
                     })
