@@ -305,7 +305,6 @@
             .menubtn {
                 display: block;
             }
-           
             .extendednav {
                 height: 160px;
             }
@@ -349,7 +348,7 @@
     <%- include('./admin_navbar2.ejs',{user : user}); %>
 
 
-     
+
         <div class="container ancestor">
             <div class="users">
                 <h4 style="text-align: center; background-color:#333;border-top-left-radius: 8px;border-top-right-radius: 8px; color: white; margin: -15px -15px 10px -15px; padding: 10px;"><span><i class="fa-solid fa-magnifying-glass"></i></span> Customers</h4>
@@ -427,10 +426,10 @@
                     <p><span style="color:#142850; font-weight: bolder;"><i class="fa-solid fa-landmark"></i>&nbsp;&nbsp; </span> Sri City
                         </span>
                     </p>
-                    <form class="d-inline" style="width: 100%;" method="POST" action="/api/user/adCreate">
+                    <!-- <form class="d-inline" style="width: 100%;" method="POST" action="/api/user/adCreate">
 
                         <b><button class="btn postadd" type="submit"><span><i class="fa-solid fa-plus" style="color: white;"></i></span>Admin</button></b>
-                    </form>
+                    </form> -->
 
                 </div>
 
@@ -535,188 +534,166 @@
 
         <%- include('./footer.ejs',{user : user}); %>
 
+
+
+
+
             <script>
-                let ancmt = document.getElementById("ancmt");
-
-                ancmt.addEventListener("submit", (e) => {
-                    e.preventDefault();
-
-                    let sub = "Announcement from Campus Trade"
-
-                    let bod = document.getElementById("data")
-                    let f = `mailto:${'<%-ad.email%>'}?subject=${sub}&body=${bod.value}`
-                        // console.log(sub)
-                        // console.log(bod)
+                var searchForm = document.getElementById("admin_product");
+                var search_user = document.getElementById("user_search");
 
 
-                    // console.log('<%-ad.email%>')
-                    window.open(f, "_self")
+                search_user.addEventListener("submit", function(e) {
+
+                    e.preventDefault()
+
+
+                    const searchQuery = e.target[0].value;
+
+
+                    fetch(`http://localhost:3000/api/search_admin_user?search=${searchQuery}`).then(response => {
+                            if (response.ok) {
+                                return response.json(); //converting back to object
+                            }
+                            throw new Error('Network response was not ok.');
+                        })
+                        .then(data => {
+                            // Call createAdCards function to create ad cards on page load
+                            let adCardsContain = document.getElementById("user_change");
+                            empty(adCardsContain)
+
+                            // console.log("hi")
+                            CreateUser(data.data)
+                        })
+                        .catch(error => {
+                            console.error('There was a problem with the fetch operation:', error);
+                        });
+
+
 
                 });
-            </script>
+
+
+                searchForm.addEventListener("submit", function(e) {
+                    e.preventDefault()
+                    console.log(e)
+
+
+                    const searchQuery = e.target[0].value;
+                    // alert(searchQuery)
+
+
+                    fetch(`http://localhost:3000/api/admin_product?search=${searchQuery}`).then(response => {
+                            if (response.ok) {
+                                return response.json(); //converting back to object
+                            }
+                            throw new Error('Network response was not ok.');
+                        })
+                        .then(data => {
+                            // Call createAdCards function to create ad cards on page load
+                            let adCardsContain = document.getElementById("add-container-1");
+                            empty(adCardsContain)
+                            createAdCards(data.data)
+                        })
+                        .catch(error => {
+                            console.error('There was a problem with the fetch operation:', error);
+                        });
 
 
 
-<script>
-    
-var searchForm = document.getElementById("admin_product");
-var search_user =document.getElementById("user_search");
+                });
 
+                fetch('http://localhost:3000/api/products').then(response => {
 
-search_user.addEventListener("submit", function(e) {
-    
-    e.preventDefault()
-   
-
-    const searchQuery = e.target[0].value;
-
-
-    fetch(`http://localhost:3000/api/search_admin_user?search=${searchQuery}`).then(response => {
-        if (response.ok) {
-            return response.json(); //converting back to object
-        }
-        throw new Error('Network response was not ok.');
-    })
-    .then(data => {
-        // Call createAdCards function to create ad cards on page load
-        let adCardsContain = document.getElementById("user_change");
-        empty(adCardsContain)
-        
-        // console.log("hi")
-        CreateUser(data.data)
-    })
-    .catch(error => {
-        console.error('There was a problem with the fetch operation:', error);
-    });
+                        if (response.ok) {
+                            return response.json(); //converting back to object
+                        }
+                        throw new Error('Network response was not ok.');
+                    })
+                    .then(data => {
+                        // Call createAdCards function to create ad cards on page load
+                        createAdCards(data.data)
+                    })
+                    .catch(error => {
+                        console.error('There was a problem with the fetch operation:', error);
+                    });
 
 
 
-});
+                fetch('http://localhost:3000/api/allusers').then(response => {
+
+                        if (response.ok) {
+                            return response.json(); //converting back to object
+                        }
+                        throw new Error('Network response was not ok.');
+                    })
+                    .then(data => {
+                        // Call createAdCards function to create ad cards on page load
+                        CreateUser(data.data)
+                    })
+                    .catch(error => {
+                        console.error('There was a problem with the fetch operation:', error);
+                    });
 
 
-searchForm.addEventListener("submit", function(e) {
-    e.preventDefault()
-    console.log(e)
+                const CreateUser = (users) => {
 
-
-    const searchQuery = e.target[0].value;
-    // alert(searchQuery)
-
-
-    fetch(`http://localhost:3000/api/admin_product?search=${searchQuery}`).then(response => {
-        if (response.ok) {
-            return response.json(); //converting back to object
-        }
-        throw new Error('Network response was not ok.');
-    })
-    .then(data => {
-        // Call createAdCards function to create ad cards on page load
-        let adCardsContain = document.getElementById("add-container-1");
-        empty(adCardsContain)
-        createAdCards(data.data)
-    })
-    .catch(error => {
-        console.error('There was a problem with the fetch operation:', error);
-    });
+                    const temp = document.getElementById("user_change")
 
 
 
-});
+                    users.forEach(ad => {
+                        const link_user = document.createElement('a')
+                        link_user.innerHTML = ad.name
+                        link_user.classList = "list-group-item list-group-item-action"
+                        link_user.href = `/api/user/adminlink/${ad._id}/admin/<%- user._id %>`
+                        temp.appendChild(link_user)
 
-fetch('http://localhost:3000/api/products').then(response => {
-  
-        if (response.ok) {
-            return response.json(); //converting back to object
-        }
-        throw new Error('Network response was not ok.');
-    })
-    .then(data => {
-        // Call createAdCards function to create ad cards on page load
-        createAdCards(data.data)
-    })
-    .catch(error => {
-        console.error('There was a problem with the fetch operation:', error);
-    });
+                    })
+
+                }
 
 
+                function empty(element) {
+                    while (element.firstElementChild) {
+                        element.firstElementChild.remove();
+                    }
+                }
 
-    fetch('http://localhost:3000/api/allusers').then(response => {
-  
-    if (response.ok) {
-        return response.json(); //converting back to object
-    }
-    throw new Error('Network response was not ok.');
-})
-.then(data => {
-    // Call createAdCards function to create ad cards on page load
-    CreateUser(data.data)
-})
-.catch(error => {
-    console.error('There was a problem with the fetch operation:', error);
-});
-
-
-const CreateUser = (users) =>{
-
-const temp = document.getElementById("user_change")
-
-
-
-users.forEach(ad =>{
-    const link_user = document.createElement('a')
-link_user.innerHTML = ad.name
-link_user.classList = "list-group-item list-group-item-action"
-link_user.href = `/api/user/adminlink/${ad._id}/admin/<%- user._id %>`
-temp.appendChild(link_user)
-
-})
-
-}
-
-
-    function empty(element) {
-        while(element.firstElementChild) {
-           element.firstElementChild.remove();
-        }
-      }
-
-// Function to create ad cards dynamically
-const createAdCards = (ads) => {
-    //ads is an array of all ads
-    const adCardsContainer = document.getElementById("add-container-1");
-    ads.forEach(ad => {
-        const adBody = document.createElement("div");
-        adBody.classList.add("c-body");
-        adBody.style.cssText = 'background-color: white; width: 100%;';
-        adBody.innerHTML = `
+                // Function to create ad cards dynamically
+                const createAdCards = (ads) => {
+                    //ads is an array of all ads
+                    const adCardsContainer = document.getElementById("add-container-1");
+                    ads.forEach(ad => {
+                        const adBody = document.createElement("div");
+                        adBody.classList.add("c-body");
+                        adBody.style.cssText = 'background-color: white; width: 100%;';
+                        adBody.innerHTML = `
         <h3 class="card-title">${ad.name}</h3>
             <p class="card-text"> ${ad.price}</p>
             <button class="viewAd" onclick="getAdDetails('${ad._id}')">View Ad</button>
             
            
 `;
-        const adCard = document.createElement("div");
-        adCard.classList.add("card");
-        adCard.style.cssText = "display: inline-block; width:210px; margin: 20px 0 0 20px; border-bottom: 6px solid orangered;"
-        // console.log(`''`)
-        adCard.innerHTML = `<img class="<img class="card-img-top"
+                        const adCard = document.createElement("div");
+                        adCard.classList.add("card");
+                        adCard.style.cssText = "display: inline-block; width:210px; margin: 20px 0 0 20px; border-bottom: 6px solid orangered;"
+                            // console.log(`''`)
+                        adCard.innerHTML = `<img class="<img class="card-img-top"
             src="data:${ad.img_type};base64,${btoa(String.fromCharCode.apply(null,ad.img_content.data))}"
             alt="Card image" style="width: 208px;height: 230px;">`;
-        adCard.appendChild(adBody);
-        adCardsContainer.appendChild(adCard);
-    });
-};
+                        adCard.appendChild(adBody);
+                        adCardsContainer.appendChild(adCard);
+                    });
+                };
 
 
 
-function getAdDetails(id) {
+                function getAdDetails(id) {
                     location.assign(`http://localhost:3000/api/admin_ads/${id}/admin/<%- user._id %>`)
                 }
-
-
-
-</script>
-        <!-- <script type="text/javascript" src="http://localhost:3000/admin_script.js"></script> -->
+            </script>
+            <!-- <script type="text/javascript" src="http://localhost:3000/admin_script.js"></script> -->
             <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
