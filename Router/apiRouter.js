@@ -23,6 +23,7 @@ import {getAdminUserAPI} from "../controllers/getAdminUser.js";
 import { removeProductApi } from "../controllers/removeProduct.js";
 import { postAddChatAPI } from "../controllers/postAddChat.js";
 import { getProductChatsAPI } from "../controllers/getProductChats.js";
+import { reportProductApi } from "../controllers/reportProductApi.js";
 
 const router=express.Router();
 
@@ -34,6 +35,7 @@ const upload = multer({ dest: 'uploads/' });
 
 router.get('/ad/:id/email/:eid',getProductAPI)
 router.get('/ad/buy/:id/uid/:uid',buyProductApi)
+router.get('/ad/report/:id/uid/:uid',reportProductApi)
 router.get('/ad/remove/:id/uid/:uid',removeProductApi)
 router.get('/ad/delete/:id/mail/:eid',delProductAPI)
 router.post('/form',upload.single('photo'),submitForm)

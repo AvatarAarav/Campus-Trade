@@ -13,7 +13,7 @@ const ProductSchema = new mongoose.Schema(
         chats:[{
             from:String,message:String
         }],
-        report:Number,
+        report:{type:Number,default:0},
         img_content: { type: Buffer, contentType: String },
     }
 );

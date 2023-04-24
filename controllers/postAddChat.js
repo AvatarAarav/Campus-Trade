@@ -6,7 +6,7 @@ export const postAddChatAPI=async (req,res)=>{
         const product=await Products.findById(id)
         const userData=await Users.find({email:req.params.email})
         product.chats.push({from:req.params.email,message:req.body.message})
-        product.save();
+        await product.save();
         res.status(200).render('ad_details',{ad:product,user :userData[0]});
 
     } catch (error) {

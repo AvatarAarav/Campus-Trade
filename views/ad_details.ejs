@@ -483,12 +483,12 @@
                             <% } else{ %>
                                 <% if(user?.report?.find((id)=>id==ad._id)) { %>
                                     <button disabled type="button" class="btn"
-                                        style="width: 60%; background-color: orange; color: white;">
+                                        style="width: 60%; background-color: red; color: white;">
                                        Reported</button>
                                     <% } else{ %>
-                                        <a href="http://localhost:3000/api/ad/buy/<%=ad._id%>/uid/<%=user._id%>"><button
+                                        <a href="http://localhost:3000/api/ad/report/<%=ad._id%>/uid/<%=user._id%>"><button
                                                 type="button" class="btn"
-                                                style="width: 60%; background-color: orange; color: white;">Report</button></a>
+                                                style="width: 60%; background-color: red; color: white;">Report</button></a>
                                         <% } %>
                                             <% } %>
                     </div>
