@@ -420,19 +420,20 @@
 
                 <div class="profileinfo">
                     <p style="font-size: 25px;padding: 0px; color:#27496D;">
-                        Admin
+                        <%=user.name %>
                     </p>
                     <p><span style="color:#142850; font-weight: bolder;"><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp; </span>India</p>
                     <p><span style="color:#142850; font-weight: bolder;"><i class="fa-solid fa-user"></i>&nbsp;&nbsp; </span> <span style="color: grey;">99999999+</span></p>
 
-                    <p><span style="color:#142850; font-weight: bolder;"><i class="fa-solid fa-envelope"></i>&nbsp;&nbsp; </span> admin@Mail.com
+                    <p><span style="color:#142850; font-weight: bolder;"><i class="fa-solid fa-envelope"></i>&nbsp;&nbsp; </span> <%=user.email %>
                         </span>
                     </p>
                     <p><span style="color:#142850; font-weight: bolder;"><i class="fa-solid fa-landmark"></i>&nbsp;&nbsp; </span> Sri City
                         </span>
                     </p>
                     <form class="d-inline" style="width: 100%;" method="POST" action="/api/user/adCreate">
-
+ 
+                        
                         <b><button class="btn postadd" type="submit"><span><i class="fa-solid fa-plus" style="color: white;"></i></span>Admin</button></b>
                     </form>
 
