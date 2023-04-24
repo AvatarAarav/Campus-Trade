@@ -358,9 +358,9 @@
         <div class="container ancestor">
             <div class="users">
                 <h4 style="text-align: center; background-color:#333;border-top-left-radius: 8px;border-top-right-radius: 8px; color: white; margin: -15px -15px 10px -15px; padding: 10px;"><span><i class="fa-solid fa-magnifying-glass"></i></span> Customers</h4>
-                <form class="form d-flex my-2 my-lg-0 searchbox" id = "user_search">
+                <form class="form d-flex my-2 my-lg-0 searchbox" id="user_search">
                     <input class="inpsearch" type="search" placeholder="User Name" aria-label="Search">
-                    <button  class="searchbtn" type="submit" ><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <button class="searchbtn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
                 <hr>
 
@@ -373,8 +373,8 @@
                 </div> -->
 
                 <div style="height: 450px;overflow-y: scroll;">
-                    <div class="list-group" id = "user_change">
-                       
+                    <div class="list-group" id="user_change">
+
                     </div>
                 </div>
 
@@ -425,15 +425,16 @@
                     <p><span style="color:#142850; font-weight: bolder;"><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp; </span>India</p>
                     <p><span style="color:#142850; font-weight: bolder;"><i class="fa-solid fa-user"></i>&nbsp;&nbsp; </span> <span style="color: grey;">99999999+</span></p>
 
-                    <p><span style="color:#142850; font-weight: bolder;"><i class="fa-solid fa-envelope"></i>&nbsp;&nbsp; </span> <%=user.email %>
-                        </span>
+                    <p><span style="color:#142850; font-weight: bolder;"><i class="fa-solid fa-envelope"></i>&nbsp;&nbsp; </span>
+                        <%=user.email %>
+                            </span>
                     </p>
                     <p><span style="color:#142850; font-weight: bolder;"><i class="fa-solid fa-landmark"></i>&nbsp;&nbsp; </span> Sri City
                         </span>
                     </p>
                     <form class="d-inline" style="width: 100%;" method="POST" action="/api/user/adCreate">
- 
-                        
+
+
                         <b><button class="btn postadd" type="submit"><span><i class="fa-solid fa-plus" style="color: white;"></i></span>Admin</button></b>
                     </form>
 
@@ -451,7 +452,7 @@
             <div class="addbox">
                 <div style="width: 100%;display: flex; justify-content: space-between;margin-bottom: 0;">
                     <h2 style="width: 100%;text-align: center; color: #142850;">All Products</h2>
-                    <form class="form d-flex my-0 my-lg-0 searchbox" id = "admin_product">
+                    <form class="form d-flex my-0 my-lg-0 searchbox" id="admin_product">
                         <input class="inpsearch" style="height: 35px; width: 270px;background-color: skyblue;" type="search" placeholder="Product Name" aria-label="Search">
                         <button class="searchbtn" style="background-color:red;" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                     </form>
@@ -460,12 +461,12 @@
                 <hr style="width: 100%; height: 4px; background-color: grey;margin: 0px;">
 
 
-                <div class="add-container" id  ="add-container-1">
-                   
-                  
-                  
+                <div class="add-container" id="add-container-1">
 
-                    
+
+
+
+
 
                 </div>
             </div>
@@ -515,7 +516,7 @@
             <div class="container" style="width: 50%;background-color: whitesmoke;border-radius: 10px;border: 2px solid var(--blue1); padding: 10px;">
                 <h3 style="text-align: center;padding: 10px;margin: -10px;background-color: var(--blue1);color: whitesmoke;border-top-left-radius: 8px;border-top-right-radius: 8px;">Announcements</h3>
                 <br>
-                <form action="">
+                <form action="" id="ancmt">
                     <h5 style="color: var(--blue1);">Send Announcement as mail </h5>
                     <textarea id="data" rows="5" name="data" style="border: 1px solid black;border-radius: 6px;padding: 6px;width: 100%; background-color: white;" required placeholder="type here... "></textarea><br><br>
                     <div style="display: flex; justify-content: center;"> <input type="submit" style="width: 200px;align-self: center;background-color: orange; border-radius: 3px;color:white;" value="Post">
@@ -540,8 +541,28 @@
 
         <%- include('./footer.ejs',{user : user}); %>
 
+            <script>
+                let ancmt = document.getElementById("ancmt");
 
-        <script type="text/javascript" src="http://localhost:3000/admin_script.js"></script>
+                ancmt.addEventListener("submit", (e) => {
+                    e.preventDefault();
+
+                    let sub = "Announcement from Campus Trade"
+
+                    let bod = document.getElementById("data")
+                    let f = `mailto:${'<%-ad.email%>'}?subject=${sub}&body=${bod.value}`
+                        // console.log(sub)
+                        // console.log(bod)
+
+
+                    // console.log('<%-ad.email%>')
+                    window.open(f, "_self")
+
+                });
+            </script>
+
+
+            <script type="text/javascript" src="http://localhost:3000/admin_script.js"></script>
             <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
