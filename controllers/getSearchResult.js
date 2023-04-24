@@ -21,7 +21,7 @@ console.log(searchString.toString())
               { name: { $regex: searchString, $options: "i" } },
             
               { type: { $regex: searchString, $options: "i" } },
-              { price: { $eq: parseInt(searchString) } },
+            
               { age: { $regex: searchString, $options: "i" } },
             ],
           };
