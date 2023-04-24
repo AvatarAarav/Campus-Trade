@@ -391,8 +391,8 @@
             </div>
 
             <div class="short" style="padding: 10px;">
-                <p>Earnings</p>
-                <p>Spent</p>
+                <p>Earnings</p> 
+                <p >Buying Money</p>
                 <p>Profit</p>
                 <p>Adds posted </p>
                 <p>Products Buying:- <%= user.ads.length %></p>
@@ -450,8 +450,11 @@
                 })
                     .then(data => {
                         // Call createAdCards function to create ad cards on page load
+                        const buyingMoney=data.sellAds.reduce((a,b)=>a+b.price,0);
+                        const sellingMoney=data.buyAds.reduce((a,b)=>a+b.price,0);
+                        const sellingAdsLen=data.buyAds.length
+                        
                         createAdCards1(data.sellAds)
-                        console.log(data)
                         createAdCards2(data.buyAds)
                     })
                     .catch(error => {

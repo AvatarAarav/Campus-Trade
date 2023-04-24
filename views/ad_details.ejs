@@ -455,21 +455,40 @@
                             <%=ad.description%>
                         </div>
                         <% if(user?.email==ad.email) { %>
-                            <a href="http://localhost:3000/api/ad/buy/<%=ad._id%>/uid/<%=user._id%>"><button disabled
-                                    type="button" class="btn"
-                                    style="width: 60%; background-color: orange; color: white;">Your Own
-                                    Product</button></a>
+                            <button disabled type="button" class="btn"
+                                style="width: 60%; background-color: orange; color: white;">
+                                Your Own
+                                    Product
+                            </button>
                             <% } else{ %>
                                 <% if(user?.ads?.find((id)=>id==ad._id)) { %>
-                                    <a href="http://localhost:3000/api/ad/buy/<%=ad._id%>/uid/<%=user._id%>"><button
-                                            disabled type="button" class="btn"
-                                            style="width: 60%; background-color: orange; color: white;">Added to Your
-                                            List</button></a>
+                                    <button disabled type="button" class="btn"
+                                        style="width: 60%; background-color: orange; color: white;">
+                                        Added
+                                            to Your
+                                            List</button>
                                     <% } else{ %>
                                         <a href="http://localhost:3000/api/ad/buy/<%=ad._id%>/uid/<%=user._id%>"><button
                                                 type="button" class="btn"
                                                 style="width: 60%; background-color: orange; color: white;">Buy
                                                 Now</button></a>
+                                        <% } %>
+                                            <% } %>
+
+                        <% if(user?.email==ad.email) { %>
+                            <button type="button" title="You can't report your own ad" class="btn addMore"
+                                style="width: 60%; background-color: red; color: white;">
+                                Report
+                            </button>
+                            <% } else{ %>
+                                <% if(user?.report?.find((id)=>id==ad._id)) { %>
+                                    <button disabled type="button" class="btn"
+                                        style="width: 60%; background-color: orange; color: white;">
+                                       Reported</button>
+                                    <% } else{ %>
+                                        <a href="http://localhost:3000/api/ad/buy/<%=ad._id%>/uid/<%=user._id%>"><button
+                                                type="button" class="btn"
+                                                style="width: 60%; background-color: orange; color: white;">Report</button></a>
                                         <% } %>
                                             <% } %>
                     </div>
@@ -517,10 +536,7 @@
                     style="padding: 0px; width: 500px; max-height: 400px;min-height:400px;background-color: white; border-radius: 10px;border:1px solid var(--blue1);box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                     <h4
                         style="padding:10px;text-align: center;background-color: #142850;color: whitesmoke;border-top-left-radius: 10px; border-top-right-radius: 10px;">
-                        Group Chat <span><button
-                                style="border: none; background-color: var(--blue1);color: white;"><span><a href=""><i
-                                            class="fa-solid fa-rotate-right" data-bs-toggle="tooltip"
-                                            data-bs-placement="top" title="Refresh chats !"></i></a></span></button>
+                        Group Chat <span>
                         </span>
                     </h4>
                     <div id="chat-container"
@@ -608,7 +624,7 @@
                     .catch(error => {
                         console.error('There was a problem with the fetch operation:', error);
                     });
-                setInterval(updateChatWindow,5000)
+                setInterval(updateChatWindow, 5000)
                 function updateChatWindow() {
                     fetch('http://localhost:3000/api/ad/chat/' + id)
                         .then(
@@ -620,15 +636,15 @@
                             }
                         )
                         .then(
-                            chats=>{createChats(chats)}
+                            chats => { createChats(chats) }
                         )
                         .catch(error => {
-                        console.error('There was a problem with the fetch operation:', error);
-                    });
+                            console.error('There was a problem with the fetch operation:', error);
+                        });
                 }
                 function createChats(chats) {
                     const chatContainer = document.getElementById('chat-container')
-                    chatContainer.innerHTML=''
+                    chatContainer.innerHTML = ''
                     chats.forEach(chat => {
                         const ChatCard = document.createElement("div");
                         if (chat.from == '<%-user.email%>') {
