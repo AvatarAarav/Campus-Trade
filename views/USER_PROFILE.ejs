@@ -430,9 +430,9 @@
                     })
                     .then(data => {
                         // Call createAdCards function to create ad cards on page load
-                        const buyingMoney = data.sellAds.reduce((a, b) => a + b.price, 0);
-                        const sellingMoney = data.buyAds.reduce((a, b) => a + b.price, 0);
-                        const sellingAdsLen = data.buyAds.length
+                        const buyingMoney = data.buyAds.reduce((a, b) => a + b.price, 0);
+                        const sellingMoney = data.sellAds.reduce((a, b) => a + b.price, 0);
+                        const sellingAdsLen = data.sellAds.length
 
                         const e = document.getElementById("e")
                         const b = document.getElementById("b")
