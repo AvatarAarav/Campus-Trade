@@ -356,11 +356,11 @@
                         <%= user.college_name %>
                             </span>
                     </p>
-                    <form class="d-inline" style="width: 100%;" method="POST" action="/api/user/adCreate">
-                        <input type="hidden" name="email" value="<%=user.email%>" />
-                        <b><button class="btn postadd del" type="submit"><span><i class="fa-solid fa-plus"
-                                        style="color: white;"></i></span> Delete User </button></b>
-                    </form>
+                   
+                     
+                      <div class="container"> <a style="float: right;" href="/api/admin/<%= user.email %>/deleteuser/<%= admin._id %>"> <b><button class="btn postadd del" type="submit"><span><i class="fa-solid fa-plus"
+                                        style="color: white;"></i></span> Delete User </button></b></a></div>
+                   
 
                 </div>
             </div>
@@ -389,7 +389,7 @@
                         <div class="c-body" style="background-color: white; width: 100%;">
                             <h3 class="card-title">Laptop</h3>
                             <p class="card-text"> $ 30,000</p>
-                            <button class="delete-btn">Delete Product</button>
+                            
                             <!-- <button class="btn btn-warning">Update</button> -->
                         </div>
                     </div>
