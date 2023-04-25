@@ -9,10 +9,10 @@ export const deleteAdminuserAPI=async (req,res)=>{
        
         const userData = await Users.findOne({email : email})
         const admindata = await Admins.findOne({_id : aid})
+       const ads = await Products.find({email : email})
        
-       const ads = userData.ads
        ads.forEach(async ad =>{
-await Products.deleteOne({id : ad._id})
+await Products.deleteOne({_id : ad._id})
        })
         
        await Users.deleteOne({_id : userData._id})
