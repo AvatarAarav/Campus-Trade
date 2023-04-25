@@ -16,13 +16,13 @@
                 <h1 style="color: white;font-family: Georgia, 'Times New Roman', Times, serif;">ADMIN PORTAL</h1>
                 <div style="margin-left: 150px;">
                     <% if(user) { %>
-                        <h6>
+                        <h6 class="h4 d-flex align-self-center">
                             <%= user.name %>
                         </h6>
                         <% } %>
-                            <a href="#" style="color: white;"><i class=" fa-solid fa-arrow-left " data-bs-toggle="tooltip" data-bs-placement="top" title="Exit !" onclick="history.back()" style="font-size: xx-large;margin-left: 20px;"></i></a>
                 </div>
-
+                <a href="/" class="btn" style="color:white;">Log Out</a>
+                <a href="#" style="color: white;"><i class=" fa-solid fa-arrow-left " data-bs-toggle="tooltip" data-bs-placement="top" title="Exit !" onclick="history.back()" style="font-size: xx-large;margin-left: 20px;"></i></a>
             </div>
 
         </div>

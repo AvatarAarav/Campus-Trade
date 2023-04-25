@@ -38,9 +38,6 @@ app.get('/register', (req, res) => {
     res.render('register', { user: undefined })
 })
 
-app.get('/adminPortal', (req, res) => {
-    res.render('adminPortal', { user: undefined })
-})
 
 
 const PORT = 3000

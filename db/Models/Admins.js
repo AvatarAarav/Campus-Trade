@@ -6,6 +6,8 @@ const AdminSchema = new mongoose.Schema(
         name: String,
         email: String,
         password: String,
+        soldOut:{type:Number,default:0},
+        reportedAds:{type:Number,default:0}
     }
 );
 
