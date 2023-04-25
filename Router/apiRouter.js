@@ -25,8 +25,8 @@ import { postAddChatAPI } from "../controllers/postAddChat.js";
 import { getProductChatsAPI } from "../controllers/getProductChats.js";
 import { reportProductApi } from "../controllers/reportProductApi.js";
 import { getAllUsersEmailAPI } from "../controllers/getAllUsersEmail.js";
-import {getuserdetailAPI} from "../controllers/getuserdetail.js"
-import {getadadmindetailAPI} from "../controllers/getadadmindetail.js"
+import { getuserdetailAPI } from "../controllers/getuserdetail.js"
+import { getadadmindetailAPI } from "../controllers/getadadmindetail.js"
 
 const router = express.Router();
 
@@ -41,13 +41,14 @@ const upload = multer({ dest: 'uploads/' });
 
 router.get('/ad/:id/email/:eid', getProductAPI)
 router.get('/ad/buy/:id/uid/:uid', buyProductApi)
-router.get('/ad/report/:id/uid/:uid',reportProductApi)
+router.get('/ad/report/:id/uid/:uid', reportProductApi)
 router.get('/ad/remove/:id/uid/:uid', removeProductApi)
 router.get('/ad/delete/:id/mail/:eid', delProductAPI)
 router.post('/form', upload.single('photo'), submitForm)
 router.post('/update_form/:id/update/:email', upload.single('photo'), updateFormAPI)
 router.post('/user/register', addUserAPI)
 router.post('/user/login', checkLoginAPI)
+router.get('/user/allEmail', getAllUsersEmailAPI)
 router.post('/user', getUserData)
 router.get('/allusers', getAllUsersAPI)
 router.get('/user/:email', getUserCardsAPI)
@@ -61,8 +62,7 @@ router.post('/user/UpdateProfile', ProfileUpdateAPI)
 router.post('/user/changeProfile', ChangeProfileAPI)
 router.post('/ad/id/:id/chat/:email/', postAddChatAPI)
 router.get('/ad/chat/:id', getProductChatsAPI)
-router.get('/user/allEmail/', getAllUsersEmailAPI)
-router.get('/user/adminlink/:id/admin/:aid',getuserdetailAPI)
-router.get('/admin_ads/:id/admin/:aid',getadadmindetailAPI)
+router.get('/user/adminlink/:id/admin/:aid', getuserdetailAPI)
+router.get('/admin_ads/:id/admin/:aid', getadadmindetailAPI)
 
 export default router

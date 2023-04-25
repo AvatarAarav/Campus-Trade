@@ -426,6 +426,7 @@
                     <p><span style="color:#142850; font-weight: bolder;"><i class="fa-solid fa-landmark"></i>&nbsp;&nbsp; </span> Sri City
                         </span>
                     </p>
+                    <br>
                     <!-- <form class="d-inline" style="width: 100%;" method="POST" action="/api/user/adCreate">
 
                         <b><button class="btn postadd" type="submit"><span><i class="fa-solid fa-plus" style="color: white;"></i></span>Admin</button></b>
@@ -509,11 +510,10 @@
             <div class="container" style="width: 50%;background-color: whitesmoke;border-radius: 10px;border: 2px solid var(--blue1); padding: 10px;">
                 <h3 style="text-align: center;padding: 10px;margin: -10px;background-color: var(--blue1);color: whitesmoke;border-top-left-radius: 8px;border-top-right-radius: 8px;">Announcements</h3>
                 <br>
-                <form action="" id="ancmt">
+                <form id="ancmt" method="post">
                     <h5 style="color: var(--blue1);">Send Announcement as mail </h5>
                     <textarea id="data" rows="5" name="data" style="border: 1px solid black;border-radius: 6px;padding: 6px;width: 100%; background-color: white;" required placeholder="type here... "></textarea><br><br>
-                    <div style="display: flex; justify-content: center;"> <input type="submit" style="width: 200px;align-self: center;background-color: orange; border-radius: 3px;color:white;" value="Post">
-                    </div>
+                    <input type="submit" style="width: 200px;align-self: center;background-color: orange; border-radius: 3px;color:white;" value="Post">
                 </form>
             </div>
 
@@ -535,6 +535,35 @@
         <%- include('./footer.ejs',{user : user}); %>
 
 
+
+
+            <script>
+                let ancmt = document.getElementById("ancmt");
+
+                ancmt.addEventListener("submit", (e) => {
+                    e.preventDefault();
+
+                    let sub = 'Announcement from Campus Trade'
+
+                    let body = document.getElementById("data")
+                    fetch('http://localhost:3000/api/user/allEmail').then(response => {
+                            if (response.ok) {
+                                return response.json();
+                            }
+                            throw new Error('Network response was not ok.');
+                        })
+                        .then((data) => {
+                            console.log(data.data)
+                            let f = `mailto:${data.data}?subject=${sub}&body=${body.value}`
+                            window.open(f, "_self")
+                        })
+                        .catch(error => {
+                            console.error('There was a problem with the fetch operation:', error);
+                        });
+
+
+                });
+            </script>
 
 
 
