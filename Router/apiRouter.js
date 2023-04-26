@@ -27,8 +27,8 @@ import { reportProductApi } from "../controllers/reportProductApi.js";
 import { getAllUsersEmailAPI } from "../controllers/getAllUsersEmail.js";
 import { getuserdetailAPI } from "../controllers/getuserdetail.js"
 import { getadadmindetailAPI } from "../controllers/getadadmindetail.js"
-import {getuserdetailAPI} from "../controllers/getuserdetail.js"
-import {getadadmindetailAPI} from "../controllers/getadadmindetail.js"
+
+
 import {deleteAdminadAPI} from "../controllers/deleteAdminad.js"
 import { deleteAdminuserAPI } from "../controllers/deleteAdminuser.js";
 const router = express.Router();
@@ -68,8 +68,7 @@ router.get('/admin_ads/:id/admin/:aid', getadadmindetailAPI)
 
 
 router.get('/user/allEmail/', getAllUsersEmailAPI)
-router.get('/user/adminlink/:id/admin/:aid',getuserdetailAPI)
-router.get('/admin_ads/:id/admin/:aid',getadadmindetailAPI)
+
 router.get('/admin/:id/delete/:aid',deleteAdminadAPI)
 router.get('/admin/:email/deleteuser/:aid',deleteAdminuserAPI)
 
