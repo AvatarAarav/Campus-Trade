@@ -14,11 +14,11 @@
         <div class="collapse navbox navbar-collapse boxxx" id="navbarSupportedContent">
             <div style="display:flex;justify-content: space-between;">
                 <h1 style="color: white;font-family: Georgia, 'Times New Roman', Times, serif;">ADMIN PORTAL</h1>
-                <div style="margin-left: 150px;">
+                <div style="margin-left: 150px;margin-right: -250px;">
                     <% if(user) { %>
-                        <h6>
+                        <span style="color: white;">
                             <%= user.name %>
-                        </h6>
+                        </span>
                         <% } %>
                             <a href="#" style="color: white;"><i class=" fa-solid fa-arrow-left " data-bs-toggle="tooltip" data-bs-placement="top" title="Exit !" onclick="history.back()" style="font-size: xx-large;margin-left: 20px;"></i></a>
                 </div>
