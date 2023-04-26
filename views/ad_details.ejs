@@ -441,13 +441,13 @@
                         <br>
                         <br>
                         <% if(user?.email==ad.email) { %>
-                            <button disabled type="button" class="btn" style="width: 60%; background-color: orange; color: white;">
+                            <button disabled type="button" class="btn" style="width: 60%; background-color: orange;margin-bottom: 20px; color: white;">
                                 Your Own
                                     Product
                             </button>
                             <% } else{ %>
                                 <% if(user?.ads?.find((id)=>id==ad._id)) { %>
-                                    <button disabled type="button" class="btn" style="width: 60%; background-color: orange; color: white;">
+                                    <button disabled type="button" class="btn" style="width: 60%; background-color: orange;margin-bottom: 20px; color: white;">
                                         Added
                                             to Your
                                             List</button>
@@ -460,7 +460,7 @@
                                             <% } %>
 
                                                 <% if(user?.email==ad.email) { %>
-                                                    <button type="button" title="You can't report your own ad" class="btn addMore" style="width: 60%; background-color: red; color: white;">
+                                                    <button type="button" title="You can't report your own ad" class="btn addMore" style="width: 60%;margin-bottom: 20px; background-color: red; color: white;">
                                 Report
                             </button>
                                                     <% } else{ %>

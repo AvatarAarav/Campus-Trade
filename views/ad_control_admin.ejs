@@ -120,6 +120,10 @@
             /* background-color: lightgreen; */
             z-index: 1;
         }
+
+        .admadnav {
+            margin-left: 200px;
+        }
         
         .parentNavbox {
             margin-top: -30px;
@@ -425,6 +429,11 @@
                             <%=ad.price%> rupees
                         </h2>
 
+                        <br>
+                        <h4 id="ad-age" style="display: inline; color: #142850;">
+                            <%=ad.age%> old
+                        </h4>
+
                         <!-- <h4>Seller : We need to update database </h4> -->
 
                         <hr>
@@ -434,9 +443,9 @@
                         </div>
 
 
-                       <a href="/api/admin/<%= ad._id%>/delete/<%=admin._id%>"><button type="button" class="btn" style="width: 60%; background-color: red; color: white;">Delete Product</button></a> 
+                       <a href="/api/admin/<%= ad._id%>/delete/<%=admin._id%>"><button type="button" class="btn" style="width: 60%; background-color: red; margin-bottom: 20px;margin-top: 20px;color: white;">Delete Product</button></a> 
                         <br>
-                        <button class="btn btn-warning">Reports Count : <%=ad.report%></button>
+                        <button class="btn btn-warning" style="margin-bottom: 20px;">Reports Count : <%=ad.report%></button>
 
                     </div>
 
