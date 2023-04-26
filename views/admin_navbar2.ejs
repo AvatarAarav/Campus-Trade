@@ -14,11 +14,15 @@
         <div class="collapse navbox navbar-collapse boxxx" id="navbarSupportedContent">
             <div style="display:flex;justify-content: space-between;">
                 <h1 style="color: white;font-family: Georgia, 'Times New Roman', Times, serif;">ADMIN PORTAL</h1>
-                <div style="margin-left: 150px;">
+                <div style="margin-left: 150px;margin-right: -250px;">
                     <% if(user) { %>
+
+                        <span style="color: white;">
+
                         <h6 class="h4 d-flex align-self-center">
+
                             <%= user.name %>
-                        </h6>
+                        </span>
                         <% } %>
                 </div>
                 <a href="/" class="btn" style="color:white;">Log Out</a>

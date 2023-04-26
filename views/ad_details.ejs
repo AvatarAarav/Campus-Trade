@@ -12,8 +12,8 @@
 
     <style>
         /* Navbar styles */
-
-        :root {
+        
+         :root {
             --blue1: #142850;
             --blue2: #27496D;
             --blue3: #0C7B93;
@@ -23,9 +23,8 @@
             --redd: #FD8A8A;
             --newRed: #ED2647;
         }
-
         /* Navbar styles */
-
+        
         body {
             background-color: whitesmoke;
             display: flex;
@@ -35,39 +34,38 @@
             align-items: center;
             padding: 0;
         }
-
         /* New Navbar styles */
-
+        
         .nav-item a {
             color: white;
         }
-
+        
         .nav-item a:hover {
             color: #333;
         }
-
+        
         .logo {
             font-size: 40px;
             color: var(--blue1);
             padding: 0px;
             margin: 0px 5px 0px -20px;
         }
-
+        
         .heading {
             padding: 0px;
             margin: 0px 10px -15px 5px;
             color: white;
             /* background-color: red; */
         }
-
+        
         h1 {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
+        
         .searchbar {
             background-color: var(--blue1);
         }
-
+        
         .inpsearch {
             padding-left: 20px;
             border: none;
@@ -76,11 +74,11 @@
             border-top-right-radius: 0;
             border-bottom-right-radius: 0;
         }
-
+        
         .inpsearch:focus {
             outline: none;
         }
-
+        
         .searchbtn {
             width: 35px;
             height: 35px;
@@ -93,24 +91,23 @@
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
         }
-
+        
         .searchbtn:hover {
             background-color: orange;
             cursor: progress;
         }
-
+        
         .menubtn {
             display: none;
             background-color: var(--blue1);
             border: none;
         }
-
+        
         .navbar-toggler-icon {
             color: white;
         }
-
         /* New Styles for navbar */
-
+        
         .navvbar {
             height: 80px;
             padding: 30px;
@@ -118,40 +115,40 @@
             background-color: var(--newRed);
             position: relative;
         }
-
+        
         .boxxx {
             /* background-color: lightgreen; */
             z-index: 1;
         }
-
+        
         .parentNavbox {
             margin-top: -30px;
         }
-
+        
         .searchbox {
             /* background-color: lightpink; */
             width: 70px;
         }
-
+        
         .navbox {
             display: flex;
             justify-content: space-between;
         }
-
+        
         .extendednavB {
             height: 220px;
             background-color: var(--newRed);
             border-bottom-right-radius: 1000px;
             border-bottom-left-radius: 300px;
         }
-
+        
         .extendednav {
             height: 100px;
             background-color: whitesmoke;
             border-bottom-right-radius: 1000px;
             z-index: 0;
         }
-
+        
         .extendednavP {
             height: 620px;
             background-color: lightblue;
@@ -160,13 +157,13 @@
             border-bottom-left-radius: 200px;
             border-bottom-right-radius: 1000px;
         }
-
+        
         .extendednavB2 {
             height: 220px;
             background-color: var(--redd);
             border-top-left-radius: 1000px;
         }
-
+        
         .bigbox {
             width: 100%;
             display: flex;
@@ -178,7 +175,7 @@
             top: 20%;
             z-index: 1;
         }
-
+        
         .rowbox {
             width: 70%;
             display: flex;
@@ -190,7 +187,7 @@
             border-radius: 40px;
             /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
         }
-
+        
         .row1 {
             display: flex;
             justify-content: space-evenly;
@@ -201,16 +198,16 @@
             border-top-left-radius: 0;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
-
+        
         .imgbox {
             width: 50%;
         }
-
+        
         .flowcontrol {
             width: 40%;
             background-color: white;
         }
-
+        
         .chat {
             width: 35%;
             display: flex;
@@ -223,122 +220,116 @@
             /* background: rgba(47, 6, 6, 0.3); */
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
-
+        
         .chatinput {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-evenly;
         }
-
+        
         form {
             width: 70%;
         }
-
+        
         hr {
             height: 1px;
             background-color: grey;
         }
-
         /* group chat */
-
+        
         .msgbox {
             max-width: 80%;
             padding: 8px;
             margin-top: 10px;
             border-radius: 10px;
         }
-
+        
         .msgbox p {
             padding: 0px;
             margin: 0px;
         }
-
+        
         .msgform {
             width: 100%;
             margin: 5px;
         }
-
+        
         .msgform input {
             width: 85%;
         }
-
+        
         .msgform button {
             width: 13%;
             background-color: var(--blue1);
             color: white;
         }
-
+        
         .msgform button:hover {
             background-color: greenyellow;
             color: black;
         }
-
         /* / group chat */
         /* Footer styles */
-
+        
         footer {
             width: 100%;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #384745;
             color: white;
         }
-
+        
         .fbox {
             display: flex;
             justify-content: space-around;
             align-items: center;
         }
-
+        
         footer li {
             text-decoration: none;
             list-style-type: none;
             margin: 10px 0 10px 0;
         }
-
+        
         footer a {
             color: white;
             text-decoration: none;
             font-style: none;
         }
-
+        
         footer a:hover {
             color: greenyellow;
         }
-
+        
         footer i {
             color: white;
         }
-
+        
         footer hr {
             display: none;
         }
-
+        
         @media (max-width: 576px) {
             footer hr {
                 display: block;
             }
-
             .fbox {
                 flex-direction: column;
             }
-
             .address {
                 flex-direction: column;
                 align-items: center;
             }
         }
-
+        
         @media (max-width: 512px) {
             body {
                 flex-direction: column;
                 padding: 0;
             }
-
             .navvbar {
                 height: 60px;
             }
-
             .boxxx {
                 margin-top: 10px;
                 flex-direction: column;
@@ -350,7 +341,6 @@
                 z-index: 2;
                 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             }
-
             .menuu {
                 background-color: var(--blue4);
                 margin-top: -15px;
@@ -358,53 +348,42 @@
                 padding: 20px;
                 border-bottom-left-radius: 30px;
             }
-
             .searchbtn {
                 background-color: red;
             }
-
             .extendednavB {
                 height: 100px;
             }
-
             .extendednav {
                 height: 60px;
             }
-
             .extendednavP {
                 height: 300px;
             }
-
             .extendednavB2 {
                 height: 120px;
             }
-
             .rowbox,
             .chat {
                 width: 100%;
             }
-
             .rowbox {
                 margin-top: 0;
             }
-
             .bigbox {
                 top: 15%;
                 width: 80%;
                 margin-top: 0;
                 border-radius: 10px;
             }
-
             .menubtn {
                 display: block;
             }
-
             .row1 {
                 flex-direction: column;
                 padding: 10px;
                 border-radius: 10px;
             }
-
             .imgbox,
             .flowcontrol {
                 width: 100%;
@@ -447,6 +426,11 @@
                             <%=ad.price%> rupees
                         </h2>
 
+                        <br>
+                        <h4 id="ad-age" style="display: inline; color: #142850;">
+                            <%=ad.age%> old
+                        </h4>
+
                         <!-- <h4>Seller : We need to update database </h4> -->
 
                         <hr>
@@ -454,43 +438,41 @@
                         <div id="ad-description">
                             <%=ad.description%>
                         </div>
+                        <br>
+                        <br>
                         <% if(user?.email==ad.email) { %>
-                            <button disabled type="button" class="btn"
-                                style="width: 60%; background-color: orange; color: white;">
+                            <button disabled type="button" class="btn" style="width: 60%; background-color: orange; color: white;">
                                 Your Own
                                     Product
                             </button>
                             <% } else{ %>
                                 <% if(user?.ads?.find((id)=>id==ad._id)) { %>
-                                    <button disabled type="button" class="btn"
-                                        style="width: 60%; background-color: orange; color: white;">
+                                    <button disabled type="button" class="btn" style="width: 60%; background-color: orange; color: white;">
                                         Added
                                             to Your
                                             List</button>
                                     <% } else{ %>
                                         <a href="http://localhost:3000/api/ad/buy/<%=ad._id%>/uid/<%=user._id%>"><button
                                                 type="button" class="btn"
-                                                style="width: 60%; background-color: orange; color: white;">Buy
+                                                style="width: 60%; background-color: orange; margin-bottom: 20px;color: white;">Buy
                                                 Now</button></a>
                                         <% } %>
                                             <% } %>
 
-                        <% if(user?.email==ad.email) { %>
-                            <button type="button" title="You can't report your own ad" class="btn addMore"
-                                style="width: 60%; background-color: red; color: white;">
+                                                <% if(user?.email==ad.email) { %>
+                                                    <button type="button" title="You can't report your own ad" class="btn addMore" style="width: 60%; background-color: red; color: white;">
                                 Report
                             </button>
-                            <% } else{ %>
-                                <% if(user?.report?.find((id)=>id==ad._id)) { %>
-                                    <button disabled type="button" class="btn"
-                                        style="width: 60%; background-color: red; color: white;">
+                                                    <% } else{ %>
+                                                        <% if(user?.report?.find((id)=>id==ad._id)) { %>
+                                                            <button disabled type="button" class="btn" style="width: 60%; background-color: red; color: white;">
                                        Reported</button>
-                                    <% } else{ %>
-                                        <a href="http://localhost:3000/api/ad/report/<%=ad._id%>/uid/<%=user._id%>"><button
+                                                            <% } else{ %>
+                                                                <a href="http://localhost:3000/api/ad/report/<%=ad._id%>/uid/<%=user._id%>"><button
                                                 type="button" class="btn"
                                                 style="width: 60%; background-color: red; color: white;">Report</button></a>
-                                        <% } %>
-                                            <% } %>
+                                                                <% } %>
+                                                                    <% } %>
                     </div>
 
 
@@ -501,24 +483,18 @@
             <div class="container d-flex justify-content-around align-items-baseline">
 
                 <div class="chat" style="max-height: 600px;">
-                    <h2
-                        style="text-align: center;margin: -3px;height: 80px;padding: 20px;background-color: green;color: whitesmoke;border-top-left-radius: 30px;font-style: italic;">
+                    <h2 style="text-align: center;margin: -3px;height: 80px;padding: 20px;background-color: green;color: whitesmoke;border-top-left-radius: 30px;font-style: italic;">
                         Mail to Seller</h2>
 
                     <div class="chatinput">
                         <form id="loginForm" action="">
                             <label for="subject" style=" display: block; margin-top: 20px;">Subject : </label>
-                            <input type="text" id="subject" name="subject "
-                                style="width:100%;border: 1px solid black; background-color: whitesmoke;" required
-                                placeholder="eg. Doubt, Bargain "><br>
+                            <input type="text" id="subject" name="subject " style="width:100%;border: 1px solid black; background-color: whitesmoke;" required placeholder="eg. Doubt, Bargain "><br>
 
                             <label for="body" style="display: block; margin-top: 20px; ">Query : </label>
-                            <textarea id="body" rows="5" name="body"
-                                style="width:100%;border: 1px solid black; background-color: whitesmoke;" required
-                                placeholder="Ask your questions.... "></textarea><br>
+                            <textarea id="body" rows="5" name="body" style="width:100%;border: 1px solid black; background-color: whitesmoke;" required placeholder="Ask your questions.... "></textarea><br>
 
-                            <input type="submit" value="Send mail"
-                                style="float: right; background-color:green; border: none; border-radius: 5px;margin: 30px 0; color: white; width: 90px;height: 40px;">
+                            <input type="submit" value="Send mail" style="float: right; background-color:green; border: none; border-radius: 5px;margin: 30px 0; color: white; width: 90px;height: 40px;">
                         </form>
                     </div>
                     <!-- <a href="mailto:parth.b21@iiits.in?subject=hi&body=hi ">ccccc</a> -->
@@ -532,23 +508,19 @@
 
 
 
-                <div class="livechat d-flex flex-column"
-                    style="padding: 0px; width: 500px; max-height: 400px;min-height:400px;background-color: white; border-radius: 10px;border:1px solid var(--blue1);box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-                    <h4
-                        style="padding:10px;text-align: center;background-color: #142850;color: whitesmoke;border-top-left-radius: 10px; border-top-right-radius: 10px;">
+                <div class="livechat d-flex flex-column" style="padding: 0px; width: 500px; max-height: 400px;min-height:400px;background-color: white; border-radius: 10px;border:1px solid var(--blue1);box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                    <h4 style="padding:10px;text-align: center;background-color: #142850;color: whitesmoke;border-top-left-radius: 10px; border-top-right-radius: 10px;">
                         Group Chat <span>
                         </span>
                     </h4>
-                    <div id="chat-container"
-                        style="width: 480px; max-height: 300px;min-height:300px;display: flex;flex-direction: column;margin: 0px 10px 0 10px;overflow-y: scroll;">
+                    <div id="chat-container" style="width: 480px; max-height: 300px;min-height:300px;display: flex;flex-direction: column;margin: 0px 10px 0 10px;overflow-y: scroll;">
 
                         <!-- Chats will come here -->
 
                     </div>
 
 
-                    <form action="http://localhost:3000/api/ad/id/<%=ad._id%>/chat/<%=user.email%>" method="post"
-                        class="msgform align-bottom" style="display: flex;">
+                    <form action="http://localhost:3000/api/ad/id/<%=ad._id%>/chat/<%=user.email%>" method="post" class="msgform align-bottom" style="display: flex;">
                         <input type="text" placeholder="message" name="message">
                         <button type="submit"><span><i class="fa-solid fa-paper-plane"></i></span></button>
                     </form>
@@ -582,8 +554,8 @@
 
                     let bod = document.getElementById("body")
                     let f = `mailto:${'<%-ad.email%>'}?subject=${sub.value}&body=${bod.value}`
-                    // console.log(sub)
-                    // console.log(bod)
+                        // console.log(sub)
+                        // console.log(bod)
 
 
                     // console.log('<%-ad.email%>')
@@ -595,23 +567,17 @@
 
 
 
-            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-                integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-                crossorigin="anonymous"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-                integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-                crossorigin="anonymous"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-                integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-                crossorigin="anonymous"></script>
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
             <script>
                 let id = '<%-ad._id%>'
                 fetch('http://localhost:3000/api/adObject/' + id).then(response => {
-                    if (response.ok) {
-                        return response.json();
-                    }
-                    throw new Error('Network response was not ok.');
-                })
+                        if (response.ok) {
+                            return response.json();
+                        }
+                        throw new Error('Network response was not ok.');
+                    })
                     .then(({
                         ad
                     }) => {
@@ -625,6 +591,7 @@
                         console.error('There was a problem with the fetch operation:', error);
                     });
                 setInterval(updateChatWindow, 5000)
+
                 function updateChatWindow() {
                     fetch('http://localhost:3000/api/ad/chat/' + id)
                         .then(
@@ -636,12 +603,15 @@
                             }
                         )
                         .then(
-                            chats => { createChats(chats) }
+                            chats => {
+                                createChats(chats)
+                            }
                         )
                         .catch(error => {
                             console.error('There was a problem with the fetch operation:', error);
                         });
                 }
+
                 function createChats(chats) {
                     const chatContainer = document.getElementById('chat-container')
                     chatContainer.innerHTML = ''
@@ -653,8 +623,7 @@
                             ChatCard.style.cssText = 'align-self:flex-end;background-color: lightskyblue;'
                             ChatCard.innerHTML = `<p style="color: var(--blue1);"><strong>${chat.from}</strong></p>
                             <p>${chat.message} </p>`
-                        }
-                        else {
+                        } else {
                             ChatCard.classList.add('msgbox')
                             ChatCard.style.cssText = 'align-self:flex-start;background-color: lightgray;'
                             ChatCard.innerHTML = `<p style="color: var(--blue1);"><strong>${chat.from}</strong></p>
