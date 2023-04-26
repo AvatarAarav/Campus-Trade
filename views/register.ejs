@@ -227,7 +227,7 @@
             <div class="profilephoto"><img id="Rprofilephoto" src="http://localhost:3000/assets/boy1.png" alt="boy" onclick="Rprofilepic()"></div>
             <div class="loginbox">
                 <form action="/api/user/register" onsubmit="return validateForm()" method="post">
-                    <div class="inputbox"><span class="iconn"><i class="fa-solid fa-user"></i></span><input name="name" required class="uname" type="text" placeholder="User Name"></div>
+                    <div class="inputbox"><span class="iconn"><i class="fa-solid fa-user"></i></span><input name="name" required class="uname" type="text" pattern="[a-zA-Z]{3,12}" placeholder="User Name"></div>
                     <div class="inputbox"><span class="iconn"><i class="fa-solid fa-envelope"></i></span><input class="umail" required type="email" name="email" placeholder="E mail Id"></div>
                     <div class="inputbox"><span class="iconn"><i class="fa-solid fa-graduation-cap"></i></span><input name="college_name" required class="uclg" type="text" placeholder="College Name"></div>
                     <div class="inputbox"><span class="iconn"><i class="fa-solid fa-calendar-days"></i></span><input name="year" required class="uyear" type="text" placeholder="Year"></div>
