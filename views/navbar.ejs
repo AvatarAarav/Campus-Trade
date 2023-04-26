@@ -22,7 +22,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="http://localhost:3000/user/home/<%=user._id%>">Home</a>
                     </li>
-                    <!-- onclick="openProfile('<%=user.id%>','<%=user.password%>') "-->
                     <span class="nav-item" style="padding: 0;">
                         <form class="d-inline" method="POST" action="/api/user">
                             <input type="hidden" name="userId" value="<%=user._id%>" />

@@ -38,13 +38,14 @@ app.get('/register', (req, res) => {
     res.render('register', { user: undefined })
 })
 
-app.get('/adminPortal', (req, res) => {
-    res.render('adminPortal', { user: undefined })
-})
 
 
 const PORT = 3000
-mongoose.connect("mongodb+srv://Aarav-Nigam:XtwpTt4aolWGmkzn@cluster0.kd8i4tz.mongodb.net/CampusTradeDB?retryWrites=true&w=majority")
+mongoose.connect('mongodb+srv://Aarav-Nigam:XtwpTt4aolWGmkzn@cluster0.kd8i4tz.mongodb.net/CampusTradeDB?retryWrites=true&w=majority',  {
+     useNewUrlParser: true, 
+     useUnifiedTopology: true,
+     family: 4,
+ })
     .then(() => {
         app.listen(PORT, () => {
             console.log(`Server is listening at port ${PORT}`)
