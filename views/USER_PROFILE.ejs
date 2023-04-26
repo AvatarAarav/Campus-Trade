@@ -461,7 +461,7 @@
                         <h3 class="card-title">${ad.name}</h3>
                             <p class="card-text"> ${ad.price}</p>
                             <a href='http://localhost:3000/api/ad/delete/${ad._id}/mail/${email}'><button class="delete-btn" >Delete</button></a>
-                            <button class="btn btn-warning float-end" onclick="UpdateAd('${ad._id}')" >Update</button>
+                          <button class="btn btn-warning float-end" onclick="UpdateAd('${ad._id}')" >Update</button>
                             <a class='d-block text-center w-100' href='http://localhost:3000/api/ad/${ad._id}/email/${email}'><button class='btn btn-secondary w-100' onclick="getAdDetails('${ad._id}')">View Ad</button></a>
 `;
                         const adCard = document.createElement("div");
