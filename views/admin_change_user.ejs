@@ -366,12 +366,13 @@
             </div>
 
             <div class="short" style="padding: 10px;">
-                <p>Earnings</p>
-                <p>Spent</p>
-                <p>Profit</p>
-                <p>loss</p>
-                <p>Adds posted</p>
-                <p>Products Bought</p>
+                <p id="e">Earnings</p>
+                <p id="b">Buying Money</p>
+                <p id="p">Profit</p>
+                <p id="ap">Adds posted </p>
+                <p>Products Buying :
+                    <%= user.ads.length %>
+                </p>
             </div>
 
 
@@ -384,12 +385,7 @@
                 <h2 style="width: 100%;text-align: center; color: #142850;">Shopping History</h2>
 
                 <div id="add-container-2" class="add-container">
-                    <div class="card" style="display: inline-block; width:210px; margin: 20px 0 0 20px; border-bottom: 6px solid orangered;">
-                        <img class="card-img-top" src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81KoSSAwH2L._SL1500_.jpg" alt="Card image" style="width: 208px;height: 230px;">
-                        <div class="c-body" style="background-color: white; width: 100%;">
-                            <h3 class="card-title">Laptop</h3>
-                            <p class="card-text"> $ 30,000</p>
-                            
+                          
                             <!-- <button class="btn btn-warning">Update</button> -->
                         </div>
                     </div>
@@ -420,45 +416,91 @@
 
 
         <%- include('./footer.ejs',{user : user}); %>
-            <script>
-                const email = '<%- user.email %>'
-                fetch('http://localhost:3000/api/user/' + email).then(response => {
-                        if (response.ok) {
-                            return response.json(); //converting back to object
-                        }
-                        throw new Error('Network response was not ok.');
-                    })
-                    .then(data => {
-                        // Call createAdCards function to create ad cards on page load
-                        createAdCards(data.ads)
-                    })
-                    .catch(error => {
-                        console.error('There was a problem with the fetch operation:', error);
-                    });
-                const createAdCards = (ads) => {
-                    //ads is an array of all ads
-                    const adCardsContainer = document.getElementById("add-container-1");
-                    ads.forEach(ad => {
-                        const adBody = document.createElement("div");
-                        adBody.classList.add("c-body");
-                        adBody.style.cssText = 'background-color: white; width: 100%;';
-                        adBody.innerHTML = `
-                        <h3 class="card-title">${ad.name}</h3>
-                            <p class="card-text"> ${ad.price}</p>
-                            <button class="delete-btn" >Delete</button>
-                            <button class="btn btn-warning">Update</button>
+        <script>
+            const email = '<%- user.email %>'
+            console.log(email)
+            fetch('http://localhost:3000/api/user/' + email).then(response => {
+                    if (response.ok) {
+                        return response.json(); //converting back to object
+                    }
+                    throw new Error('Network response was not ok.');
+                })
+                .then(data => {
+                    // Call createAdCards function to create ad cards on page load
+                    const buyingMoney = data.sellAds.reduce((a, b) => a + b.price, 0);
+                    const sellingMoney = data.buyAds.reduce((a, b) => a + b.price, 0);
+                    const sellingAdsLen = data.buyAds.length
+
+                    const e = document.getElementById("e")
+                    const b = document.getElementById("b")
+                    const p = document.getElementById("p")
+                    const ap = document.getElementById("ap")
+                    e.innerHTML = `Earnings : ${sellingMoney}`
+                    b.innerHTML = `Buying Money : ${buyingMoney}`
+                    p.innerHTML = `Profits : ${(sellingMoney - buyingMoney)}`
+                    ap.innerHTML = `Ads posted : ${sellingAdsLen}`
+
+
+                    createAdCards1(data.sellAds)
+                    createAdCards2(data.buyAds)
+                })
+                .catch(error => {
+                    console.error('There was a problem with the fetch operation:', error);
+                });
+            const createAdCards1 = (ads) => {
+                //ads is an array of all ads
+                const adCardsContainer = document.getElementById("add-container-1");
+                ads.forEach(ad => {
+                    const adBody = document.createElement("div");
+                    adBody.classList.add("c-body");
+                    adBody.style.cssText = 'background-color: white; width: 100%;';
+                    adBody.innerHTML = `
+                    <h3 class="card-title">${ad.name}</h3>
+                        <p class="card-text"> ${ad.price}</p>
+                        <a class='d-block text-center w-100' href='http://localhost:3000/api/admin_ads/${ad._id}/admin/<%- admin._id %>'><button class='btn btn-secondary w-100'>View Ad</button></a>
+
+                       
+                       
 `;
-                        const adCard = document.createElement("div");
-                        adCard.classList.add("card");
-                        adCard.style.cssText = "display: inline-block; width:210px; margin: 20px 0 0 20px; border-bottom: 6px solid orangered;"
-                            // console.log(`''`)
-                        adCard.innerHTML = `<img class="<img class="card-img-top"
-                            src="data:${ad.img_type};base64,${btoa(String.fromCharCode.apply(null,ad.img_content.data))}"
-                            alt="Card image" style="width: 208px;height: 230px;">`;
-                        adCard.appendChild(adBody);
-                        adCardsContainer.appendChild(adCard);
-                    });
-                };
+                    const adCard = document.createElement("div");
+                    adCard.classList.add("card");
+                    adCard.style.cssText = "display: inline-block; width:210px; margin: 20px 0 0 20px; border-bottom: 6px solid orangered;"
+                        // console.log(`''`)
+                    adCard.innerHTML = `<img class="<img class="card-img-top"
+                        src="data:${ad.img_type};base64,${btoa(String.fromCharCode.apply(null, ad.img_content.data))}"
+                        alt="Card image" style="width: 208px;height: 230px;">`;
+                    adCard.appendChild(adBody);
+                    adCardsContainer.appendChild(adCard);
+                });
+
+            };
+
+
+            const createAdCards2 = (ads) => {
+                //ads is an array of all ads
+                const adCardsContainer = document.getElementById("add-container-2");
+                ads.forEach(ad => {
+                    const adBody = document.createElement("div");
+                    adBody.classList.add("c-body");
+                    adBody.style.cssText = 'background-color: white; width: 100%;';
+                    adBody.innerHTML = `
+                    <h3 class="card-title">${ad.name}</h3>
+                        <p class="card-text"> ${ad.price}</p>
+                        <a class='d-block text-center w-100' href='http://localhost:3000/api/admin_ads/${ad._id}/admin/<%- admin._id %>'><button class='btn btn-secondary w-100'>View Ad</button></a>
+                      
+`;
+                    const adCard = document.createElement("div");
+                    adCard.classList.add("card");
+                    adCard.style.cssText = "display: inline-block; width:210px; margin: 20px 0 0 20px; border-bottom: 6px solid orangered;"
+                        // console.log(`''`)
+                    adCard.innerHTML = `<img class="<img class="card-img-top"
+                        src="data:${ad.img_type};base64,${btoa(String.fromCharCode.apply(null, ad.img_content.data))}"
+                        alt="Card image" style="width: 208px;height: 230px;">`;
+                    adCard.appendChild(adBody);
+                    adCardsContainer.appendChild(adCard);
+                });
+
+            };
             </script>
 
 

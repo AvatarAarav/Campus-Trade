@@ -22,7 +22,7 @@ console.log(searchString.toString())
             
               { type: { $regex: searchString, $options: "i" } },
             
-              { age: { $regex: searchString, $options: "i" } },
+             
             ],
           };
           
