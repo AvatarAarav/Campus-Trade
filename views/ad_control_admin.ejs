@@ -94,7 +94,7 @@
         
         .searchbtn:hover {
             background-color: orange;
-            cursor: progress;
+            cursor: not-allowed;
         }
         
         .menubtn {
@@ -120,7 +120,7 @@
             /* background-color: lightgreen; */
             z-index: 1;
         }
-
+        
         .admadnav {
             margin-left: 200px;
         }
@@ -443,7 +443,7 @@
                         </div>
 
 
-                       <a href="/api/admin/<%= ad._id%>/delete/<%=admin._id%>"><button type="button" class="btn" style="width: 60%; background-color: red; margin-bottom: 20px;margin-top: 20px;color: white;">Delete Product</button></a> 
+                        <a href="/api/admin/<%= ad._id%>/delete/<%=admin._id%>"><button type="button" class="btn" style="width: 60%; background-color: red; margin-bottom: 20px;margin-top: 20px;color: white;">Delete Product</button></a>
                         <br>
                         <button class="btn btn-warning" style="margin-bottom: 20px;">Reports Count : <%=ad.report%></button>
 
@@ -596,6 +596,9 @@
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
             <script>
+                var btn = document.getElementById('searchbtn')
+                btn.disabled = true
+
                 let id = '<%-ad._id%>'
                 fetch('http://localhost:3000/api/adObject/' + id).then(response => {
                         if (response.ok) {
