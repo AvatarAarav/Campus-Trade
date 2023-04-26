@@ -102,7 +102,7 @@
         
         .searchbtn:hover {
             background-color: orange;
-            cursor: progress;
+            cursor: not-allowed;
         }
         
         .menubtn {
@@ -421,6 +421,9 @@
 
         <%- include('./footer.ejs'); %>
             <script>
+                var btn = document.getElementById('searchbtn')
+                btn.disabled = true
+
                 const email = '<%- user.email %>'
                 fetch('http://localhost:3000/api/user/' + email).then(response => {
                         if (response.ok) {

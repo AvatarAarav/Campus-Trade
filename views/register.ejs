@@ -103,7 +103,7 @@
         
         .searchbtn:hover {
             background-color: orange;
-            cursor: progress;
+            cursor: not-allowed;
         }
         
         .menubtn {
@@ -262,6 +262,9 @@
 
 
             <script>
+                var btn = document.getElementById('searchbtn')
+                btn.disabled = true
+
                 function validateForm() {
                     var pw1 = document.getElementById("pswd1");
                     var pw2 = document.getElementById("pswd2");
